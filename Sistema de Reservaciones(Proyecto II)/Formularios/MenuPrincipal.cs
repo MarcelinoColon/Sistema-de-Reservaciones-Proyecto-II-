@@ -17,6 +17,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             InitializeComponent();
         }
 
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -30,6 +31,13 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginform = new LoginForm();
+            loginform.Show();
+            this.Close();
         }
     }
 }

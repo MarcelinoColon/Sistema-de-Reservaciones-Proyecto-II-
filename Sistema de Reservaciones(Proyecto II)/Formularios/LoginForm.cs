@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Sistema_de_Reservaciones_Proyecto_II_.Formularios;
 
 namespace Sistema_de_Reservaciones_Proyecto_II_
 {
@@ -52,7 +53,10 @@ namespace Sistema_de_Reservaciones_Proyecto_II_
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    MessageBox.Show("Bienvenido");
+                    MenuPrincipal menuprincipal = new MenuPrincipal();
+                    menuprincipal.Show();
+                    this.Hide();
+                    MessageBox.Show("Bienvenido " + reader.GetString(1));
                 }
                 else
                 {
