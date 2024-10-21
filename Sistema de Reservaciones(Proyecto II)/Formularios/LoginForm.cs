@@ -53,10 +53,15 @@ namespace Sistema_de_Reservaciones_Proyecto_II_
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    string usuario = reader["nombre_usuario"].ToString();
+                    string contrasena = reader["contrasena"].ToString();
+                    string tipoUsuario = reader["id_tipo_usuario"].ToString();
+
+                    UserCache.Initialize(usuario, contrasena, tipoUsuario);
                     MenuPrincipal menuprincipal = new MenuPrincipal();
                     menuprincipal.Show();
                     this.Hide();
-                    MessageBox.Show("Bienvenido " + reader.GetString(1));
+                    MessageBox.Show("Bienvenido "+ usuario);
                 }
                 else
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_de_Reservaciones_Proyecto_II_.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,18 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             LoginForm loginform = new LoginForm();
             loginform.Show();
             this.Close();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            if (UserCache.Current.TipoUsuario == "4")
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
     }
 }

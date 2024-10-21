@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\DBGeneral.cs" />
+    <Compile Include="Clases\UserCache.cs" />
     <Compile Include="Formularios\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
