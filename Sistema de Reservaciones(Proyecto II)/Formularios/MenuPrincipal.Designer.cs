@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.PanelPrincipal = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.btnReservaciones = new System.Windows.Forms.PictureBox();
@@ -84,7 +84,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btnCerrarSesion);
@@ -160,13 +160,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Clientes";
             // 
-            // panel3
+            // PanelPrincipal
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 145);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1050, 505);
-            this.panel3.TabIndex = 2;
+            this.PanelPrincipal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.PanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelPrincipal.Location = new System.Drawing.Point(0, 145);
+            this.PanelPrincipal.Name = "PanelPrincipal";
+            this.PanelPrincipal.Size = new System.Drawing.Size(1050, 505);
+            this.PanelPrincipal.TabIndex = 2;
             // 
             // label8
             // 
@@ -233,6 +234,7 @@
             this.btnClientes.TabIndex = 0;
             this.btnClientes.TabStop = false;
             this.btnClientes.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.btnClientes.MouseEnter += new System.EventHandler(this.btnClientes_MouseEnter);
             // 
             // btnReportes
             // 
@@ -285,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 650);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.PanelPrincipal);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -329,7 +331,7 @@
         private System.Windows.Forms.PictureBox btnReservaciones;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbInfo;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel PanelPrincipal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox btnCerrarSesion;
     }

@@ -31,7 +31,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            AbrirFormHijo(new ClientesForm());
         }
 
 
@@ -60,6 +60,23 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 loginform.Show();
                 this.Close();
             }
+        }
+
+        private void AbrirFormHijo(object formhijo)
+        {
+            if (this.PanelPrincipal.Controls.Count> 0)
+                this.PanelPrincipal.Controls.RemoveAt(0);
+            Form fh = formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelPrincipal.Controls.Add(fh);
+            this.PanelPrincipal.Tag = fh;
+            fh.Show();
+        }
+
+        private void btnClientes_MouseEnter(object sender, EventArgs e)
+        {
+
         }
     }
 }
