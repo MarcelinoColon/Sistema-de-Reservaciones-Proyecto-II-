@@ -30,25 +30,27 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbInfo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnReservaciones = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnMesas = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelPrincipal = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
-            this.btnReservaciones = new System.Windows.Forms.PictureBox();
-            this.btnMesas = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnClientes = new System.Windows.Forms.PictureBox();
             this.btnReportes = new System.Windows.Forms.PictureBox();
             this.btnEmpleados = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PanelPrincipal = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReservaciones)).BeginInit();
@@ -57,8 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +81,30 @@
             this.lbInfo.Size = new System.Drawing.Size(107, 20);
             this.lbInfo.TabIndex = 3;
             this.lbInfo.Text = "Administrador";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.minimazar;
+            this.pictureBox1.Location = new System.Drawing.Point(981, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(1017, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel2
             // 
@@ -106,6 +130,29 @@
             this.panel2.Size = new System.Drawing.Size(1050, 110);
             this.panel2.TabIndex = 1;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(915, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Cerrar Sesion";
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnCerrarSesion.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Cerrar_Sesion;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(910, 5);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 80);
+            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.TabStop = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.btnCerrarSesion.MouseEnter += new System.EventHandler(this.btnCerrarSesion_MouseEnter);
+            this.btnCerrarSesion.MouseLeave += new System.EventHandler(this.btnCerrarSesion_MouseLeave);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -115,6 +162,19 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Reservaciones";
             // 
+            // btnReservaciones
+            // 
+            this.btnReservaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnReservaciones.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Reservaciones;
+            this.btnReservaciones.Location = new System.Drawing.Point(160, 5);
+            this.btnReservaciones.Name = "btnReservaciones";
+            this.btnReservaciones.Size = new System.Drawing.Size(120, 80);
+            this.btnReservaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReservaciones.TabIndex = 5;
+            this.btnReservaciones.TabStop = false;
+            this.btnReservaciones.MouseEnter += new System.EventHandler(this.btnReservaciones_MouseEnter);
+            this.btnReservaciones.MouseLeave += new System.EventHandler(this.btnReservaciones_MouseLeave);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -123,6 +183,19 @@
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "Mesas";
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnMesas.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Mesa;
+            this.btnMesas.Location = new System.Drawing.Point(610, 5);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(120, 80);
+            this.btnMesas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMesas.TabIndex = 2;
+            this.btnMesas.TabStop = false;
+            this.btnMesas.MouseEnter += new System.EventHandler(this.btnMesas_MouseEnter);
+            this.btnMesas.MouseLeave += new System.EventHandler(this.btnMesas_MouseLeave);
             // 
             // label4
             // 
@@ -151,67 +224,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Empleados";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Clientes";
-            // 
-            // PanelPrincipal
-            // 
-            this.PanelPrincipal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.PanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelPrincipal.Location = new System.Drawing.Point(0, 145);
-            this.PanelPrincipal.Name = "PanelPrincipal";
-            this.PanelPrincipal.Size = new System.Drawing.Size(1050, 505);
-            this.PanelPrincipal.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(915, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Cerrar Sesion";
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnCerrarSesion.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Cerrar_Sesion;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(910, 5);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 80);
-            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarSesion.TabIndex = 0;
-            this.btnCerrarSesion.TabStop = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btnReservaciones
-            // 
-            this.btnReservaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnReservaciones.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Reservaciones;
-            this.btnReservaciones.Location = new System.Drawing.Point(160, 5);
-            this.btnReservaciones.Name = "btnReservaciones";
-            this.btnReservaciones.Size = new System.Drawing.Size(120, 80);
-            this.btnReservaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReservaciones.TabIndex = 5;
-            this.btnReservaciones.TabStop = false;
-            // 
-            // btnMesas
-            // 
-            this.btnMesas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnMesas.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Mesa;
-            this.btnMesas.Location = new System.Drawing.Point(610, 5);
-            this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(120, 80);
-            this.btnMesas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMesas.TabIndex = 2;
-            this.btnMesas.TabStop = false;
-            // 
             // btnMenu
             // 
             this.btnMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -222,6 +234,17 @@
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMenu.TabIndex = 4;
             this.btnMenu.TabStop = false;
+            this.btnMenu.MouseEnter += new System.EventHandler(this.btnMenu_MouseEnter);
+            this.btnMenu.MouseLeave += new System.EventHandler(this.btnMenu_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Clientes";
             // 
             // btnClientes
             // 
@@ -235,6 +258,7 @@
             this.btnClientes.TabStop = false;
             this.btnClientes.Click += new System.EventHandler(this.pictureBox3_Click);
             this.btnClientes.MouseEnter += new System.EventHandler(this.btnClientes_MouseEnter);
+            this.btnClientes.MouseLeave += new System.EventHandler(this.btnClientes_MouseLeave);
             // 
             // btnReportes
             // 
@@ -246,6 +270,8 @@
             this.btnReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnReportes.TabIndex = 3;
             this.btnReportes.TabStop = false;
+            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
+            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
             // 
             // btnEmpleados
             // 
@@ -257,30 +283,17 @@
             this.btnEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnEmpleados.TabIndex = 2;
             this.btnEmpleados.TabStop = false;
+            this.btnEmpleados.MouseEnter += new System.EventHandler(this.btnEmpleados_MouseEnter);
+            this.btnEmpleados.MouseLeave += new System.EventHandler(this.btnEmpleados_MouseLeave);
             // 
-            // pictureBox1
+            // PanelPrincipal
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.minimazar;
-            this.pictureBox1.Location = new System.Drawing.Point(981, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(1017, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.PanelPrincipal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.PanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelPrincipal.Location = new System.Drawing.Point(0, 145);
+            this.PanelPrincipal.Name = "PanelPrincipal";
+            this.PanelPrincipal.Size = new System.Drawing.Size(1050, 505);
+            this.PanelPrincipal.TabIndex = 2;
             // 
             // MenuPrincipal
             // 
@@ -297,6 +310,8 @@
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
@@ -306,8 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

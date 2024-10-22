@@ -76,7 +76,86 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnClientes_MouseEnter(object sender, EventArgs e)
         {
+            btnClientes.BorderStyle = BorderStyle.FixedSingle;
+            btnClientes.Cursor = Cursors.Hand;
+        }
 
+        private void btnClientes_MouseLeave(object sender, EventArgs e)
+        {
+            btnClientes.BorderStyle = BorderStyle.Fixed3D;
+            btnClientes.Cursor = Cursors.Default;
+        }
+
+        private void btnCerrarSesion_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrarSesion.BorderStyle = BorderStyle.FixedSingle;
+            btnCerrarSesion.Cursor = Cursors.Hand;
+        }
+
+        private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarSesion.BorderStyle = BorderStyle.Fixed3D;
+            btnCerrarSesion.Cursor = Cursors.Default;
+        }
+
+        private void btnReservaciones_MouseEnter(object sender, EventArgs e)
+        {
+            btnReservaciones.BorderStyle = BorderStyle.FixedSingle;
+            btnReservaciones.Cursor = Cursors.Hand;
+        }
+
+        private void btnReservaciones_MouseLeave(object sender, EventArgs e)
+        {
+            btnReservaciones.BorderStyle = BorderStyle.Fixed3D;
+            btnReservaciones.Cursor = Cursors.Default;
+        }
+
+        private void btnReportes_MouseEnter(object sender, EventArgs e)
+        {
+            btnReportes.BorderStyle = BorderStyle.FixedSingle;
+            btnReportes.Cursor = Cursors.Hand;
+        }
+
+        private void btnReportes_MouseLeave(object sender, EventArgs e)
+        {
+            btnReportes.BorderStyle = BorderStyle.Fixed3D;
+            btnReportes.Cursor = Cursors.Default;
+        }
+
+        private void btnMenu_MouseEnter(object sender, EventArgs e)
+        {
+            btnMenu.BorderStyle = BorderStyle.FixedSingle;
+            btnMenu.Cursor = Cursors.Hand;
+        }
+
+        private void btnMenu_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenu.BorderStyle = BorderStyle.Fixed3D;
+            btnMenu.Cursor = Cursors.Default;
+        }
+
+        private void btnMesas_MouseEnter(object sender, EventArgs e)
+        {
+            btnMesas.BorderStyle = BorderStyle.FixedSingle;
+            btnMesas.Cursor = Cursors.Hand;
+        }
+
+        private void btnMesas_MouseLeave(object sender, EventArgs e)
+        {
+            btnMesas.BorderStyle = BorderStyle.Fixed3D;
+            btnMesas.Cursor = Cursors.Default;
+        }
+
+        private void btnEmpleados_MouseEnter(object sender, EventArgs e)
+        {
+            btnEmpleados.BorderStyle = BorderStyle.FixedSingle;
+            btnEmpleados.Cursor = Cursors.Hand;
+        }
+
+        private void btnEmpleados_MouseLeave(object sender, EventArgs e)
+        {
+            btnEmpleados.BorderStyle = BorderStyle.Fixed3D;
+            btnEmpleados.Cursor = Cursors.Default;
         }
     }
 }
