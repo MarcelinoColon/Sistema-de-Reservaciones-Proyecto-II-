@@ -73,6 +73,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cerrar_Sesion {
+            get {
+                object obj = ResourceManager.GetObject("Cerrar Sesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chart_business_graph_statistics_report_diagram_analysis_icon_232657 {
             get {
                 object obj = ResourceManager.GetObject("chart_business_graph_statistics_report_diagram_analysis_icon_232657", resourceCulture);

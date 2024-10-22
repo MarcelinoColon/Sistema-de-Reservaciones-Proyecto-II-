@@ -34,12 +34,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoginForm loginform = new LoginForm();
-            loginform.Show();
-            this.Close();
-        }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -50,6 +44,21 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             else
             {
                 
+            }
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show("¿Está seguro de que desea cerrar sesión?",
+                                     "Cerrar Sesión",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                LoginForm loginform = new LoginForm();
+                loginform.Show();
+                this.Close();
             }
         }
     }
