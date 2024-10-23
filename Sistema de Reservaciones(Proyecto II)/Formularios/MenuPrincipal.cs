@@ -157,5 +157,22 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             btnEmpleados.BorderStyle = BorderStyle.Fixed3D;
             btnEmpleados.Cursor = Cursors.Default;
         }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            btnCaja.BorderStyle = BorderStyle.FixedSingle;
+            btnCaja.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            btnCaja.BorderStyle = BorderStyle.Fixed3D;
+            btnCaja.Cursor = Cursors.Default;
+        }
     }
 }
