@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
-    public partial class ClientesForm : Form
+    public partial class ReportesForm : Form
     {
-        public ClientesForm()
+        public ReportesForm()
         {
             InitializeComponent();
-            this.Text = "Clientes";
+            this.Text = "Reportes";
         }
     }
 }

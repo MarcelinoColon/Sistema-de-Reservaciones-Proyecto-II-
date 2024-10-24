@@ -1,6 +1,6 @@
 ﻿namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
-    partial class ClientesForm
+    partial class MesasForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,13 +35,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 267);
+            this.label1.Location = new System.Drawing.Point(223, 289);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(591, 163);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Clientes";
+            this.label1.Size = new System.Drawing.Size(493, 163);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Mesas";
             // 
-            // ClientesForm
+            // MesasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -49,8 +49,8 @@
             this.ClientSize = new System.Drawing.Size(980, 765);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ClientesForm";
-            this.Text = "ClientesForm";
+            this.Name = "MesasForm";
+            this.Text = "MesasForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
