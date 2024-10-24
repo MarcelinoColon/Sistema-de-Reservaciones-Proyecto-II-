@@ -29,45 +29,37 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbInfo = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelPrincipal = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnClientes = new System.Windows.Forms.PictureBox();
-            this.btnCaja = new System.Windows.Forms.PictureBox();
-            this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
-            this.btnReservaciones = new System.Windows.Forms.PictureBox();
-            this.btnMesas = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.btnReportes = new System.Windows.Forms.PictureBox();
-            this.btnEmpleados = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
+            this.btnEmpleados = new FontAwesome.Sharp.IconButton();
+            this.btnClientes = new FontAwesome.Sharp.IconButton();
+            this.btnReportes = new FontAwesome.Sharp.IconButton();
+            this.btnCaja = new FontAwesome.Sharp.IconButton();
+            this.btnMesas = new FontAwesome.Sharp.IconButton();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.btnReservaciones = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.PanelPrincipal = new System.Windows.Forms.Panel();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.Titulo = new System.Windows.Forms.Label();
+            this.iconoMenuActual = new FontAwesome.Sharp.IconPictureBox();
+            this.panelSombra = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCaja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReservaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMesas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReportes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelBotones.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoMenuActual)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.lbInfo);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,228 +67,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 35);
             this.panel1.TabIndex = 0;
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.Location = new System.Drawing.Point(12, 9);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(107, 20);
-            this.lbInfo.TabIndex = 3;
-            this.lbInfo.Text = "Administrador";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnClientes);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.btnCaja);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.btnCerrarSesion);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.btnReservaciones);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.btnMesas);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnMenu);
-            this.panel2.Controls.Add(this.btnReportes);
-            this.panel2.Controls.Add(this.btnEmpleados);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 35);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 110);
-            this.panel2.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1065, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Cerrar Sesion";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Reservaciones";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(339, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Mesas";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(197, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Menu";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(629, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Reportes";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(923, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Empleados";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(791, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Clientes";
-            // 
-            // PanelPrincipal
-            // 
-            this.PanelPrincipal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.PanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelPrincipal.Location = new System.Drawing.Point(0, 145);
-            this.PanelPrincipal.Name = "PanelPrincipal";
-            this.PanelPrincipal.Size = new System.Drawing.Size(1200, 655);
-            this.PanelPrincipal.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(499, 85);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Caja";
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnClientes.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Clientes;
-            this.btnClientes.Location = new System.Drawing.Point(760, 5);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(120, 80);
-            this.btnClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClientes.TabIndex = 0;
-            this.btnClientes.TabStop = false;
-            this.btnClientes.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.btnClientes.MouseEnter += new System.EventHandler(this.btnClientes_MouseEnter);
-            this.btnClientes.MouseLeave += new System.EventHandler(this.btnClientes_MouseLeave);
-            // 
-            // btnCaja
-            // 
-            this.btnCaja.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnCaja.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Caja;
-            this.btnCaja.Location = new System.Drawing.Point(460, 5);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(120, 80);
-            this.btnCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCaja.TabIndex = 0;
-            this.btnCaja.TabStop = false;
-            this.btnCaja.Click += new System.EventHandler(this.pictureBox3_Click_1);
-            this.btnCaja.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
-            this.btnCaja.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnCerrarSesion.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Cerrar_Sesion;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(1060, 5);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 80);
-            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarSesion.TabIndex = 0;
-            this.btnCerrarSesion.TabStop = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            this.btnCerrarSesion.MouseEnter += new System.EventHandler(this.btnCerrarSesion_MouseEnter);
-            this.btnCerrarSesion.MouseLeave += new System.EventHandler(this.btnCerrarSesion_MouseLeave);
-            // 
-            // btnReservaciones
-            // 
-            this.btnReservaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnReservaciones.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Reservaciones;
-            this.btnReservaciones.Location = new System.Drawing.Point(10, 5);
-            this.btnReservaciones.Name = "btnReservaciones";
-            this.btnReservaciones.Size = new System.Drawing.Size(120, 80);
-            this.btnReservaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReservaciones.TabIndex = 5;
-            this.btnReservaciones.TabStop = false;
-            this.btnReservaciones.MouseEnter += new System.EventHandler(this.btnReservaciones_MouseEnter);
-            this.btnReservaciones.MouseLeave += new System.EventHandler(this.btnReservaciones_MouseLeave);
-            // 
-            // btnMesas
-            // 
-            this.btnMesas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnMesas.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Mesa;
-            this.btnMesas.Location = new System.Drawing.Point(310, 5);
-            this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(120, 80);
-            this.btnMesas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMesas.TabIndex = 2;
-            this.btnMesas.TabStop = false;
-            this.btnMesas.MouseEnter += new System.EventHandler(this.btnMesas_MouseEnter);
-            this.btnMesas.MouseLeave += new System.EventHandler(this.btnMesas_MouseLeave);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnMenu.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Menu;
-            this.btnMenu.Location = new System.Drawing.Point(160, 5);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(120, 80);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMenu.TabIndex = 4;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.MouseEnter += new System.EventHandler(this.btnMenu_MouseEnter);
-            this.btnMenu.MouseLeave += new System.EventHandler(this.btnMenu_MouseLeave);
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnReportes.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Reportes;
-            this.btnReportes.Location = new System.Drawing.Point(610, 5);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(120, 80);
-            this.btnReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReportes.TabIndex = 3;
-            this.btnReportes.TabStop = false;
-            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
-            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnEmpleados.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.Empleados;
-            this.btnEmpleados.Location = new System.Drawing.Point(910, 5);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(120, 80);
-            this.btnEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEmpleados.TabIndex = 2;
-            this.btnEmpleados.TabStop = false;
-            this.btnEmpleados.MouseEnter += new System.EventHandler(this.btnEmpleados_MouseEnter);
-            this.btnEmpleados.MouseLeave += new System.EventHandler(this.btnEmpleados_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -322,13 +92,257 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // panelBotones
+            // 
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panelBotones.Controls.Add(this.btnCerrarSesion);
+            this.panelBotones.Controls.Add(this.btnEmpleados);
+            this.panelBotones.Controls.Add(this.btnClientes);
+            this.panelBotones.Controls.Add(this.btnReportes);
+            this.panelBotones.Controls.Add(this.btnCaja);
+            this.panelBotones.Controls.Add(this.btnMesas);
+            this.panelBotones.Controls.Add(this.btnMenu);
+            this.panelBotones.Controls.Add(this.btnReservaciones);
+            this.panelBotones.Controls.Add(this.panel3);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBotones.Location = new System.Drawing.Point(0, 35);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(220, 765);
+            this.panelBotones.TabIndex = 1;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.btnCerrarSesion.IconColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 700);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(220, 65);
+            this.btnCerrarSesion.TabIndex = 8;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
+            this.btnEmpleados.IconColor = System.Drawing.Color.Black;
+            this.btnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 530);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnEmpleados.Size = new System.Drawing.Size(220, 65);
+            this.btnEmpleados.TabIndex = 7;
+            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnClientes.IconColor = System.Drawing.Color.Black;
+            this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(0, 465);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnClientes.Size = new System.Drawing.Size(220, 65);
+            this.btnClientes.TabIndex = 6;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.btnReportes.IconColor = System.Drawing.Color.Black;
+            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 400);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnReportes.Size = new System.Drawing.Size(220, 65);
+            this.btnReportes.TabIndex = 5;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.FlatAppearance.BorderSize = 0;
+            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaja.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            this.btnCaja.IconColor = System.Drawing.Color.Black;
+            this.btnCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCaja.Location = new System.Drawing.Point(0, 335);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCaja.Size = new System.Drawing.Size(220, 65);
+            this.btnCaja.TabIndex = 4;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCaja.UseVisualStyleBackColor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.FlatAppearance.BorderSize = 0;
+            this.btnMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesas.IconChar = FontAwesome.Sharp.IconChar.Chair;
+            this.btnMesas.IconColor = System.Drawing.Color.Black;
+            this.btnMesas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMesas.Location = new System.Drawing.Point(0, 270);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnMesas.Size = new System.Drawing.Size(220, 65);
+            this.btnMesas.TabIndex = 3;
+            this.btnMesas.Text = "Mesas";
+            this.btnMesas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Table;
+            this.btnMenu.IconColor = System.Drawing.Color.Black;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.Location = new System.Drawing.Point(0, 205);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnMenu.Size = new System.Drawing.Size(220, 65);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnReservaciones
+            // 
+            this.btnReservaciones.FlatAppearance.BorderSize = 0;
+            this.btnReservaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReservaciones.ForeColor = System.Drawing.Color.Black;
+            this.btnReservaciones.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.btnReservaciones.IconColor = System.Drawing.Color.Black;
+            this.btnReservaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReservaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReservaciones.Location = new System.Drawing.Point(0, 140);
+            this.btnReservaciones.Name = "btnReservaciones";
+            this.btnReservaciones.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnReservaciones.Size = new System.Drawing.Size(220, 65);
+            this.btnReservaciones.TabIndex = 1;
+            this.btnReservaciones.Text = "Reservaciones";
+            this.btnReservaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReservaciones.UseVisualStyleBackColor = true;
+            this.btnReservaciones.Click += new System.EventHandler(this.btnReservaciones_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.iconPictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.panel3.Size = new System.Drawing.Size(220, 140);
+            this.panel3.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 140;
+            this.iconPictureBox1.Location = new System.Drawing.Point(10, 0);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(190, 140);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            // 
+            // PanelPrincipal
+            // 
+            this.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.PanelPrincipal.Location = new System.Drawing.Point(220, 120);
+            this.PanelPrincipal.Name = "PanelPrincipal";
+            this.PanelPrincipal.Size = new System.Drawing.Size(980, 680);
+            this.PanelPrincipal.TabIndex = 2;
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panelTitulo.Controls.Add(this.Titulo);
+            this.panelTitulo.Controls.Add(this.iconoMenuActual);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(220, 35);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(980, 75);
+            this.panelTitulo.TabIndex = 3;
+            // 
+            // Titulo
+            // 
+            this.Titulo.AutoSize = true;
+            this.Titulo.Font = new System.Drawing.Font("Meiryo UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.Location = new System.Drawing.Point(72, 6);
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Size = new System.Drawing.Size(155, 56);
+            this.Titulo.TabIndex = 1;
+            this.Titulo.Text = "Inicio";
+            // 
+            // iconoMenuActual
+            // 
+            this.iconoMenuActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.iconoMenuActual.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconoMenuActual.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconoMenuActual.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconoMenuActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconoMenuActual.IconSize = 50;
+            this.iconoMenuActual.Location = new System.Drawing.Point(16, 13);
+            this.iconoMenuActual.Name = "iconoMenuActual";
+            this.iconoMenuActual.Size = new System.Drawing.Size(50, 56);
+            this.iconoMenuActual.TabIndex = 0;
+            this.iconoMenuActual.TabStop = false;
+            // 
+            // panelSombra
+            // 
+            this.panelSombra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panelSombra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSombra.Location = new System.Drawing.Point(220, 110);
+            this.panelSombra.Name = "panelSombra";
+            this.panelSombra.Size = new System.Drawing.Size(980, 10);
+            this.panelSombra.TabIndex = 4;
+            // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.Controls.Add(this.panelSombra);
+            this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.PanelPrincipal);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPrincipal";
@@ -336,19 +350,14 @@
             this.Text = "MenuPrincipal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCaja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReservaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMesas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReportes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelBotones.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panelTitulo.ResumeLayout(false);
+            this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoMenuActual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,24 +367,21 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox btnClientes;
-        private System.Windows.Forms.PictureBox btnEmpleados;
-        private System.Windows.Forms.PictureBox btnReportes;
-        private System.Windows.Forms.PictureBox btnMenu;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox btnMesas;
-        private System.Windows.Forms.PictureBox btnReservaciones;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbInfo;
+        private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Panel PanelPrincipal;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox btnCerrarSesion;
-        private System.Windows.Forms.PictureBox btnCaja;
-        private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton btnReservaciones;
+        private FontAwesome.Sharp.IconButton btnCerrarSesion;
+        private FontAwesome.Sharp.IconButton btnEmpleados;
+        private FontAwesome.Sharp.IconButton btnClientes;
+        private FontAwesome.Sharp.IconButton btnReportes;
+        private FontAwesome.Sharp.IconButton btnCaja;
+        private FontAwesome.Sharp.IconButton btnMesas;
+        private FontAwesome.Sharp.IconButton btnMenu;
+        private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Panel panelTitulo;
+        private FontAwesome.Sharp.IconPictureBox iconoMenuActual;
+        private System.Windows.Forms.Label Titulo;
+        private System.Windows.Forms.Panel panelSombra;
     }
 }

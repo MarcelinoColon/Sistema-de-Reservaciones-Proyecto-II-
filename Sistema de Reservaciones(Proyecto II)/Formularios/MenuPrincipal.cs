@@ -8,16 +8,96 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class MenuPrincipal : Form
     {
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+        private Form currentChildForm;
+
         public MenuPrincipal()
         {
             InitializeComponent();
+            this.Size = new System.Drawing.Size(1200, 800);
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panelBotones.Controls.Add(leftBorderBtn);
         }
 
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableButton();
+                //Button
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(163, 180, 209);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                //Left border button
+                
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+                //Current Child Form Icon
+                iconoMenuActual.IconChar = currentBtn.IconChar;
+                iconoMenuActual.IconColor = color;
+            }
+        }
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(153, 180, 209);
+                currentBtn.ForeColor = Color.Black;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Black;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            PanelPrincipal.Controls.Add(childForm);
+            PanelPrincipal.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            Titulo.Text = childForm.Text;
+        }
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(255, 255, 255);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
+        }
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+            iconoMenuActual.IconChar = IconChar.Home;
+            iconoMenuActual.IconColor = Color.MediumPurple;
+            Titulo.Text = "Inicio";
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -29,10 +109,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            AbrirFormHijo(new ClientesForm());
-        }
+
 
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -45,6 +122,53 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             {
                 
             }
+        }
+
+        private void btnReservaciones_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new ReservacionesForm());
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new MenuForm());
+        }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new MesasForm());
+        }
+
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new CajaForm());
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new ReportesForm());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new ClientesForm());
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new EmpleadosForm());
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -60,119 +184,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 loginform.Show();
                 this.Close();
             }
-        }
-
-        private void AbrirFormHijo(object formhijo)
-        {
-            if (this.PanelPrincipal.Controls.Count> 0)
-                this.PanelPrincipal.Controls.RemoveAt(0);
-            Form fh = formhijo as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.PanelPrincipal.Controls.Add(fh);
-            this.PanelPrincipal.Tag = fh;
-            fh.Show();
-        }
-
-        private void btnClientes_MouseEnter(object sender, EventArgs e)
-        {
-            btnClientes.BorderStyle = BorderStyle.FixedSingle;
-            btnClientes.Cursor = Cursors.Hand;
-        }
-
-        private void btnClientes_MouseLeave(object sender, EventArgs e)
-        {
-            btnClientes.BorderStyle = BorderStyle.Fixed3D;
-            btnClientes.Cursor = Cursors.Default;
-        }
-
-        private void btnCerrarSesion_MouseEnter(object sender, EventArgs e)
-        {
-            btnCerrarSesion.BorderStyle = BorderStyle.FixedSingle;
-            btnCerrarSesion.Cursor = Cursors.Hand;
-        }
-
-        private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
-        {
-            btnCerrarSesion.BorderStyle = BorderStyle.Fixed3D;
-            btnCerrarSesion.Cursor = Cursors.Default;
-        }
-
-        private void btnReservaciones_MouseEnter(object sender, EventArgs e)
-        {
-            btnReservaciones.BorderStyle = BorderStyle.FixedSingle;
-            btnReservaciones.Cursor = Cursors.Hand;
-        }
-
-        private void btnReservaciones_MouseLeave(object sender, EventArgs e)
-        {
-            btnReservaciones.BorderStyle = BorderStyle.Fixed3D;
-            btnReservaciones.Cursor = Cursors.Default;
-        }
-
-        private void btnReportes_MouseEnter(object sender, EventArgs e)
-        {
-            btnReportes.BorderStyle = BorderStyle.FixedSingle;
-            btnReportes.Cursor = Cursors.Hand;
-        }
-
-        private void btnReportes_MouseLeave(object sender, EventArgs e)
-        {
-            btnReportes.BorderStyle = BorderStyle.Fixed3D;
-            btnReportes.Cursor = Cursors.Default;
-        }
-
-        private void btnMenu_MouseEnter(object sender, EventArgs e)
-        {
-            btnMenu.BorderStyle = BorderStyle.FixedSingle;
-            btnMenu.Cursor = Cursors.Hand;
-        }
-
-        private void btnMenu_MouseLeave(object sender, EventArgs e)
-        {
-            btnMenu.BorderStyle = BorderStyle.Fixed3D;
-            btnMenu.Cursor = Cursors.Default;
-        }
-
-        private void btnMesas_MouseEnter(object sender, EventArgs e)
-        {
-            btnMesas.BorderStyle = BorderStyle.FixedSingle;
-            btnMesas.Cursor = Cursors.Hand;
-        }
-
-        private void btnMesas_MouseLeave(object sender, EventArgs e)
-        {
-            btnMesas.BorderStyle = BorderStyle.Fixed3D;
-            btnMesas.Cursor = Cursors.Default;
-        }
-
-        private void btnEmpleados_MouseEnter(object sender, EventArgs e)
-        {
-            btnEmpleados.BorderStyle = BorderStyle.FixedSingle;
-            btnEmpleados.Cursor = Cursors.Hand;
-        }
-
-        private void btnEmpleados_MouseLeave(object sender, EventArgs e)
-        {
-            btnEmpleados.BorderStyle = BorderStyle.Fixed3D;
-            btnEmpleados.Cursor = Cursors.Default;
-        }
-
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-            btnCaja.BorderStyle = BorderStyle.FixedSingle;
-            btnCaja.Cursor = Cursors.Hand;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            btnCaja.BorderStyle = BorderStyle.Fixed3D;
-            btnCaja.Cursor = Cursors.Default;
         }
     }
 }
