@@ -27,6 +27,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             panelBotones.Controls.Add(leftBorderBtn);
         }
 
+
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
