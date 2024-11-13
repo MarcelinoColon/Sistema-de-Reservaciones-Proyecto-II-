@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\DBGeneral.cs" />
+    <Compile Include="Clases\MostrarDatos.cs" />
     <Compile Include="Clases\UserCache.cs" />
     <Compile Include="Formularios\CajaForm.cs">
       <SubType>Form</SubType>
