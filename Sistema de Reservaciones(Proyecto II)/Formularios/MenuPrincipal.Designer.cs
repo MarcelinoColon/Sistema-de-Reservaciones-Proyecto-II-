@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.PanelPrincipal = new System.Windows.Forms.Panel();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.Titulo = new System.Windows.Forms.Label();
+            this.panelSombra = new System.Windows.Forms.Panel();
+            this.iconoMenuActual = new FontAwesome.Sharp.IconPictureBox();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.btnEmpleados = new FontAwesome.Sharp.IconButton();
             this.btnClientes = new FontAwesome.Sharp.IconButton();
@@ -40,21 +44,17 @@
             this.btnMesas = new FontAwesome.Sharp.IconButton();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.btnReservaciones = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.PanelPrincipal = new System.Windows.Forms.Panel();
-            this.panelTitulo = new System.Windows.Forms.Panel();
-            this.Titulo = new System.Windows.Forms.Label();
-            this.iconoMenuActual = new FontAwesome.Sharp.IconPictureBox();
-            this.panelSombra = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelBotones.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoMenuActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,30 +67,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 35);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.minimazar;
-            this.pictureBox1.Location = new System.Drawing.Point(1130, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(1165, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panelBotones
             // 
@@ -109,6 +85,68 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(220, 765);
             this.panelBotones.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.iconPictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.panel3.Size = new System.Drawing.Size(220, 140);
+            this.panel3.TabIndex = 0;
+            // 
+            // PanelPrincipal
+            // 
+            this.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.PanelPrincipal.Location = new System.Drawing.Point(220, 120);
+            this.PanelPrincipal.Name = "PanelPrincipal";
+            this.PanelPrincipal.Size = new System.Drawing.Size(980, 680);
+            this.PanelPrincipal.TabIndex = 2;
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panelTitulo.Controls.Add(this.Titulo);
+            this.panelTitulo.Controls.Add(this.iconoMenuActual);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(220, 35);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(980, 75);
+            this.panelTitulo.TabIndex = 3;
+            // 
+            // Titulo
+            // 
+            this.Titulo.AutoSize = true;
+            this.Titulo.Font = new System.Drawing.Font("Meiryo UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.Location = new System.Drawing.Point(72, 6);
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Size = new System.Drawing.Size(155, 56);
+            this.Titulo.TabIndex = 1;
+            this.Titulo.Text = "Inicio";
+            // 
+            // panelSombra
+            // 
+            this.panelSombra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panelSombra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSombra.Location = new System.Drawing.Point(220, 110);
+            this.panelSombra.Name = "panelSombra";
+            this.panelSombra.Size = new System.Drawing.Size(980, 10);
+            this.panelSombra.TabIndex = 4;
+            // 
+            // iconoMenuActual
+            // 
+            this.iconoMenuActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.iconoMenuActual.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconoMenuActual.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconoMenuActual.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconoMenuActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconoMenuActual.IconSize = 50;
+            this.iconoMenuActual.Location = new System.Drawing.Point(16, 13);
+            this.iconoMenuActual.Name = "iconoMenuActual";
+            this.iconoMenuActual.Size = new System.Drawing.Size(50, 56);
+            this.iconoMenuActual.TabIndex = 0;
+            this.iconoMenuActual.TabStop = false;
             // 
             // btnCerrarSesion
             // 
@@ -256,22 +294,12 @@
             this.btnReservaciones.UseVisualStyleBackColor = true;
             this.btnReservaciones.Click += new System.EventHandler(this.btnReservaciones_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.iconPictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.panel3.Size = new System.Drawing.Size(220, 140);
-            this.panel3.TabIndex = 0;
-            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
             this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 140;
@@ -283,57 +311,29 @@
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
-            // PanelPrincipal
+            // pictureBox1
             // 
-            this.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
-            this.PanelPrincipal.Location = new System.Drawing.Point(220, 120);
-            this.PanelPrincipal.Name = "PanelPrincipal";
-            this.PanelPrincipal.Size = new System.Drawing.Size(980, 680);
-            this.PanelPrincipal.TabIndex = 2;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.minimazar;
+            this.pictureBox1.Location = new System.Drawing.Point(1130, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panelTitulo
+            // pictureBox2
             // 
-            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.panelTitulo.Controls.Add(this.Titulo);
-            this.panelTitulo.Controls.Add(this.iconoMenuActual);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitulo.Location = new System.Drawing.Point(220, 35);
-            this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(980, 75);
-            this.panelTitulo.TabIndex = 3;
-            // 
-            // Titulo
-            // 
-            this.Titulo.AutoSize = true;
-            this.Titulo.Font = new System.Drawing.Font("Meiryo UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo.Location = new System.Drawing.Point(72, 6);
-            this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(155, 56);
-            this.Titulo.TabIndex = 1;
-            this.Titulo.Text = "Inicio";
-            // 
-            // iconoMenuActual
-            // 
-            this.iconoMenuActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.iconoMenuActual.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconoMenuActual.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconoMenuActual.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconoMenuActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconoMenuActual.IconSize = 50;
-            this.iconoMenuActual.Location = new System.Drawing.Point(16, 13);
-            this.iconoMenuActual.Name = "iconoMenuActual";
-            this.iconoMenuActual.Size = new System.Drawing.Size(50, 56);
-            this.iconoMenuActual.TabIndex = 0;
-            this.iconoMenuActual.TabStop = false;
-            // 
-            // panelSombra
-            // 
-            this.panelSombra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.panelSombra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSombra.Location = new System.Drawing.Point(220, 110);
-            this.panelSombra.Name = "panelSombra";
-            this.panelSombra.Size = new System.Drawing.Size(980, 10);
-            this.panelSombra.TabIndex = 4;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(1165, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // MenuPrincipal
             // 
@@ -350,14 +350,14 @@
             this.Text = "MenuPrincipal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelBotones.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoMenuActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
