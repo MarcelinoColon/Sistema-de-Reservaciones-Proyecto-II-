@@ -169,5 +169,15 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TORTILLA_ESPAÑOLA {
+            get {
+                object obj = ResourceManager.GetObject("TORTILLA ESPAÑOLA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
