@@ -127,6 +127,7 @@
     <Compile Include="Formularios\MesasForm.Designer.cs">
       <DependentUpon>MesasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Ordenes.cs" />
     <Compile Include="Formularios\ReportesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +235,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TORTILLA ESPAÑOLA.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
