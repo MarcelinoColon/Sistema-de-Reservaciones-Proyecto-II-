@@ -13,49 +13,46 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class MesasForm : Form
     {
-        private int idmesa;
-        private string silla;
-        private DateTime fecha = DateTime.Now.Date;
-        private DateTime hora = DateTime.Today.Add(DateTime.Now.TimeOfDay);
-        private string estado = "Pendiente";
-        private int idmenu;
-        private int cantidad;
-        private decimal precio;
-        MostrarDatos mostrarDatos = new MostrarDatos();
-        private List<Ordenes> lista = new List<Ordenes>();
-        private string producto;
+        private PanelManager panelManager;
+        private int? tagSeleccionado;
+        public static int idmenu;
         public MesasForm()
         {
             InitializeComponent();
             ocultarTab();
             this.Text = "Mesas";
-            pnDesayuno.Visible = false;
+            flowLayoutPanel1.Visible = false;
             pnAlmuerzo.Visible = false;
             pnPostres.Visible = false;
             pnBebidas.Visible = false;
-            pnDescripcion.Visible = false;
-            lbCantidad.Text = "1"; 
+            lbCantidad.Text = "1";
+            panelManager = new PanelManager();
         }
-        private void MostrarEnDataGridView()
+        private void OnPanelClick(panelProductos panel)
         {
-            DataTable dt = new DataTable();
+            tagSeleccionado = (int?)panel.Tag; // El panel Tag es de tipo object, necesitamos convertirlo a int?
+            MesasForm.idmenu = tagSeleccionado.Value;
+        }
+        private void LoadPaneles()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            var paneles = panelManager.GetPaneles();
 
-            dt.Columns.Add("Producto");
-            dt.Columns.Add("Cantidad");
-            dt.Columns.Add("Precio");
-            dt.Columns.Add("Total"); 
-
-            foreach (var orden in lista)
+            foreach (var panel in paneles)
             {
-                decimal total = orden.Cantidad * orden.Precio;
-                dt.Rows.Add(orden.Producto, orden.Cantidad, orden.Precio, total);
-            }
+                panelProductos panelDinamico = new panelProductos(panel.Tag, panel.Descripcion, panel.Precio, panel.ImagenPath);
+                panelDinamico.Click += (sender, e) => OnPanelClick(panelDinamico);  // Manejo de clic en el panel
 
-            dgvOrdenes.DataSource = dt;
+                // Agregar el manejador de clic a los controles dentro del panel
+                panelDinamico.pictureBox.Click += (sender, e) => panelDinamico.OnPanelClick();  // Al hacer clic en PictureBox, invocar el clic del panel
+                panelDinamico.labelDescripcion.Click += (sender, e) => panelDinamico.OnPanelClick();   // Al hacer clic en Label, invocar el clic del panel
+
+                flowLayoutPanel1.Controls.Add(panelDinamico);
+            }
         }
         private void MesasForm_Load(object sender, EventArgs e)
         {
-
+            LoadPaneles();
         }
         private void ocultarTab()
         {
@@ -83,10 +80,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             tabAnterior();
         }
 
-        private void iconButton1_Click_1(object sender, EventArgs e)
-        {
-            siguienteTab();
-        }
+
         private void btnAtrasSillas_Click(object sender, EventArgs e)
         {
             siguienteTab();
@@ -94,7 +88,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnDesayunos_Click(object sender, EventArgs e)
         {
-            if (pnDesayuno.Visible == false) { pnDesayuno.Visible = true; }
+            if (flowLayoutPanel1.Visible == false) { flowLayoutPanel1.Visible = true; }
             pnAlmuerzo.Visible = false;
             pnPostres.Visible = false;
             pnBebidas.Visible = false;
@@ -103,7 +97,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void btnAlmuerzos_Click_1(object sender, EventArgs e)
         {
             if (pnAlmuerzo.Visible == false) { pnAlmuerzo.Visible = true; }
-            pnDesayuno.Visible = false;
+            flowLayoutPanel1.Visible = false;
             pnPostres.Visible = false;
             pnBebidas.Visible = false;
         }
@@ -111,7 +105,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void btnPostres_Click_1(object sender, EventArgs e)
         {
             if (pnPostres.Visible == false) { pnPostres.Visible = true; }
-            pnDesayuno.Visible = false;
+            flowLayoutPanel1.Visible = false;
             pnAlmuerzo.Visible = false;
             pnBebidas.Visible = false;
         }
@@ -119,12 +113,45 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void btnBebidas_Click_1(object sender, EventArgs e)
         {
             if (pnBebidas.Visible == false) { pnBebidas.Visible = true; }
-            pnDesayuno.Visible = false;
+            flowLayoutPanel1.Visible = false;
             pnAlmuerzo.Visible = false;
             pnPostres.Visible = false;
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+        }
+
+
+        private void btnTomarOrden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbFiltro_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = tbFiltro.Text.ToLower();
+
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is panelProductos panel)
+                {
+                    // Filtrar en el texto de la descripcion del panel
+                    bool matchesFilter = panel.labelDescripcion.Text.ToLower().Contains(filterText);
+
+                    // Mostrar u ocultar el panel según el filtro
+                    panel.Visible = matchesFilter;
+                }
+            }
+        }
+
+        private void btnMas_Click(object sender, EventArgs e)
         {
             if (int.TryParse(lbCantidad.Text, out int currentValue))
             {
@@ -139,9 +166,9 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             }
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
+        private void btnMenos_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(lbCantidad .Text, out int currentValue))
+            if (int.TryParse(lbCantidad.Text, out int currentValue))
             {
                 if (currentValue > 1) // Asegurarse de que no baje de 1.
                 {
@@ -158,57 +185,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 // Manejar casos donde el texto no sea un número válido.
                 MessageBox.Show("El valor actual no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbCantidad.Text = "1"; // Restaurar al valor predeterminado.
-            }
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-            siguienteTab();
-            idmesa = 1;
-        }
-
-        private void iconButton7_Click(object sender, EventArgs e)
-        {
-            siguienteTab();
-            silla = "1";
-            List<Ordenes> lista = new List<Ordenes>();
-        }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            pnDescripcion.Visible = true;
-            idmenu = 1;
-            DataTable menuData = mostrarDatos.DataMenu(idmenu);
-            if (menuData.Rows.Count > 0) 
-            {
-                DataRow row = menuData.Rows[0];
-                precio = Convert.ToDecimal(row["precio"]);
-                producto = row["nombre_producto"].ToString();
-
-                lbPrecio.Text = precio.ToString("F2") + "$";
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron datos para el ID del menú proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            int cantidad = int.Parse(lbCantidad.Text);
-            Ordenes orden = new Ordenes(idmesa, silla, fecha, hora, estado, idmenu, cantidad, precio, producto);
-            lista.Add(orden);
-            MostrarEnDataGridView();
-        }
-
-        private void btnTomarOrden_Click(object sender, EventArgs e)
-        {
-            foreach (Ordenes orden in lista) 
-            {
-                mostrarDatos.InsertarOrdenes(orden.Silla, orden.IdMesa,null, orden.Fecha, orden.Hora, orden.Estado, orden.IdMenu, orden.Cantidad);
-                MessageBox.Show("Orden tomada correctamente");
-                lista.Clear();
             }
         }
     }
