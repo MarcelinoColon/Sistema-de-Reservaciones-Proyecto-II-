@@ -73,6 +73,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnPrincipalMesas.SuspendLayout();
@@ -155,7 +159,7 @@
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(36, 155);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 18);
+            this.label9.Size = new System.Drawing.Size(87, 12);
             this.label9.TabIndex = 7;
             this.label9.Text = "Estado y fecha";
             // 
@@ -165,7 +169,7 @@
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(73, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 18);
+            this.label8.Size = new System.Drawing.Size(44, 12);
             this.label8.TabIndex = 6;
             this.label8.Text = "Mesa 1";
             // 
@@ -200,7 +204,7 @@
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(265, 14);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(345, 37);
+            this.label7.Size = new System.Drawing.Size(238, 26);
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione una mesa";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,7 +266,7 @@
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(271, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(325, 37);
+            this.label6.Size = new System.Drawing.Size(224, 26);
             this.label6.TabIndex = 2;
             this.label6.Text = "Seleccione una silla";
             // 
@@ -318,7 +322,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(749, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 37);
+            this.label1.Size = new System.Drawing.Size(79, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "Orden";
             // 
@@ -381,7 +385,7 @@
             this.tbFiltro.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbFiltro.Location = new System.Drawing.Point(17, 23);
             this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(455, 31);
+            this.tbFiltro.Size = new System.Drawing.Size(455, 23);
             this.tbFiltro.TabIndex = 6;
             this.tbFiltro.Text = "Filtrar";
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
@@ -480,7 +484,7 @@
             this.pnDescripcion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnDescripcion.Location = new System.Drawing.Point(0, 1800);
             this.pnDescripcion.Name = "pnDescripcion";
-            this.pnDescripcion.Size = new System.Drawing.Size(429, 75);
+            this.pnDescripcion.Size = new System.Drawing.Size(438, 75);
             this.pnDescripcion.TabIndex = 10;
             // 
             // btnMenos
@@ -513,7 +517,7 @@
             this.lbCantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCantidad.Location = new System.Drawing.Point(312, 17);
             this.lbCantidad.Name = "lbCantidad";
-            this.lbCantidad.Size = new System.Drawing.Size(31, 32);
+            this.lbCantidad.Size = new System.Drawing.Size(21, 22);
             this.lbCantidad.TabIndex = 2;
             this.lbCantidad.Text = "1";
             // 
@@ -523,7 +527,7 @@
             this.lbPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrecio.Location = new System.Drawing.Point(113, 20);
             this.lbPrecio.Name = "lbPrecio";
-            this.lbPrecio.Size = new System.Drawing.Size(84, 37);
+            this.lbPrecio.Size = new System.Drawing.Size(58, 26);
             this.lbPrecio.TabIndex = 1;
             this.lbPrecio.Text = "0.00";
             // 
@@ -533,7 +537,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 32);
+            this.label2.Size = new System.Drawing.Size(75, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Precio:";
             // 
@@ -542,7 +546,7 @@
             this.pnBebidas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBebidas.Location = new System.Drawing.Point(0, 1350);
             this.pnBebidas.Name = "pnBebidas";
-            this.pnBebidas.Size = new System.Drawing.Size(429, 450);
+            this.pnBebidas.Size = new System.Drawing.Size(438, 450);
             this.pnBebidas.TabIndex = 9;
             // 
             // pnPostres
@@ -550,7 +554,7 @@
             this.pnPostres.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnPostres.Location = new System.Drawing.Point(0, 900);
             this.pnPostres.Name = "pnPostres";
-            this.pnPostres.Size = new System.Drawing.Size(429, 450);
+            this.pnPostres.Size = new System.Drawing.Size(438, 450);
             this.pnPostres.TabIndex = 8;
             // 
             // pnAlmuerzo
@@ -558,16 +562,20 @@
             this.pnAlmuerzo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnAlmuerzo.Location = new System.Drawing.Point(0, 450);
             this.pnAlmuerzo.Name = "pnAlmuerzo";
-            this.pnAlmuerzo.Size = new System.Drawing.Size(429, 450);
+            this.pnAlmuerzo.Size = new System.Drawing.Size(438, 450);
             this.pnAlmuerzo.TabIndex = 7;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(429, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 450);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // panel1
@@ -587,7 +595,7 @@
             this.label5.Location = new System.Drawing.Point(9, 91);
             this.label5.MaximumSize = new System.Drawing.Size(43, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 18);
+            this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 2;
             this.label5.Text = "5.99";
             // 
@@ -618,6 +626,42 @@
             this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox2.TabIndex = 0;
             this.iconPictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(217, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 155);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 164);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 155);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(146, 164);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 155);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(289, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 125);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // MesasForm
             // 
@@ -708,5 +752,9 @@
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

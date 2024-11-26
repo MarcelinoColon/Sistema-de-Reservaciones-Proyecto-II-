@@ -84,14 +84,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ButtonData.cs" />
+    <Compile Include="Clases\ButtonManager.cs" />
     <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\DBGeneral.cs" />
-    <Compile Include="Clases\MostrarDatos.cs" />
-    <Compile Include="Clases\PanelInfo.cs" />
-    <Compile Include="Clases\PanelManager.cs" />
-    <Compile Include="Clases\panelProductos.cs">
+    <Compile Include="Clases\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Clases\DBGeneral.cs" />
+    <Compile Include="Clases\MostrarDatos.cs" />
+    <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\UserCache.cs" />
     <Compile Include="Formularios\CajaForm.cs">
       <SubType>Form</SubType>

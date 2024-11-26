@@ -1,9 +1,11 @@
-﻿using Sistema_de_Reservaciones_Proyecto_II_.Clases;
+﻿using Newtonsoft.Json;
+using Sistema_de_Reservaciones_Proyecto_II_.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,76 +15,59 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class MenuForm : Form
     {
-        private int? tagSeleccionado;  // Usamos nullable int para gestionar la selección de un panel
-        private PanelManager panelManager;
+        public string idmenu;
+        ButtonManager buttonManager = new ButtonManager();
+
         public MenuForm()
         {
             InitializeComponent();
             this.Text = "Menu";
-            panelManager = new PanelManager();
-            LoadPaneles();
+            CargarBotonesDesdeJson();
         }
-       
-        private void LoadPaneles()
+        private void CargarBotonesDesdeJson()
         {
-            flowLayoutPanel1.Controls.Clear();
-            var paneles = panelManager.GetPaneles();
-
-            foreach (var panel in paneles)
+            string archivoJson = "ruta_a_tu_archivo_json.json";
+            if (File.Exists(archivoJson))
             {
-                var panelDinamico = new panelProductos(panel.Tag, panel.Descripcion, panel.Precio, panel.ImagenPath);
-                panelDinamico.Click += (sender, e) => OnPanelClick(panelDinamico);
-                panelDinamico.pictureBox.Click += (sender, e) => panelDinamico.OnPanelClick();
-                panelDinamico.labelDescripcion.Click += (sender, e) => panelDinamico.OnPanelClick();
+                string json = File.ReadAllText(archivoJson);
+                List<CustomButton> botones = JsonConvert.DeserializeObject<List<CustomButton>>(json);
 
-                flowLayoutPanel1.Controls.Add(panelDinamico);
+                foreach (var boton in botones)
+                {
+                    // Cargar los botones en el FlowLayoutPanel
+                    flowLayoutPanel1.Controls.Add(boton);
+                }
             }
         }
-        private void OnPanelClick(panelProductos panel)
-        {
-            tagSeleccionado = panel.TagValor;
-            MesasForm.idmenu = tagSeleccionado.Value;
-        }
+
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            try
+            // Validar que todos los campos están completos
+            if (string.IsNullOrWhiteSpace(txtProducto.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text) || cbMenu.SelectedItem == null || Imagen.Image == null)
             {
-                if (string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
-                    string.IsNullOrWhiteSpace(txtPrecio.Text) ||
-                    Imagen.Image == null ||
-                    cbMenu.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, complete todos los campos y seleccione una imagen.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
-                {
-                    MessageBox.Show("El precio ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                string tipoProducto = cbMenu.SelectedItem.ToString();
-                var nuevoPanel = new PanelInfo
-                {
-                    Tag = new Random().Next(1, 1000),  // Generar Tag único
-                    Descripcion = txtDescripcion.Text,
-                    Precio = precio,
-                    ImagenPath = Imagen.Tag?.ToString(),
-                    Menu = tipoProducto
-                };
-
-                panelManager.AddPanel(nuevoPanel);
-                LoadPaneles();  // Recargar los paneles
-
-                ClearInputs();
-                MessageBox.Show("Panel agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al agregar el panel: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor complete todos los campos.");
+                return;
             }
 
+            // Crear el nuevo producto y el botón
+            Producto producto = new Producto
+            {
+                NombreProducto = txtProducto.Text,
+                Precio = decimal.Parse(txtPrecio.Text),
+                TipoProducto = cbMenu.SelectedItem.ToString()
+            };
+
+            // Guardar el producto en la base de datos
+            buttonManager.GuardarProducto(producto);
+
+            // Crear el botón personalizado
+            CustomButton boton = new CustomButton(producto.Id.ToString(), producto.NombreProducto, Imagen.ImageLocation);
+
+            // Agregar el botón al FlowLayoutPanel
+            flowLayoutPanel1.Controls.Add(boton);
+
+            // Guardar el botón en el archivo JSON
+            buttonManager.GuardarBotonEnJson(boton);
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -110,7 +95,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         }
         private void ClearInputs()
         {
-            txtDescripcion.Clear();
+            txtProducto.Clear();
             txtPrecio.Clear();
             cbMenu.Text = "";
             Imagen.Image = null;
@@ -119,17 +104,24 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (tagSeleccionado.HasValue)
+            if (flowLayoutPanel1.Controls.Count == 0 || flowLayoutPanel1.Controls.OfType<CustomButton>().All(b => b != SelectedButton))
             {
-                panelManager.RemovePanel(tagSeleccionado.Value);
-                LoadPaneles(); // Recargar los paneles después de la eliminación
-                tagSeleccionado = null; // Reiniciar la selección
-                MessageBox.Show("Panel eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seleccione un botón para eliminar.");
+                return;
             }
-            else
-            {
-                MessageBox.Show("No hay ningún panel seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
+            // Obtener el ID del botón seleccionado
+            string idMenu = SelectedButton.Id;
+
+            // Eliminar el botón del FlowLayoutPanel
+            flowLayoutPanel1.Controls.Remove(SelectedButton);
+
+            // Eliminar el botón del archivo JSON
+            buttonManager.EliminarBotonEnJson(int.Parse(idMenu));
+
+            // Eliminar el producto de la base de datos
+            buttonManager.EliminarProducto(int.Parse(idMenu));
         }
+        private CustomButton SelectedButton;
     }
 }

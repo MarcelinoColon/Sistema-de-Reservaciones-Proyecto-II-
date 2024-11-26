@@ -13,7 +13,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class MesasForm : Form
     {
-        private PanelManager panelManager;
+
         private int? tagSeleccionado;
         public static int idmenu;
         public MesasForm()
@@ -26,33 +26,13 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             pnPostres.Visible = false;
             pnBebidas.Visible = false;
             lbCantidad.Text = "1";
-            panelManager = new PanelManager();
-        }
-        private void OnPanelClick(panelProductos panel)
-        {
-            tagSeleccionado = (int?)panel.Tag; // El panel Tag es de tipo object, necesitamos convertirlo a int?
-            MesasForm.idmenu = tagSeleccionado.Value;
-        }
-        private void LoadPaneles()
-        {
-            flowLayoutPanel1.Controls.Clear();
-            var paneles = panelManager.GetPaneles();
 
-            foreach (var panel in paneles)
-            {
-                panelProductos panelDinamico = new panelProductos(panel.Tag, panel.Descripcion, panel.Precio, panel.ImagenPath);
-                panelDinamico.Click += (sender, e) => OnPanelClick(panelDinamico);  // Manejo de clic en el panel
-
-                // Agregar el manejador de clic a los controles dentro del panel
-                panelDinamico.pictureBox.Click += (sender, e) => panelDinamico.OnPanelClick();  // Al hacer clic en PictureBox, invocar el clic del panel
-                panelDinamico.labelDescripcion.Click += (sender, e) => panelDinamico.OnPanelClick();   // Al hacer clic en Label, invocar el clic del panel
-
-                flowLayoutPanel1.Controls.Add(panelDinamico);
-            }
         }
+
+
         private void MesasForm_Load(object sender, EventArgs e)
         {
-            LoadPaneles();
+
         }
         private void ocultarTab()
         {
@@ -136,19 +116,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
-            string filterText = tbFiltro.Text.ToLower();
 
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control is panelProductos panel)
-                {
-                    // Filtrar en el texto de la descripcion del panel
-                    bool matchesFilter = panel.labelDescripcion.Text.ToLower().Contains(filterText);
-
-                    // Mostrar u ocultar el panel según el filtro
-                    panel.Visible = matchesFilter;
-                }
-            }
         }
 
         private void btnMas_Click(object sender, EventArgs e)
