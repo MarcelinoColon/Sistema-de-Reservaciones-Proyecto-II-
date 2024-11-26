@@ -30,14 +30,14 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnPrincipalMesas = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
@@ -52,33 +52,35 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvOrdenes = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tbFiltro = new System.Windows.Forms.TextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnBebidas = new FontAwesome.Sharp.IconButton();
             this.btnPostres = new FontAwesome.Sharp.IconButton();
             this.btnAlmuerzos = new FontAwesome.Sharp.IconButton();
             this.btnDesayunos = new FontAwesome.Sharp.IconButton();
             this.pnPaneles = new System.Windows.Forms.Panel();
-            this.pnBebidas = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pnPostres = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pnAlmuerzo = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnDesayuno = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.pnDescripcion = new System.Windows.Forms.Panel();
+            this.btnMenos = new FontAwesome.Sharp.IconButton();
+            this.btnMas = new FontAwesome.Sharp.IconButton();
+            this.lbCantidad = new System.Windows.Forms.Label();
             this.lbPrecio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.lbCantidad = new System.Windows.Forms.Label();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.pnBebidas = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnPostres = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnAlmuerzo = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnPrincipalMesas.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
@@ -92,13 +94,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).BeginInit();
             this.panel6.SuspendLayout();
             this.pnPaneles.SuspendLayout();
-            this.pnBebidas.SuspendLayout();
-            this.pnPostres.SuspendLayout();
-            this.pnAlmuerzo.SuspendLayout();
-            this.pnDesayuno.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.pnDescripcion.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -116,7 +115,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.pnPrincipalMesas);
             this.tabPage1.Location = new System.Drawing.Point(4, 14);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -125,23 +124,31 @@
             this.tabPage1.Text = "Mesas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pnPrincipalMesas
             // 
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.iconButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(966, 656);
-            this.panel1.TabIndex = 1;
+            this.pnPrincipalMesas.Controls.Add(this.flowLayoutPanel2);
+            this.pnPrincipalMesas.Controls.Add(this.panel8);
+            this.pnPrincipalMesas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnPrincipalMesas.Location = new System.Drawing.Point(3, 3);
+            this.pnPrincipalMesas.Name = "pnPrincipalMesas";
+            this.pnPrincipalMesas.Size = new System.Drawing.Size(966, 656);
+            this.pnPrincipalMesas.TabIndex = 1;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.panel10);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 60);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(966, 596);
+            this.flowLayoutPanel2.TabIndex = 7;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.label9);
             this.panel10.Controls.Add(this.label8);
             this.panel10.Controls.Add(this.iconPictureBox1);
-            this.panel10.Location = new System.Drawing.Point(15, 77);
+            this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(211, 183);
             this.panel10.TabIndex = 6;
@@ -152,7 +159,7 @@
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(36, 155);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 18);
+            this.label9.Size = new System.Drawing.Size(87, 12);
             this.label9.TabIndex = 7;
             this.label9.Text = "Estado y fecha";
             // 
@@ -162,7 +169,7 @@
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(73, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 18);
+            this.label8.Size = new System.Drawing.Size(44, 12);
             this.label8.TabIndex = 6;
             this.label8.Text = "Mesa 1";
             // 
@@ -179,6 +186,7 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(146, 118);
             this.iconPictureBox1.TabIndex = 5;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Tag = "1";
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // panel8
@@ -196,24 +204,10 @@
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(265, 14);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(345, 37);
+            this.label7.Size = new System.Drawing.Size(238, 26);
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione una mesa";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(0, 589);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(966, 67);
-            this.iconButton1.TabIndex = 0;
-            this.iconButton1.Text = "iconButton1";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // tabPage2
             // 
@@ -246,10 +240,11 @@
             this.iconButton7.IconColor = System.Drawing.Color.Brown;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton7.IconSize = 150;
-            this.iconButton7.Location = new System.Drawing.Point(351, 78);
+            this.iconButton7.Location = new System.Drawing.Point(386, 66);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Size = new System.Drawing.Size(179, 168);
             this.iconButton7.TabIndex = 4;
+            this.iconButton7.Tag = "1";
             this.iconButton7.Text = "Silla 1";
             this.iconButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -271,7 +266,7 @@
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(271, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(325, 37);
+            this.label6.Size = new System.Drawing.Size(224, 26);
             this.label6.TabIndex = 2;
             this.label6.Text = "Seleccione una silla";
             // 
@@ -327,7 +322,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(749, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 37);
+            this.label1.Size = new System.Drawing.Size(79, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "Orden";
             // 
@@ -372,6 +367,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.Controls.Add(this.tbFiltro);
             this.panel6.Controls.Add(this.btnCancelar);
             this.panel6.Controls.Add(this.btnBebidas);
             this.panel6.Controls.Add(this.btnPostres);
@@ -382,6 +378,17 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(622, 599);
             this.panel6.TabIndex = 0;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.tbFiltro.Location = new System.Drawing.Point(17, 23);
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Size = new System.Drawing.Size(455, 23);
+            this.tbFiltro.TabIndex = 6;
+            this.tbFiltro.Text = "Filtrar";
+            this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // btnCancelar
             // 
@@ -402,7 +409,7 @@
             this.btnBebidas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnBebidas.IconColor = System.Drawing.Color.Black;
             this.btnBebidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBebidas.Location = new System.Drawing.Point(483, 336);
+            this.btnBebidas.Location = new System.Drawing.Point(481, 365);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(130, 60);
             this.btnBebidas.TabIndex = 4;
@@ -416,7 +423,7 @@
             this.btnPostres.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnPostres.IconColor = System.Drawing.Color.Black;
             this.btnPostres.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPostres.Location = new System.Drawing.Point(483, 236);
+            this.btnPostres.Location = new System.Drawing.Point(481, 265);
             this.btnPostres.Name = "btnPostres";
             this.btnPostres.Size = new System.Drawing.Size(130, 60);
             this.btnPostres.TabIndex = 3;
@@ -430,7 +437,7 @@
             this.btnAlmuerzos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAlmuerzos.IconColor = System.Drawing.Color.Black;
             this.btnAlmuerzos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAlmuerzos.Location = new System.Drawing.Point(483, 136);
+            this.btnAlmuerzos.Location = new System.Drawing.Point(481, 165);
             this.btnAlmuerzos.Name = "btnAlmuerzos";
             this.btnAlmuerzos.Size = new System.Drawing.Size(130, 60);
             this.btnAlmuerzos.TabIndex = 2;
@@ -444,7 +451,7 @@
             this.btnDesayunos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDesayunos.IconColor = System.Drawing.Color.Black;
             this.btnDesayunos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDesayunos.Location = new System.Drawing.Point(483, 36);
+            this.btnDesayunos.Location = new System.Drawing.Point(481, 65);
             this.btnDesayunos.Name = "btnDesayunos";
             this.btnDesayunos.Size = new System.Drawing.Size(130, 60);
             this.btnDesayunos.TabIndex = 1;
@@ -456,216 +463,205 @@
             // 
             this.pnPaneles.AutoScroll = true;
             this.pnPaneles.BackColor = System.Drawing.Color.White;
+            this.pnPaneles.Controls.Add(this.pnDescripcion);
             this.pnPaneles.Controls.Add(this.pnBebidas);
             this.pnPaneles.Controls.Add(this.pnPostres);
             this.pnPaneles.Controls.Add(this.pnAlmuerzo);
-            this.pnPaneles.Controls.Add(this.pnDesayuno);
-            this.pnPaneles.Location = new System.Drawing.Point(17, 26);
+            this.pnPaneles.Controls.Add(this.flowLayoutPanel1);
+            this.pnPaneles.Location = new System.Drawing.Point(17, 65);
             this.pnPaneles.Name = "pnPaneles";
-            this.pnPaneles.Size = new System.Drawing.Size(455, 550);
+            this.pnPaneles.Size = new System.Drawing.Size(455, 525);
             this.pnPaneles.TabIndex = 0;
-            // 
-            // pnBebidas
-            // 
-            this.pnBebidas.AutoScroll = true;
-            this.pnBebidas.Controls.Add(this.label5);
-            this.pnBebidas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBebidas.Location = new System.Drawing.Point(0, 1650);
-            this.pnBebidas.Name = "pnBebidas";
-            this.pnBebidas.Size = new System.Drawing.Size(429, 550);
-            this.pnBebidas.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(205, 265);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "4";
-            // 
-            // pnPostres
-            // 
-            this.pnPostres.AutoScroll = true;
-            this.pnPostres.Controls.Add(this.label4);
-            this.pnPostres.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnPostres.Location = new System.Drawing.Point(0, 1100);
-            this.pnPostres.Name = "pnPostres";
-            this.pnPostres.Size = new System.Drawing.Size(429, 550);
-            this.pnPostres.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(205, 265);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "3";
-            // 
-            // pnAlmuerzo
-            // 
-            this.pnAlmuerzo.AutoScroll = true;
-            this.pnAlmuerzo.Controls.Add(this.label3);
-            this.pnAlmuerzo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnAlmuerzo.Location = new System.Drawing.Point(0, 550);
-            this.pnAlmuerzo.Name = "pnAlmuerzo";
-            this.pnAlmuerzo.Size = new System.Drawing.Size(429, 550);
-            this.pnAlmuerzo.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 265);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "2";
-            // 
-            // pnDesayuno
-            // 
-            this.pnDesayuno.AutoScroll = true;
-            this.pnDesayuno.Controls.Add(this.panel4);
-            this.pnDesayuno.Controls.Add(this.pnDescripcion);
-            this.pnDesayuno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnDesayuno.Location = new System.Drawing.Point(0, 0);
-            this.pnDesayuno.Name = "pnDesayuno";
-            this.pnDesayuno.Size = new System.Drawing.Size(429, 550);
-            this.pnDesayuno.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.iconButton6);
-            this.panel4.Location = new System.Drawing.Point(19, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(146, 141);
-            this.panel4.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(30, 107);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 18);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "producto";
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.BackgroundImage = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.TORTILLA_ESPAÑOLA;
-            this.iconButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.Location = new System.Drawing.Point(3, 3);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(140, 89);
-            this.iconButton6.TabIndex = 5;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // pnDescripcion
             // 
-            this.pnDescripcion.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnDescripcion.Controls.Add(this.btnMenos);
+            this.pnDescripcion.Controls.Add(this.btnMas);
+            this.pnDescripcion.Controls.Add(this.lbCantidad);
             this.pnDescripcion.Controls.Add(this.lbPrecio);
             this.pnDescripcion.Controls.Add(this.label2);
-            this.pnDescripcion.Controls.Add(this.panel11);
-            this.pnDescripcion.Controls.Add(this.iconButton2);
             this.pnDescripcion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnDescripcion.Location = new System.Drawing.Point(0, 409);
+            this.pnDescripcion.Location = new System.Drawing.Point(0, 1800);
             this.pnDescripcion.Name = "pnDescripcion";
-            this.pnDescripcion.Size = new System.Drawing.Size(429, 141);
-            this.pnDescripcion.TabIndex = 1;
+            this.pnDescripcion.Size = new System.Drawing.Size(438, 75);
+            this.pnDescripcion.TabIndex = 10;
+            // 
+            // btnMenos
+            // 
+            this.btnMenos.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMenos.IconColor = System.Drawing.Color.Black;
+            this.btnMenos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenos.Location = new System.Drawing.Point(264, 17);
+            this.btnMenos.Name = "btnMenos";
+            this.btnMenos.Size = new System.Drawing.Size(42, 40);
+            this.btnMenos.TabIndex = 4;
+            this.btnMenos.UseVisualStyleBackColor = true;
+            this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
+            // 
+            // btnMas
+            // 
+            this.btnMas.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnMas.IconColor = System.Drawing.Color.Black;
+            this.btnMas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMas.Location = new System.Drawing.Point(349, 15);
+            this.btnMas.Name = "btnMas";
+            this.btnMas.Size = new System.Drawing.Size(39, 42);
+            this.btnMas.TabIndex = 3;
+            this.btnMas.UseVisualStyleBackColor = true;
+            this.btnMas.Click += new System.EventHandler(this.btnMas_Click);
+            // 
+            // lbCantidad
+            // 
+            this.lbCantidad.AutoSize = true;
+            this.lbCantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCantidad.Location = new System.Drawing.Point(312, 17);
+            this.lbCantidad.Name = "lbCantidad";
+            this.lbCantidad.Size = new System.Drawing.Size(21, 22);
+            this.lbCantidad.TabIndex = 2;
+            this.lbCantidad.Text = "1";
             // 
             // lbPrecio
             // 
             this.lbPrecio.AutoSize = true;
-            this.lbPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecio.Location = new System.Drawing.Point(108, 47);
+            this.lbPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrecio.Location = new System.Drawing.Point(113, 20);
             this.lbPrecio.Name = "lbPrecio";
-            this.lbPrecio.Size = new System.Drawing.Size(131, 42);
-            this.lbPrecio.TabIndex = 5;
-            this.lbPrecio.Text = "precio";
+            this.lbPrecio.Size = new System.Drawing.Size(58, 26);
+            this.lbPrecio.TabIndex = 1;
+            this.lbPrecio.Text = "0.00";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 54);
+            this.label2.Location = new System.Drawing.Point(3, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 32);
-            this.label2.TabIndex = 4;
+            this.label2.Size = new System.Drawing.Size(75, 22);
+            this.label2.TabIndex = 0;
             this.label2.Text = "Precio:";
             // 
-            // panel11
+            // pnBebidas
             // 
-            this.panel11.Controls.Add(this.lbCantidad);
-            this.panel11.Controls.Add(this.iconButton4);
-            this.panel11.Controls.Add(this.iconButton5);
-            this.panel11.Location = new System.Drawing.Point(249, 11);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(46, 115);
-            this.panel11.TabIndex = 3;
+            this.pnBebidas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnBebidas.Location = new System.Drawing.Point(0, 1350);
+            this.pnBebidas.Name = "pnBebidas";
+            this.pnBebidas.Size = new System.Drawing.Size(438, 450);
+            this.pnBebidas.TabIndex = 9;
             // 
-            // lbCantidad
+            // pnPostres
             // 
-            this.lbCantidad.AutoSize = true;
-            this.lbCantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantidad.Location = new System.Drawing.Point(9, 43);
-            this.lbCantidad.Name = "lbCantidad";
-            this.lbCantidad.Size = new System.Drawing.Size(26, 28);
-            this.lbCantidad.TabIndex = 5;
-            this.lbCantidad.Text = "1";
+            this.pnPostres.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnPostres.Location = new System.Drawing.Point(0, 900);
+            this.pnPostres.Name = "pnPostres";
+            this.pnPostres.Size = new System.Drawing.Size(438, 450);
+            this.pnPostres.TabIndex = 8;
             // 
-            // iconButton4
+            // pnAlmuerzo
             // 
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(0, 0);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(46, 40);
-            this.iconButton4.TabIndex = 3;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            this.pnAlmuerzo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnAlmuerzo.Location = new System.Drawing.Point(0, 450);
+            this.pnAlmuerzo.Name = "pnAlmuerzo";
+            this.pnAlmuerzo.Size = new System.Drawing.Size(438, 450);
+            this.pnAlmuerzo.TabIndex = 7;
             // 
-            // iconButton5
+            // flowLayoutPanel1
             // 
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(0, 74);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(46, 41);
-            this.iconButton5.TabIndex = 4;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 450);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
-            // iconButton2
+            // panel1
             // 
-            this.iconButton2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(329, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(100, 141);
-            this.iconButton2.TabIndex = 0;
-            this.iconButton2.Text = "Agregar";
-            this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.iconPictureBox2);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 122);
+            this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 91);
+            this.label5.MaximumSize = new System.Drawing.Size(43, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "5.99";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.MaximumSize = new System.Drawing.Size(82, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 82);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Arroz con Pescado Frito";
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox2.BackgroundImage = global::Sistema_de_Reservaciones_Proyecto_II_.Properties.Resources.TORTILLA_ESPAÑOLA;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 111;
+            this.iconPictureBox2.Location = new System.Drawing.Point(97, 0);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(111, 122);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox2.TabIndex = 0;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(217, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 155);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 164);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 155);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(146, 164);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 155);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(289, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 125);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // MesasForm
             // 
@@ -679,7 +675,8 @@
             this.Load += new System.EventHandler(this.MesasForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.pnPrincipalMesas.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
@@ -696,20 +693,14 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).EndInit();
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.pnPaneles.ResumeLayout(false);
-            this.pnBebidas.ResumeLayout(false);
-            this.pnBebidas.PerformLayout();
-            this.pnPostres.ResumeLayout(false);
-            this.pnPostres.PerformLayout();
-            this.pnAlmuerzo.ResumeLayout(false);
-            this.pnAlmuerzo.PerformLayout();
-            this.pnDesayuno.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.pnDescripcion.ResumeLayout(false);
             this.pnDescripcion.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -721,8 +712,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel pnMenu;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnPrincipalMesas;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnAtrasSillas;
@@ -736,18 +726,7 @@
         private FontAwesome.Sharp.IconButton btnPostres;
         private FontAwesome.Sharp.IconButton btnAlmuerzos;
         private FontAwesome.Sharp.IconButton btnDesayunos;
-        private System.Windows.Forms.Panel pnBebidas;
-        private System.Windows.Forms.Panel pnPostres;
-        private System.Windows.Forms.Panel pnAlmuerzo;
-        private System.Windows.Forms.Panel pnDesayuno;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnCancelar;
-        private System.Windows.Forms.Panel pnDescripcion;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private System.Windows.Forms.Panel panel4;
-        private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel8;
@@ -756,13 +735,26 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton iconButton7;
-        private System.Windows.Forms.Panel panel11;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private System.Windows.Forms.TextBox tbFiltro;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel pnBebidas;
+        private System.Windows.Forms.FlowLayoutPanel pnPostres;
+        private System.Windows.Forms.FlowLayoutPanel pnAlmuerzo;
+        private System.Windows.Forms.Panel pnDescripcion;
+        private System.Windows.Forms.Label lbCantidad;
         private System.Windows.Forms.Label lbPrecio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbCantidad;
+        private FontAwesome.Sharp.IconButton btnMenos;
+        private FontAwesome.Sharp.IconButton btnMas;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
