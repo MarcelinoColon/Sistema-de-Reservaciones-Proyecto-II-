@@ -8,8 +8,9 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
 {
     public class ButtonData
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Text { get; set; }
+        public string Menu { get; set; }
         public string ImagePath { get; set; }
     }
 }

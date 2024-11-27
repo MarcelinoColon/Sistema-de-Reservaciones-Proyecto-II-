@@ -88,23 +88,22 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
 
         //Insertar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
-        public void InsertarOrdenes(string silla, int idMesa, int? idEmpleado, DateTime fechaOrden, DateTime horaOrden,string estado, int idMenu, int cantidad)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "sp_InsertarOrden";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@silla", silla);
-            comando.Parameters.AddWithValue("@id_mesa ", idMesa);
-            comando.Parameters.AddWithValue("@id_empleado  ", idEmpleado);
-            comando.Parameters.AddWithValue("@fecha_orden", fechaOrden);
-            comando.Parameters.AddWithValue("@hora_orden ", horaOrden);
-            comando.Parameters.AddWithValue("@estado  ", estado);
-            comando.Parameters.AddWithValue("@id_menu ", idMenu);
-            comando.Parameters.AddWithValue("@cantidad  ", cantidad);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-        }
-
+        //  public void InsertarOrdenes(string silla, int idMesa, int? idEmpleado, DateTime fechaOrden, DateTime horaOrden,string estado, int idMenu, int cantidad)
+        //  {
+        //      comando.Connection = conexion.AbrirConexion();
+        //      comando.CommandText = "sp_InsertarOrden";
+        //      comando.CommandType = CommandType.StoredProcedure;
+        //    comando.Parameters.AddWithValue("@silla", silla);
+        //  comando.Parameters.AddWithValue("@id_mesa ", idMesa);
+        //  comando.Parameters.AddWithValue("@id_empleado  ", idEmpleado);
+        //  comando.Parameters.AddWithValue("@fecha_orden", fechaOrden);
+        //  comando.Parameters.AddWithValue("@hora_orden ", horaOrden);
+        //  comando.Parameters.AddWithValue("@estado  ", estado);
+        //  comando.Parameters.AddWithValue("@id_menu ", idMenu);
+        //  comando.Parameters.AddWithValue("@cantidad  ", cantidad);
+        //  comando.ExecuteNonQuery();
+        //  comando.Parameters.Clear();
+        // }
 
     }
 }
