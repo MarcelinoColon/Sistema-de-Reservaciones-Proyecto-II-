@@ -65,10 +65,10 @@
             this.tabPage1.Controls.Add(this.txtPrecio);
             this.tabPage1.Controls.Add(this.txtProducto);
             this.tabPage1.Controls.Add(this.flowLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(972, 654);
+            this.tabPage1.Size = new System.Drawing.Size(972, 647);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -81,10 +81,10 @@
             "Desayuno",
             "Almuerzo",
             "Postre",
-            "Bebidas"});
+            "Bebida"});
             this.cbMenu.Location = new System.Drawing.Point(707, 296);
             this.cbMenu.Name = "cbMenu";
-            this.cbMenu.Size = new System.Drawing.Size(157, 32);
+            this.cbMenu.Size = new System.Drawing.Size(157, 40);
             this.cbMenu.TabIndex = 9;
             // 
             // rutaImagen
@@ -141,7 +141,7 @@
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(707, 365);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(157, 29);
+            this.txtPrecio.Size = new System.Drawing.Size(157, 39);
             this.txtPrecio.TabIndex = 2;
             // 
             // txtProducto
@@ -149,7 +149,7 @@
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProducto.Location = new System.Drawing.Point(707, 221);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(157, 29);
+            this.txtProducto.Size = new System.Drawing.Size(157, 39);
             this.txtProducto.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -163,10 +163,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(972, 654);
+            this.tabPage2.Size = new System.Drawing.Size(972, 647);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;

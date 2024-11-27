@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Clases\DBGeneral.cs" />
     <Compile Include="Clases\MostrarDatos.cs" />
+    <Compile Include="Clases\PData.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\UserCache.cs" />
     <Compile Include="Formularios\CajaForm.cs">

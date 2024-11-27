@@ -15,15 +15,18 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class MenuForm : Form
     {
-        public string idmenu;
         ButtonManager buttonManager = new ButtonManager();
+        string nombreProducto;
+        decimal precio;
+        string tipoProducto;
 
         public MenuForm()
         {
             InitializeComponent();
             this.Text = "Menu";
-            CargarBotonesDesdeJson();
+            buttonManager.CargarBotonesDesdeJson(flowLayoutPanel1, new List<string> { "Desayuno", "Almuerzo", "Postre", "Bebida"});
         }
+       
         private void CargarBotonesDesdeJson()
         {
             string archivoJson = "ruta_a_tu_archivo_json.json";
@@ -42,6 +45,10 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            Producto producto = new Producto();
+            producto.NombreProducto = txtProducto.Text;
+            producto.TipoProducto = cbMenu.SelectedItem.ToString();
+            producto.Precio = Convert.ToDecimal(txtPrecio.Text);
             // Validar que todos los campos están completos
             if (string.IsNullOrWhiteSpace(txtProducto.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text) || cbMenu.SelectedItem == null || Imagen.Image == null)
             {
@@ -49,20 +56,12 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 return;
             }
 
-            // Crear el nuevo producto y el botón
-            Producto producto = new Producto
-            {
-                NombreProducto = txtProducto.Text,
-                Precio = decimal.Parse(txtPrecio.Text),
-                TipoProducto = cbMenu.SelectedItem.ToString()
-            };
-
-            // Guardar el producto en la base de datos
-            buttonManager.GuardarProducto(producto);
+        // Guardar el producto en la base de datos
+        buttonManager.GuardarProducto(producto);
 
             // Crear el botón personalizado
-            CustomButton boton = new CustomButton(producto.Id.ToString(), producto.NombreProducto, Imagen.ImageLocation);
-
+            CustomButton boton = new CustomButton(producto.Id, producto.NombreProducto, producto.TipoProducto, Imagen.Tag.ToString());
+            
             // Agregar el botón al FlowLayoutPanel
             flowLayoutPanel1.Controls.Add(boton);
 
@@ -104,23 +103,34 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (flowLayoutPanel1.Controls.Count == 0 || flowLayoutPanel1.Controls.OfType<CustomButton>().All(b => b != SelectedButton))
+            // Verificar si el FlowLayoutPanel tiene botones
+            if (flowLayoutPanel1.Controls.Count == 0)
             {
-                MessageBox.Show("Seleccione un botón para eliminar.");
+                MessageBox.Show("No hay botones para eliminar.");
                 return;
             }
 
-            // Obtener el ID del botón seleccionado
-            string idMenu = SelectedButton.Id;
+            // Buscar el botón con el Id que coincida con el valor actual de PData.idmenu
+            foreach (CustomButton boton in flowLayoutPanel1.Controls.OfType<CustomButton>())
+            {
+                if (boton.Id == PData.idmenu) // Verificar si el Id del botón coincide con el valor de idmenu
+                {
+                    // Eliminar el botón del FlowLayoutPanel
+                    flowLayoutPanel1.Controls.Remove(boton);
 
-            // Eliminar el botón del FlowLayoutPanel
-            flowLayoutPanel1.Controls.Remove(SelectedButton);
+                    // Eliminar el botón del archivo JSON
+                    buttonManager.EliminarBotonEnJson(PData.idmenu);
 
-            // Eliminar el botón del archivo JSON
-            buttonManager.EliminarBotonEnJson(int.Parse(idMenu));
+                    // Eliminar el producto de la base de datos
+                    buttonManager.EliminarProducto(PData.idmenu);
 
-            // Eliminar el producto de la base de datos
-            buttonManager.EliminarProducto(int.Parse(idMenu));
+                    MessageBox.Show("Botón eliminado exitosamente.");
+                    return;
+                }
+            }
+
+            // Si no se encuentra el botón con el Id correspondiente
+            MessageBox.Show("No se encontró un botón con el id especificado.");
         }
         private CustomButton SelectedButton;
     }

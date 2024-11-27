@@ -6,68 +6,101 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
 {
 
-    public  class ButtonManager
+    public class ButtonManager
     {
         DBGeneral conexion = new DBGeneral();
         public void GuardarProducto(Producto producto)
         {
-            using (conexion.AbrirConexion())
+            using (SqlConnection con = DBGeneral.ObtenerConexion())
             {
-                var comando = new SqlCommand("INSERT INTO Menu (NombreProducto, Precio, TipoProducto) VALUES (@NombreProducto, @Precio, @TipoProducto)", conexion.AbrirConexion());
+                var comando = new SqlCommand("INSERT INTO Menu (nombre_producto, precio, tipo_producto) VALUES (@NombreProducto, @Precio, @TipoProducto); Select SCOPE_IDENTITY();", conexion.AbrirConexion());
                 comando.Parameters.AddWithValue("@NombreProducto", producto.NombreProducto);
                 comando.Parameters.AddWithValue("@Precio", producto.Precio);
                 comando.Parameters.AddWithValue("@TipoProducto", producto.TipoProducto);
-
-                comando.ExecuteNonQuery();
-                conexion.CerrarConexion();
+                producto.Id = Convert.ToInt32(comando.ExecuteScalar());
             }
         }
         public void GuardarBotonEnJson(CustomButton boton)
         {
-            string archivoJson = "ruta_a_tu_archivo_json.json";
+            string archivoJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivo.json");
 
-            List<CustomButton> botones = new List<CustomButton>();
+            List<ButtonData> botones = new List<ButtonData>();
+
             if (File.Exists(archivoJson))
             {
                 string jsonExistente = File.ReadAllText(archivoJson);
-                botones = JsonConvert.DeserializeObject<List<CustomButton>>(jsonExistente);
+                botones = JsonConvert.DeserializeObject<List<ButtonData>>(jsonExistente);
             }
 
-            botones.Add(boton);
+            // Convertir CustomButton a ButtonData
+            ButtonData botonData = new ButtonData
+            {
+                Id = boton.Id,
+                Text = boton.Text,
+                Menu = boton.Menu,
+                ImagePath = boton.ImagePath // Asegúrate de usar ImagePath correctamente
+            };
+
+            botones.Add(botonData);
 
             string json = JsonConvert.SerializeObject(botones, Formatting.Indented);
             File.WriteAllText(archivoJson, json);
         }
         public void EliminarProducto(int idMenu)
         {
-            using (conexion.AbrirConexion())
+            using (SqlConnection con = DBGeneral.ObtenerConexion())
             {
-                var comando = new SqlCommand("DELETE FROM Menu WHERE IdMenu = @IdMenu", conexion.AbrirConexion());
-                comando.Parameters.AddWithValue("@IdMenu", idMenu);
+                var comando = new SqlCommand("DELETE FROM Menu WHERE id_menu = @id_menu", conexion.AbrirConexion());
+                comando.Parameters.AddWithValue("@id_menu", idMenu); // Asegúrate que el parámetro coincida con el nombre en la consulta SQL.
 
-                comando.ExecuteNonQuery();
-                conexion.CerrarConexion();
+                comando.ExecuteNonQuery(); // Ejecuta la eliminación
             }
         }
         public void EliminarBotonEnJson(int idMenu)
         {
-            string archivoJson = "ruta_a_tu_archivo_json.json";
+            string archivoJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivo.json");
 
             if (File.Exists(archivoJson))
             {
+                // Leer el contenido del archivo JSON
                 string jsonExistente = File.ReadAllText(archivoJson);
-                List<CustomButton> botones = JsonConvert.DeserializeObject<List<CustomButton>>(jsonExistente);
 
-                // Buscar y eliminar el botón con el Id correspondiente (antes se usaba IdMenu)
-                botones.RemoveAll(b => b.Id == idMenu.ToString());  // Asegúrate de que idMenu sea un string
+                // Deserializar el JSON en una lista de botones
+                List<ButtonData> botones = JsonConvert.DeserializeObject<List<ButtonData>>(jsonExistente);
 
-                // Guardar nuevamente el archivo JSON
+                // Buscar y eliminar el botón con el Id correspondiente
+                botones.RemoveAll(b => b.Id == idMenu);  // Compara el idMenu con el Id del botón, asegurándose de que ambos sean cadenas
+
+                // Serializar la lista modificada de botones y guardar de nuevo el archivo JSON
                 string json = JsonConvert.SerializeObject(botones, Formatting.Indented);
                 File.WriteAllText(archivoJson, json);
+            }
+        }
+        public void CargarBotonesDesdeJson(FlowLayoutPanel flowLayoutPanel, List<string> descripciones)
+        {
+            string archivoJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archivo.json");
+
+            if (File.Exists(archivoJson))
+            {
+                string json = File.ReadAllText(archivoJson);
+                List<ButtonData> botones = JsonConvert.DeserializeObject<List<ButtonData>>(json);
+
+                // Filtrar los botones que coincidan con alguna descripción en la lista
+                var botonesFiltrados = botones.Where(b => descripciones.Contains(b.Menu, StringComparer.OrdinalIgnoreCase));
+
+                foreach (var botonData in botonesFiltrados)
+                {
+                    // Crear un nuevo CustomButton
+                    CustomButton boton = new CustomButton(botonData.Id, botonData.Text, botonData.Menu, botonData.ImagePath);
+
+                    // Agregarlo al FlowLayoutPanel
+                    flowLayoutPanel.Controls.Add(boton);
+                }
             }
         }
     }
