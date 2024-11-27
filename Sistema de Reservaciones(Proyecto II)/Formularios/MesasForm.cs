@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,46 +14,33 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class MesasForm : Form
     {
-        private int idmesa;
-        private string silla;
-        private DateTime fecha = DateTime.Now.Date;
-        private DateTime hora = DateTime.Today.Add(DateTime.Now.TimeOfDay);
-        private string estado = "Pendiente";
-        private int idmenu;
-        private int cantidad;
-        private decimal precio;
-        MostrarDatos mostrarDatos = new MostrarDatos();
-        private List<Ordenes> lista = new List<Ordenes>();
-        private string producto;
+        ButtonManager buttonManager = new ButtonManager();
+        private int? tagSeleccionado;
+        public static int idmenu;
+        int mesa;
+        string silla;
+
         public MesasForm()
         {
             InitializeComponent();
             ocultarTab();
             this.Text = "Mesas";
-            pnDesayuno.Visible = false;
-            pnAlmuerzo.Visible = false;
-            pnPostres.Visible = false;
-            pnBebidas.Visible = false;
-            pnDescripcion.Visible = false;
-            lbCantidad.Text = "1"; 
+            flpDesayuno.Visible = false;
+            flpAlmuerzo.Visible = false;
+            flpPostres.Visible = false;
+            flpBebidas.Visible = false;
+            lbCantidad.Text = "1";
+            PData.IdMenuChanged += ActualizarPrecio;
+            buttonManager.CargarBotonesDesdeJson(flpDesayuno, new List<string> { "Desayuno"});
+            buttonManager.CargarBotonesDesdeJson(flpAlmuerzo, new List<string> { "Almuerzo" });
+            buttonManager.CargarBotonesDesdeJson(flpPostres, new List<string> { "Postre" });
+            buttonManager.CargarBotonesDesdeJson(flpBebidas, new List<string> { "Bebida" });
         }
-        private void MostrarEnDataGridView()
+        private void ActualizarPrecio()
         {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Producto");
-            dt.Columns.Add("Cantidad");
-            dt.Columns.Add("Precio");
-            dt.Columns.Add("Total"); 
-
-            foreach (var orden in lista)
-            {
-                decimal total = orden.Cantidad * orden.Precio;
-                dt.Rows.Add(orden.Producto, orden.Cantidad, orden.Precio, total);
-            }
-
-            dgvOrdenes.DataSource = dt;
+            PData.ActualizarLabelPrecio(lbPrecio); // Actualizar el precio en el Label
         }
+
         private void MesasForm_Load(object sender, EventArgs e)
         {
 
@@ -83,10 +71,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             tabAnterior();
         }
 
-        private void iconButton1_Click_1(object sender, EventArgs e)
-        {
-            siguienteTab();
-        }
+
         private void btnAtrasSillas_Click(object sender, EventArgs e)
         {
             siguienteTab();
@@ -94,37 +79,101 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnDesayunos_Click(object sender, EventArgs e)
         {
-            if (pnDesayuno.Visible == false) { pnDesayuno.Visible = true; }
-            pnAlmuerzo.Visible = false;
-            pnPostres.Visible = false;
-            pnBebidas.Visible = false;
+            if (flpDesayuno.Visible == false) { flpDesayuno.Visible = true; }
+            flpAlmuerzo.Visible = false;
+            flpPostres.Visible = false;
+            flpBebidas.Visible = false;
         }
 
         private void btnAlmuerzos_Click_1(object sender, EventArgs e)
         {
-            if (pnAlmuerzo.Visible == false) { pnAlmuerzo.Visible = true; }
-            pnDesayuno.Visible = false;
-            pnPostres.Visible = false;
-            pnBebidas.Visible = false;
+            if (flpAlmuerzo.Visible == false) { flpAlmuerzo.Visible = true; }
+            flpDesayuno.Visible = false;
+            flpPostres.Visible = false;
+            flpBebidas.Visible = false;
         }
 
         private void btnPostres_Click_1(object sender, EventArgs e)
         {
-            if (pnPostres.Visible == false) { pnPostres.Visible = true; }
-            pnDesayuno.Visible = false;
-            pnAlmuerzo.Visible = false;
-            pnBebidas.Visible = false;
+            if (flpPostres.Visible == false) { flpPostres.Visible = true; }
+            flpDesayuno.Visible = false;
+            flpAlmuerzo.Visible = false;
+            flpBebidas.Visible = false;
         }
 
         private void btnBebidas_Click_1(object sender, EventArgs e)
         {
-            if (pnBebidas.Visible == false) { pnBebidas.Visible = true; }
-            pnDesayuno.Visible = false;
-            pnAlmuerzo.Visible = false;
-            pnPostres.Visible = false;
+            if (flpBebidas.Visible == false) { flpBebidas.Visible = true; }
+            flpDesayuno.Visible = false;
+            flpAlmuerzo.Visible = false;
+            flpPostres.Visible = false;
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        //MESAS 
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+            mesa = 1;
+        }
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+            mesa = 2;
+        }
+
+        //SILLAS
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+            silla = "1";
+        }
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+            silla = "2";
+        }
+        private void btnSilla3_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+            silla = "3";
+        }
+
+        private void btnSilla4_Click(object sender, EventArgs e)
+        {
+            siguienteTab();
+            silla = "4";
+        }
+
+        //OTROS
+        private void btnTomarOrden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbFiltro_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = tbFiltro.Text.Trim().ToLower();
+
+            // Llama al método para filtrar botones en cada FlowLayoutPanel
+            FiltrarBotones(flpDesayuno, filtro);
+            FiltrarBotones(flpAlmuerzo, filtro);
+            FiltrarBotones(flpBebidas, filtro);
+            FiltrarBotones(flpPostres, filtro);
+        }
+        private void FiltrarBotones(FlowLayoutPanel panel, string filtro)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is Button boton)
+                {
+                    // Compara el texto del botón con el filtro
+                    boton.Visible = boton.Text.ToLower().Contains(filtro);
+                }
+            }
+        }
+
+            private void btnMas_Click(object sender, EventArgs e)
         {
             if (int.TryParse(lbCantidad.Text, out int currentValue))
             {
@@ -139,9 +188,9 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             }
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
+        private void btnMenos_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(lbCantidad .Text, out int currentValue))
+            if (int.TryParse(lbCantidad.Text, out int currentValue))
             {
                 if (currentValue > 1) // Asegurarse de que no baje de 1.
                 {
@@ -158,57 +207,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 // Manejar casos donde el texto no sea un número válido.
                 MessageBox.Show("El valor actual no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbCantidad.Text = "1"; // Restaurar al valor predeterminado.
-            }
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-            siguienteTab();
-            idmesa = 1;
-        }
-
-        private void iconButton7_Click(object sender, EventArgs e)
-        {
-            siguienteTab();
-            silla = "1";
-            List<Ordenes> lista = new List<Ordenes>();
-        }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            pnDescripcion.Visible = true;
-            idmenu = 1;
-            DataTable menuData = mostrarDatos.DataMenu(idmenu);
-            if (menuData.Rows.Count > 0) 
-            {
-                DataRow row = menuData.Rows[0];
-                precio = Convert.ToDecimal(row["precio"]);
-                producto = row["nombre_producto"].ToString();
-
-                lbPrecio.Text = precio.ToString("F2") + "$";
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron datos para el ID del menú proporcionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            int cantidad = int.Parse(lbCantidad.Text);
-            Ordenes orden = new Ordenes(idmesa, silla, fecha, hora, estado, idmenu, cantidad, precio, producto);
-            lista.Add(orden);
-            MostrarEnDataGridView();
-        }
-
-        private void btnTomarOrden_Click(object sender, EventArgs e)
-        {
-            foreach (Ordenes orden in lista) 
-            {
-                mostrarDatos.InsertarOrdenes(orden.Silla, orden.IdMesa,null, orden.Fecha, orden.Hora, orden.Estado, orden.IdMenu, orden.Cantidad);
-                MessageBox.Show("Orden tomada correctamente");
-                lista.Clear();
             }
         }
     }
