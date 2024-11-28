@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,10 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
     public partial class MesasForm : Form
     {
         ButtonManager buttonManager = new ButtonManager();
-        private int? tagSeleccionado;
-        public static int idmenu;
+        MostrarDatos datos = new MostrarDatos();
         int mesa;
-        string silla;
-
+        int silla;
+        int idOrden;
         public MesasForm()
         {
             InitializeComponent();
@@ -36,6 +36,23 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             buttonManager.CargarBotonesDesdeJson(flpPostres, new List<string> { "Postre" });
             buttonManager.CargarBotonesDesdeJson(flpBebidas, new List<string> { "Bebida" });
         }
+        private void MostrarDetallesOrdenes(int Vmesa, int Vsilla)
+        {
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(Vmesa, Vsilla);
+        }
+        private void Orden()
+        {
+            idOrden = datos.ObtenerOrdenActiva(mesa, silla);
+
+            if (idOrden == 0)
+            {
+                // Crear nueva orden si no hay activa
+                idOrden = datos.CrearNuevaOrden(mesa, silla);
+                MessageBox.Show($"Nueva orden creada con ID: {idOrden}");
+            }
+        }
+
         private void ActualizarPrecio()
         {
             PData.ActualizarLabelPrecio(lbPrecio); // Actualizar el precio en el Label
@@ -112,44 +129,51 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         //MESAS 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-            siguienteTab();
             mesa = 1;
+            siguienteTab();
+            lbMesa.Text = "Mesa 1";
         }
         private void iconPictureBox2_Click(object sender, EventArgs e)
         {
-            siguienteTab();
             mesa = 2;
+            siguienteTab();
+            lbMesa.Text = "Mesa 2";
         }
 
         //SILLAS
 
-        private void iconButton7_Click(object sender, EventArgs e)
+        private void btnSilla1_Click(object sender, EventArgs e)
         {
-            siguienteTab();
-            silla = "1";
-        }
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            siguienteTab();
-            silla = "2";
-        }
-        private void btnSilla3_Click(object sender, EventArgs e)
-        {
-            siguienteTab();
-            silla = "3";
+            silla = 1;
+            Orden();
+            MostrarDetallesOrdenes(silla, mesa);
         }
 
-        private void btnSilla4_Click(object sender, EventArgs e)
+        private void btnSilla2_Click(object sender, EventArgs e)
         {
-            siguienteTab();
-            silla = "4";
+            silla = 2;
+            Orden();
+            MostrarDetallesOrdenes(silla, mesa);
+        }
+
+        private void btnSilla3_Click_1(object sender, EventArgs e)
+        {
+            silla = 3;
+            Orden();
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+        }
+
+        private void btnSilla4_Click_1(object sender, EventArgs e)
+        {
+            silla = 4;
+            Orden();
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
         }
 
         //OTROS
-        private void btnTomarOrden_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
@@ -173,12 +197,21 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             }
         }
 
-            private void btnMas_Click(object sender, EventArgs e)
+        private void btnMas_Click(object sender, EventArgs e)
         {
+            // Intentar convertir el texto del Label a un número entero.
             if (int.TryParse(lbCantidad.Text, out int currentValue))
             {
-                currentValue++; // Incrementar el valor.
-                lbCantidad.Text = currentValue.ToString(); // Asignar el nuevo valor.
+                if (currentValue < 9) // Verificar si el valor actual es menor que 9.
+                {
+                    currentValue++; // Incrementar el valor.
+                    lbCantidad.Text = currentValue.ToString(); // Asignar el nuevo valor.
+                }
+                else
+                {
+                    // Mostrar un mensaje si el valor alcanza el límite.
+                    MessageBox.Show("El valor no puede ser mayor que 9.", "Límite alcanzado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
@@ -208,6 +241,33 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 MessageBox.Show("El valor actual no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbCantidad.Text = "1"; // Restaurar al valor predeterminado.
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            tabAnterior();
+        }
+
+        private void btnTomarOrden_Click(object sender, EventArgs e)
+        {
+            decimal precio = PData.ObtenerPrecioProducto(PData.idmenu);
+            int idOrden = datos.ObtenerOrdenActiva(mesa, silla);
+            if (idOrden > 0)
+            {
+                datos.AgregarDetalleOrden(idOrden, PData.idmenu, int.Parse(lbCantidad.Text), precio);
+                MessageBox.Show("Producto agregado a la orden.");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo obtener la orden activa.");
+            }
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

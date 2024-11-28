@@ -188,14 +188,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            objOrdenes.InsertarOrdenes(txtCliente.Text,
-            Convert.ToInt32(cbMesa.SelectedValue),null, 
-            DateTime.Now.Date, 
-            DateTime.Today.Add(DateTime.Now.TimeOfDay), 
-            "Pendiente", Convert.ToInt32(cbProducto.SelectedValue), 
-            Convert.ToInt32(cbCantidad.Text));
-            MessageBox.Show("Producto agregado correctamente");
-            MostrarOrdenes();
+
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

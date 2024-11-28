@@ -45,7 +45,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
         }
 
         // Método para obtener el precio desde la base de datos (igual que antes)
-        private static decimal ObtenerPrecioProducto(int idMenu)
+        public static decimal ObtenerPrecioProducto(int idMenu)
         {
             decimal precio = 0;
 
