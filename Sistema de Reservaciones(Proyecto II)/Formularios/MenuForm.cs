@@ -56,8 +56,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 return;
             }
 
-        // Guardar el producto en la base de datos
-        buttonManager.GuardarProducto(producto);
+         // Guardar el producto en la base de datos
+         buttonManager.GuardarProducto(producto);
 
             // Crear el botón personalizado
             CustomButton boton = new CustomButton(producto.Id, producto.NombreProducto, producto.TipoProducto, Imagen.Tag.ToString());
@@ -67,6 +67,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
             // Guardar el botón en el archivo JSON
             buttonManager.GuardarBotonEnJson(boton);
+            MessageBox.Show("Producto guardado exitosamente");
+            ClearInputs();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

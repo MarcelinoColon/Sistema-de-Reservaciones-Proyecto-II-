@@ -36,11 +36,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             buttonManager.CargarBotonesDesdeJson(flpPostres, new List<string> { "Postre" });
             buttonManager.CargarBotonesDesdeJson(flpBebidas, new List<string> { "Bebida" });
         }
-        private void MostrarDetallesOrdenes(int Vmesa, int Vsilla)
-        {
-            MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(Vmesa, Vsilla);
-        }
+
         private void Orden()
         {
             idOrden = datos.ObtenerOrdenActiva(mesa, silla);
@@ -146,14 +142,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         {
             silla = 1;
             Orden();
-            MostrarDetallesOrdenes(silla, mesa);
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
         }
 
         private void btnSilla2_Click(object sender, EventArgs e)
         {
             silla = 2;
             Orden();
-            MostrarDetallesOrdenes(silla, mesa);
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
         }
 
         private void btnSilla3_Click_1(object sender, EventArgs e)
@@ -267,7 +265,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-
+            var resultado = MessageBox.Show("¿Está seguro de que desea facturar la orden "+idOrden+ "?",
+                                     "Facturar orden",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                MostrarDatos objDetallesOrdenes = new MostrarDatos();
+                objDetallesOrdenes.ActualizarOrden(idOrden);
+                dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            }
         }
     }
 }

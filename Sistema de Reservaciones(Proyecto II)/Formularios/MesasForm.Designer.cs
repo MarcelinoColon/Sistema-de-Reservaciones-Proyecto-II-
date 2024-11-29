@@ -539,7 +539,6 @@
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(470, 31);
             this.tbFiltro.TabIndex = 6;
-            this.tbFiltro.Text = "Filtrar";
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // pnPaneles
