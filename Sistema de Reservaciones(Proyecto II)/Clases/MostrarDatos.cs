@@ -206,6 +206,24 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
                 conexion.CerrarConexion();
             }
         }
-
+        public void ActualizarOrden(int idOrden)
+        {
+            SqlConnection con = conexion.AbrirConexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Orden Set estado = 'Pendiente' WHERE id_orden = @id_orden", con);
+                cmd.Parameters.AddWithValue("@id_orden", idOrden);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al agregar detalle a la orden: {ex.Message}");
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         public MesasForm()
         {
             InitializeComponent();
-            ocultarTab();
+            tabControl1.TabPages.Remove(tabPage3);
             this.Text = "Mesas";
             flpDesayuno.Visible = false;
             flpAlmuerzo.Visible = false;
@@ -36,11 +36,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             buttonManager.CargarBotonesDesdeJson(flpPostres, new List<string> { "Postre" });
             buttonManager.CargarBotonesDesdeJson(flpBebidas, new List<string> { "Bebida" });
         }
-        private void MostrarDetallesOrdenes(int Vmesa, int Vsilla)
-        {
-            MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(Vmesa, Vsilla);
-        }
+
         private void Orden()
         {
             idOrden = datos.ObtenerOrdenActiva(mesa, silla);
@@ -129,12 +125,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         //MESAS 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPage3);
+            tabControl1.TabPages.Remove(tabPage1);
             mesa = 1;
             siguienteTab();
             lbMesa.Text = "Mesa 1";
         }
         private void iconPictureBox2_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPage3);
+            tabControl1.TabPages.Remove(tabPage1);
             mesa = 2;
             siguienteTab();
             lbMesa.Text = "Mesa 2";
@@ -146,14 +146,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         {
             silla = 1;
             Orden();
-            MostrarDetallesOrdenes(silla, mesa);
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
         }
 
         private void btnSilla2_Click(object sender, EventArgs e)
         {
             silla = 2;
             Orden();
-            MostrarDetallesOrdenes(silla, mesa);
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
         }
 
         private void btnSilla3_Click_1(object sender, EventArgs e)
@@ -245,6 +247,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPage1);
+            tabControl1.TabPages.Remove(tabPage3);
             tabAnterior();
         }
 
@@ -267,7 +271,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-
+            var resultado = MessageBox.Show("¿Está seguro de que desea facturar la orden "+idOrden+ "?",
+                                     "Facturar orden",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                MostrarDatos objDetallesOrdenes = new MostrarDatos();
+                objDetallesOrdenes.ActualizarOrden(idOrden);
+                dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            }
         }
     }
 }
