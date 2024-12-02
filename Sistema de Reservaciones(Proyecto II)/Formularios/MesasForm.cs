@@ -23,7 +23,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         public MesasForm()
         {
             InitializeComponent();
-            ocultarTab();
+            tabControl1.TabPages.Remove(tabPage3);
             this.Text = "Mesas";
             flpDesayuno.Visible = false;
             flpAlmuerzo.Visible = false;
@@ -125,12 +125,16 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         //MESAS 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPage3);
+            tabControl1.TabPages.Remove(tabPage1);
             mesa = 1;
             siguienteTab();
             lbMesa.Text = "Mesa 1";
         }
         private void iconPictureBox2_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPage3);
+            tabControl1.TabPages.Remove(tabPage1);
             mesa = 2;
             siguienteTab();
             lbMesa.Text = "Mesa 2";
@@ -243,6 +247,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPage1);
+            tabControl1.TabPages.Remove(tabPage3);
             tabAnterior();
         }
 
