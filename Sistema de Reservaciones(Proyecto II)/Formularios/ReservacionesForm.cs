@@ -23,7 +23,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void ReservacionesForm_Load(object sender, EventArgs e)
         {
             MostrarClientes();
-            MostrarReservaciones();
         }
 
         private void MostrarClientes()

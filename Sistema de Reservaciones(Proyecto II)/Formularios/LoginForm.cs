@@ -61,7 +61,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_
                     MenuPrincipal menuprincipal = new MenuPrincipal();
                     menuprincipal.Show();
                     this.Hide();
-                    MessageBox.Show("Bienvenido "+ usuario);
                 }
                 else
                 {
