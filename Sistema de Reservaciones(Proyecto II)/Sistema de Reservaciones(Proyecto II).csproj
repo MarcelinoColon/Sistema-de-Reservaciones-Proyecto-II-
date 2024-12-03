@@ -90,9 +90,16 @@
     <Compile Include="Clases\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Clases\CustomMesa.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Clases\DBGeneral.cs" />
+    <Compile Include="Clases\Mesa.cs" />
+    <Compile Include="Clases\MesaData.cs" />
+    <Compile Include="Clases\MesasManager.cs" />
     <Compile Include="Clases\MostrarDatos.cs" />
     <Compile Include="Clases\PData.cs" />
+    <Compile Include="Clases\PMesa.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\UserCache.cs" />
     <Compile Include="Formularios\CajaForm.cs">

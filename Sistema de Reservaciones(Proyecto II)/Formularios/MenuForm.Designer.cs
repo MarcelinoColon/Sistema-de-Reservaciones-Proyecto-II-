@@ -39,9 +39,17 @@
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnImagenMesa = new FontAwesome.Sharp.IconButton();
+            this.pbMesa = new System.Windows.Forms.PictureBox();
+            this.btnEliminarMesa = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarMesa = new FontAwesome.Sharp.IconButton();
+            this.tbNumeroMesa = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMesa)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -163,6 +171,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tbNumeroMesa);
+            this.tabPage2.Controls.Add(this.btnEliminarMesa);
+            this.tabPage2.Controls.Add(this.btnGuardarMesa);
+            this.tabPage2.Controls.Add(this.btnImagenMesa);
+            this.tabPage2.Controls.Add(this.pbMesa);
+            this.tabPage2.Controls.Add(this.flowLayoutPanel2);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -170,6 +184,71 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 6);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(600, 635);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // btnImagenMesa
+            // 
+            this.btnImagenMesa.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnImagenMesa.IconColor = System.Drawing.Color.Black;
+            this.btnImagenMesa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImagenMesa.Location = new System.Drawing.Point(709, 274);
+            this.btnImagenMesa.Name = "btnImagenMesa";
+            this.btnImagenMesa.Size = new System.Drawing.Size(157, 31);
+            this.btnImagenMesa.TabIndex = 10;
+            this.btnImagenMesa.Text = "Seleccionar imagen";
+            this.btnImagenMesa.UseVisualStyleBackColor = true;
+            this.btnImagenMesa.Click += new System.EventHandler(this.btnImagenMesa_Click);
+            // 
+            // pbMesa
+            // 
+            this.pbMesa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbMesa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbMesa.Location = new System.Drawing.Point(709, 160);
+            this.pbMesa.Name = "pbMesa";
+            this.pbMesa.Size = new System.Drawing.Size(157, 93);
+            this.pbMesa.TabIndex = 9;
+            this.pbMesa.TabStop = false;
+            // 
+            // btnEliminarMesa
+            // 
+            this.btnEliminarMesa.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnEliminarMesa.IconColor = System.Drawing.Color.Black;
+            this.btnEliminarMesa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarMesa.Location = new System.Drawing.Point(809, 564);
+            this.btnEliminarMesa.Name = "btnEliminarMesa";
+            this.btnEliminarMesa.Size = new System.Drawing.Size(140, 31);
+            this.btnEliminarMesa.TabIndex = 12;
+            this.btnEliminarMesa.Text = "Eliminar";
+            this.btnEliminarMesa.UseVisualStyleBackColor = true;
+            this.btnEliminarMesa.Click += new System.EventHandler(this.btnEliminarMesa_Click);
+            // 
+            // btnGuardarMesa
+            // 
+            this.btnGuardarMesa.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGuardarMesa.IconColor = System.Drawing.Color.Black;
+            this.btnGuardarMesa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardarMesa.Location = new System.Drawing.Point(624, 564);
+            this.btnGuardarMesa.Name = "btnGuardarMesa";
+            this.btnGuardarMesa.Size = new System.Drawing.Size(140, 31);
+            this.btnGuardarMesa.TabIndex = 11;
+            this.btnGuardarMesa.Text = "Guardar";
+            this.btnGuardarMesa.UseVisualStyleBackColor = true;
+            this.btnGuardarMesa.Click += new System.EventHandler(this.btnGuardarMesa_Click);
+            // 
+            // tbNumeroMesa
+            // 
+            this.tbNumeroMesa.Location = new System.Drawing.Point(732, 348);
+            this.tbNumeroMesa.Name = "tbNumeroMesa";
+            this.tbNumeroMesa.Size = new System.Drawing.Size(100, 26);
+            this.tbNumeroMesa.TabIndex = 13;
             // 
             // MenuForm
             // 
@@ -184,6 +263,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMesa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +283,11 @@
         private System.Windows.Forms.TextBox txtProducto;
         private FontAwesome.Sharp.IconButton rutaImagen;
         private System.Windows.Forms.ComboBox cbMenu;
+        private FontAwesome.Sharp.IconButton btnEliminarMesa;
+        private FontAwesome.Sharp.IconButton btnGuardarMesa;
+        private FontAwesome.Sharp.IconButton btnImagenMesa;
+        private System.Windows.Forms.PictureBox pbMesa;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TextBox tbNumeroMesa;
     }
 }

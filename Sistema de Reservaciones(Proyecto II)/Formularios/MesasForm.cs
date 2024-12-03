@@ -16,8 +16,9 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
     public partial class MesasForm : Form
     {
         ButtonManager buttonManager = new ButtonManager();
+        MesasManager mesaManager = new MesasManager();
         MostrarDatos datos = new MostrarDatos();
-        int mesa;
+ 
         int silla;
         int idOrden;
         public MesasForm()
@@ -29,23 +30,60 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             flpAlmuerzo.Visible = false;
             flpPostres.Visible = false;
             flpBebidas.Visible = false;
+
+            flpMesasLibres.Visible = false;
+            flpMesasOcupadas.Visible = false;
+            flpMesasReservadas.Visible = false;
             lbCantidad.Text = "1";
+            CargarMesas();
+            AsignarEventoClickAMesasLibres();
+            AsignarEventoClickAMesasOcupadas();
+            AsignarEventoClickAMesasReservadas();
             PData.IdMenuChanged += ActualizarPrecio;
             buttonManager.CargarBotonesDesdeJson(flpDesayuno, new List<string> { "Desayuno"});
             buttonManager.CargarBotonesDesdeJson(flpAlmuerzo, new List<string> { "Almuerzo" });
             buttonManager.CargarBotonesDesdeJson(flpPostres, new List<string> { "Postre" });
             buttonManager.CargarBotonesDesdeJson(flpBebidas, new List<string> { "Bebida" });
         }
+        private void CargarMesas()
+        {
+            mesaManager.CargarMesasDesdeJson(flpMesasLibres, new List<string> { "Libre" });
+            mesaManager.CargarMesasDesdeJson(flpMesasOcupadas, new List<string> { "Ocupada" });
+            mesaManager.CargarMesasDesdeJson(flpMesasReservadas, new List<string> { "Reservada" });
+        }
+        private void ClearImput()
+        {
+            lbCantidad.Text = "1";
+            lbPrecio.Text = "0.00 ";
+        }
 
         private void Orden()
         {
-            idOrden = datos.ObtenerOrdenActiva(mesa, silla);
+            bool existePendiente = datos.ExisteOrdenPendiente(PMesa.Id, silla);
+            if (existePendiente)
+            {
+                MessageBox.Show(
+                    "No se puede abrir una nueva orden porque ya existe una orden pendiente para esta silla.",
+                    "Orden Pendiente",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return; // Salir del método si hay una orden pendiente
+            }
+            idOrden = datos.ObtenerOrdenActiva(PMesa.Id, silla);
 
             if (idOrden == 0)
             {
-                // Crear nueva orden si no hay activa
-                idOrden = datos.CrearNuevaOrden(mesa, silla);
-                MessageBox.Show($"Nueva orden creada con ID: {idOrden}");
+                var result = MessageBox.Show(
+                "¿Está seguro de que desea crear una nueva orden?",
+                "Confirmar creación de orden",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Crear nueva orden si no hay activa
+                    idOrden = datos.CrearNuevaOrden(PMesa.Id, silla);
+                    MessageBox.Show($"Nueva orden creada con ID: {idOrden}");
+                }
             }
         }
 
@@ -127,15 +165,15 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         {
             tabControl1.TabPages.Add(tabPage3);
             tabControl1.TabPages.Remove(tabPage1);
-            mesa = 1;
+            PMesa.Id = 1;
             siguienteTab();
-            lbMesa.Text = "Mesa 1";
+            lbMesa.Text = "Mesa "+PMesa.Id;
         }
         private void iconPictureBox2_Click(object sender, EventArgs e)
         {
             tabControl1.TabPages.Add(tabPage3);
             tabControl1.TabPages.Remove(tabPage1);
-            mesa = 2;
+            PMesa.Id = 2;
             siguienteTab();
             lbMesa.Text = "Mesa 2";
         }
@@ -147,7 +185,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             silla = 1;
             Orden();
             MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(PMesa.Id, silla);
         }
 
         private void btnSilla2_Click(object sender, EventArgs e)
@@ -155,7 +193,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             silla = 2;
             Orden();
             MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(PMesa.Id, silla);
         }
 
         private void btnSilla3_Click_1(object sender, EventArgs e)
@@ -163,7 +201,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             silla = 3;
             Orden();
             MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(PMesa.Id, silla);
         }
 
         private void btnSilla4_Click_1(object sender, EventArgs e)
@@ -171,7 +209,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             silla = 4;
             Orden();
             MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(PMesa.Id, silla);
         }
 
         //OTROS
@@ -255,7 +293,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void btnTomarOrden_Click(object sender, EventArgs e)
         {
             decimal precio = PData.ObtenerPrecioProducto(PData.idmenu);
-            int idOrden = datos.ObtenerOrdenActiva(mesa, silla);
+            int idOrden = datos.ObtenerOrdenActiva(PMesa.Id, silla);
             if (idOrden > 0)
             {
                 datos.AgregarDetalleOrden(idOrden, PData.idmenu, int.Parse(lbCantidad.Text), precio);
@@ -266,7 +304,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 MessageBox.Show("No se pudo obtener la orden activa.");
             }
             MostrarDatos objDetallesOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+            dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(PMesa.Id, silla);
+            ClearImput();
         }
 
         private void btnFacturar_Click(object sender, EventArgs e)
@@ -279,8 +318,144 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             {
                 MostrarDatos objDetallesOrdenes = new MostrarDatos();
                 objDetallesOrdenes.ActualizarOrden(idOrden);
-                dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(mesa, silla);
+                dgvOrdenes.DataSource = objDetallesOrdenes.MostrarDetallesOrdenes(PMesa.Id, silla);
             }
+            ClearImput();
+        }
+        // --------------------------MESAS-----------------------------------
+        //--------------------------LIBRES-----------------------------------
+        private void AsignarEventoClickAMesasLibres()
+        {
+            foreach (Control control in flpMesasLibres.Controls)
+            {
+                if (control is CustomMesa mesa)
+                {
+                    // Asignar el evento Click al control CustomMesa
+                    mesa.Click += Boton_ClickLibres;
+                }
+            }
+        }
+        private void Boton_ClickLibres(object sender, EventArgs e)
+        { 
+            if (sender is CustomMesa mesa)
+            {
+                PMesa.Id = mesa.Id;
+                DialogResult result = MessageBox.Show(
+                "¿Estás seguro de ocupar esta mesa?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
+                {
+                    datos.OcuparMesa(PMesa.Id);
+                    MessageBox.Show("La mesa ha sido ocupada.");
+                }
+                else
+                {
+                    // Acción si el usuario hace clic en "No"
+                    MessageBox.Show("Operación cancelada.");
+                }
+                flpMesasLibres.Controls.Clear();
+                flpMesasOcupadas.Controls.Clear();
+                flpMesasReservadas.Controls.Clear();
+                CargarMesas();
+                AsignarEventoClickAMesasLibres();
+                AsignarEventoClickAMesasOcupadas();
+                AsignarEventoClickAMesasReservadas();
+            }
+        }
+
+
+        //-----------------------------OCUPADAS---------------------------
+        private void AsignarEventoClickAMesasOcupadas()
+        {
+            foreach (Control control in flpMesasOcupadas.Controls)
+            {
+                if (control is CustomMesa mesa)
+                {
+                    // Asignar el evento Click al control CustomMesa
+                    mesa.Click += Boton_ClickOcupadas;
+                }
+            }
+        }
+        private void Boton_ClickOcupadas(object sender, EventArgs e)
+        {
+            if (sender is CustomMesa mesa)
+            {
+                PMesa.Id = mesa.Id;
+                tabControl1.TabPages.Add(tabPage3);
+                tabControl1.TabPages.Remove(tabPage1);
+                siguienteTab();
+
+            }
+        }
+
+        //-----------------------------RESERVADAS--------------------------
+        private void AsignarEventoClickAMesasReservadas()
+        {
+            foreach (Control control in flpMesasReservadas.Controls)
+            {
+                if (control is CustomMesa mesa)
+                {
+                    // Asignar el evento Click al control CustomMesa
+                    mesa.Click += Boton_ClickReservadas;
+                }
+            }
+        }
+        private void Boton_ClickReservadas(object sender, EventArgs e)
+        {
+            if (sender is CustomMesa mesa)
+            {
+                PMesa.Id = mesa.Id;
+                DialogResult result = MessageBox.Show(
+                "¿Estás seguro de ocupar esta mesa?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
+                {
+                    datos.OcuparMesa(PMesa.Id);
+                    MessageBox.Show("La mesa ha sido ocupada.");
+                }
+                else
+                {
+                    // Acción si el usuario hace clic en "No"
+                    MessageBox.Show("Operación cancelada.");
+                }
+                flpMesasLibres.Controls.Clear();
+                flpMesasOcupadas.Controls.Clear();
+                flpMesasReservadas.Controls.Clear();
+                CargarMesas();
+                AsignarEventoClickAMesasLibres();
+                AsignarEventoClickAMesasOcupadas();
+                AsignarEventoClickAMesasReservadas();
+            }
+        }
+
+        //-------------------------------------------------------------------
+        private void btnMesasLibres_Click(object sender, EventArgs e)
+        {
+            if (flpMesasLibres.Visible == false) { flpMesasLibres.Visible = true; }
+            flpMesasOcupadas.Visible = false;
+            flpMesasReservadas.Visible = false;
+        }
+
+        private void btnMesasOcupadas_Click(object sender, EventArgs e)
+        {
+            if (flpMesasOcupadas.Visible == false) { flpMesasOcupadas.Visible = true; }
+            flpMesasLibres.Visible = false;
+            flpMesasReservadas.Visible = false;
+        }
+
+        private void btnMesasReservadas_Click(object sender, EventArgs e)
+        {
+            if (flpMesasReservadas.Visible == false) { flpMesasReservadas.Visible = true; }
+            flpMesasLibres.Visible = false;
+            flpMesasOcupadas.Visible = false;
         }
     }
 }

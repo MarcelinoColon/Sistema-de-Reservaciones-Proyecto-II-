@@ -25,8 +25,19 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelBotones.Controls.Add(leftBorderBtn);
+            IniciarTemporizadorFechaHora();
         }
-
+        private void IniciarTemporizadorFechaHora()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 1000; // Intervalo de 1 segundo (1000 ms)
+            timer.Tick += ActualizarFechaHoraLabel; // Asigna el método que actualizará el Label
+            timer.Start();
+        }
+        private void ActualizarFechaHoraLabel(object sender, EventArgs e)
+        {
+            lbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
 
         private void ActivateButton(object senderBtn, Color color)
         {

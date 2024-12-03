@@ -15,26 +15,56 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 {
     public partial class CajaForm : Form
     {
+        int Mesa;
         MostrarDatos objOrdenes = new MostrarDatos();
         public CajaForm()
         {
             InitializeComponent();
             this.Text = "Caja";
+            checkSilla1.CheckedChanged += checkSilla_CheckedChanged;
+            checkSilla2.CheckedChanged += checkSilla_CheckedChanged;
+            checkSilla3.CheckedChanged += checkSilla_CheckedChanged;
+            checkSilla4.CheckedChanged += checkSilla_CheckedChanged;
         }
+
 
         private void CajaForm_Load(object sender, EventArgs e)
         {
-            MostrarOrdenes();
             MostrarMesas();
-            MostrarMenu();
-            cbProducto.DataSource = null;
-
-            IniciarTemporizadorFechaHora();
         }
-        private void MostrarOrdenes()
+        private void checkSilla_CheckedChanged(object sender, EventArgs e)
+        {
+            // Crear una lista de enteros para las sillas seleccionadas
+            List<int> sillasSeleccionadas = new List<int>();
+
+            // Verificar si los CheckBox están marcados y agregar las sillas correspondientes a la lista
+            if (checkSilla1.Checked) sillasSeleccionadas.Add(1);
+            if (checkSilla2.Checked) sillasSeleccionadas.Add(2);
+            if (checkSilla3.Checked) sillasSeleccionadas.Add(3);
+            if (checkSilla4.Checked) sillasSeleccionadas.Add(4);
+
+            // Convertir la lista de sillas seleccionadas a una cadena separada por comas
+            string sillasString = string.Join(",", sillasSeleccionadas);
+
+            // Asegurarse de que se ha seleccionado al menos una silla
+            if (sillasSeleccionadas.Count > 0)
+            {
+                // Obtener el valor de la mesa seleccionada
+                int mesaSeleccionada = Convert.ToInt32(cbMesa.SelectedValue);
+
+                // Llamar al método para mostrar las órdenes, pasando la mesa y las sillas seleccionadas
+                MostrarOrdenes(mesaSeleccionada, sillasString);
+            }
+            else
+            {
+                // Si no se ha seleccionado ninguna silla, vaciar las órdenes
+                dgvOrdenes.DataSource = null;
+            }
+        }
+        private void MostrarOrdenes(int mesa, string silla)
         {
             MostrarDatos objOrdenes = new MostrarDatos();
-            dgvOrdenes.DataSource = objOrdenes.MostrarOrdenes();
+            dgvOrdenes.DataSource = objOrdenes.MostrarOrdenes(mesa, silla);
         }
         private void MostrarMesas()
         {
@@ -43,59 +73,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             cbMesa.DisplayMember = "numero_mesa";
             cbMesa.ValueMember = "id_mesa";
         }
-        private void MostrarMenu()
-        {
-            MostrarDatos objMenu = new MostrarDatos();
-            cbMenu.DataSource = objMenu.MostrarMenu("SELECT DISTINCT tipo_producto FROM Menu");
-            cbMenu.DisplayMember = "tipo_producto";
-            cbMenu.ValueMember = "tipo_producto";
-        }
 
-        private void cbMenu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbMenu.SelectedValue != null)
-            {
-                string tipoProductoSeleccionado = cbMenu.SelectedValue.ToString();
-
-                if (!string.IsNullOrEmpty(tipoProductoSeleccionado))
-                {
-                    MostrarDatos objMenu = new MostrarDatos();
-
-                    switch (tipoProductoSeleccionado)
-                    {
-                        case "Desayuno":
-                            cbProducto.DataSource = objMenu.MostrarMenu("SELECT * FROM Menu WHERE tipo_producto = 'Desayuno'");
-                            break;
-                        case "Almuerzo":
-                            cbProducto.DataSource = objMenu.MostrarMenu("SELECT * FROM Menu WHERE tipo_producto = 'Almuerzo'");
-                            break;
-                        case "Postre":
-                            cbProducto.DataSource = objMenu.MostrarMenu("SELECT * FROM Menu WHERE tipo_producto = 'Postre'");
-                            break;
-                        case "Bebida":
-                            cbProducto.DataSource = objMenu.MostrarMenu("SELECT * FROM Menu WHERE tipo_producto = 'Bebida'");
-                            break;
-                        default:
-                            cbProducto.DataSource = null;
-                            break;
-                    }
-
-                    cbProducto.DisplayMember = "nombre_producto";
-                    cbProducto.ValueMember = "id_menu";
-                }
-            }
-        }
-        private void IniciarTemporizadorFechaHora()
-        {
-            Timer timer = new Timer();
-            timer.Interval = 1000; // Intervalo de 1 segundo (1000 ms)
-            timer.Tick += ActualizarFechaHoraLabel; // Asigna el método que actualizará el Label
-            timer.Start();
-        }
-        private void ActualizarFechaHoraLabel(object sender, EventArgs e)
-        {
-            lbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-        }
+    
         private void GuardarFacturaComoTxt()
         {
             // Asegúrate de que hay filas seleccionadas
@@ -184,16 +163,17 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             }
         }
 
-
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             GuardarFacturaComoTxt();
+        }
+
+        private void cbMesa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMesa.SelectedValue != null && int.TryParse(cbMesa.SelectedValue.ToString(), out int idMesa))
+            {
+                Mesa = idMesa;
+            }
         }
     }
 }

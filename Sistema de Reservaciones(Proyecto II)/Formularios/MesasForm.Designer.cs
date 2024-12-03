@@ -31,17 +31,21 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pnPrincipalMesas = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.flpMesasReservadas = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMesasOcupadas = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMesasLibres = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnMesasReservadas = new FontAwesome.Sharp.IconButton();
+            this.btnMesasOcupadas = new FontAwesome.Sharp.IconButton();
+            this.btnMesasLibres = new FontAwesome.Sharp.IconButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pnMenu = new System.Windows.Forms.Panel();
             this.pnTitulo = new System.Windows.Forms.Panel();
@@ -78,11 +82,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnPrincipalMesas.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.flpMesasLibres.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -121,7 +125,10 @@
             // 
             // pnPrincipalMesas
             // 
-            this.pnPrincipalMesas.Controls.Add(this.flowLayoutPanel2);
+            this.pnPrincipalMesas.AutoScroll = true;
+            this.pnPrincipalMesas.Controls.Add(this.flpMesasReservadas);
+            this.pnPrincipalMesas.Controls.Add(this.flpMesasOcupadas);
+            this.pnPrincipalMesas.Controls.Add(this.flpMesasLibres);
             this.pnPrincipalMesas.Controls.Add(this.panel8);
             this.pnPrincipalMesas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnPrincipalMesas.Location = new System.Drawing.Point(3, 3);
@@ -129,68 +136,39 @@
             this.pnPrincipalMesas.Size = new System.Drawing.Size(966, 656);
             this.pnPrincipalMesas.TabIndex = 1;
             // 
-            // flowLayoutPanel2
+            // flpMesasReservadas
             // 
-            this.flowLayoutPanel2.Controls.Add(this.panel10);
-            this.flowLayoutPanel2.Controls.Add(this.panel1);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 60);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(966, 596);
-            this.flowLayoutPanel2.TabIndex = 7;
+            this.flpMesasReservadas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpMesasReservadas.Location = new System.Drawing.Point(0, 1252);
+            this.flpMesasReservadas.Name = "flpMesasReservadas";
+            this.flpMesasReservadas.Size = new System.Drawing.Size(940, 596);
+            this.flpMesasReservadas.TabIndex = 9;
             // 
-            // panel10
+            // flpMesasOcupadas
             // 
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Controls.Add(this.iconPictureBox1);
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(211, 183);
-            this.panel10.TabIndex = 6;
+            this.flpMesasOcupadas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpMesasOcupadas.Location = new System.Drawing.Point(0, 656);
+            this.flpMesasOcupadas.Name = "flpMesasOcupadas";
+            this.flpMesasOcupadas.Size = new System.Drawing.Size(940, 596);
+            this.flpMesasOcupadas.TabIndex = 8;
             // 
-            // label9
+            // flpMesasLibres
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Estado y fecha";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(73, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 18);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Mesa 1";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Chair;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 118;
-            this.iconPictureBox1.Location = new System.Drawing.Point(30, 28);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(146, 118);
-            this.iconPictureBox1.TabIndex = 5;
-            this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Tag = "1";
-            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            this.flpMesasLibres.AutoScroll = true;
+            this.flpMesasLibres.Controls.Add(this.panel1);
+            this.flpMesasLibres.Controls.Add(this.panel10);
+            this.flpMesasLibres.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpMesasLibres.Location = new System.Drawing.Point(0, 60);
+            this.flpMesasLibres.Name = "flpMesasLibres";
+            this.flpMesasLibres.Size = new System.Drawing.Size(940, 596);
+            this.flpMesasLibres.TabIndex = 7;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.iconPictureBox2);
-            this.panel1.Location = new System.Drawing.Point(220, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(211, 183);
             this.panel1.TabIndex = 7;
@@ -231,25 +209,104 @@
             this.iconPictureBox2.Tag = "1";
             this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label9);
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Controls.Add(this.iconPictureBox1);
+            this.panel10.Location = new System.Drawing.Point(220, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(211, 183);
+            this.panel10.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(36, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(126, 18);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Estado y fecha";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(73, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 18);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Mesa 1";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Chair;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 118;
+            this.iconPictureBox1.Location = new System.Drawing.Point(30, 28);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(146, 118);
+            this.iconPictureBox1.TabIndex = 5;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Tag = "1";
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+            // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.btnMesasReservadas);
+            this.panel8.Controls.Add(this.btnMesasOcupadas);
+            this.panel8.Controls.Add(this.btnMesasLibres);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(966, 60);
+            this.panel8.Size = new System.Drawing.Size(940, 60);
             this.panel8.TabIndex = 4;
             // 
-            // label7
+            // btnMesasReservadas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(265, 14);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(345, 37);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Seleccione una mesa";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMesasReservadas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMesasReservadas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnMesasReservadas.IconColor = System.Drawing.Color.Black;
+            this.btnMesasReservadas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMesasReservadas.Location = new System.Drawing.Point(642, 0);
+            this.btnMesasReservadas.Name = "btnMesasReservadas";
+            this.btnMesasReservadas.Size = new System.Drawing.Size(321, 60);
+            this.btnMesasReservadas.TabIndex = 2;
+            this.btnMesasReservadas.Text = "Mesas Reservadas";
+            this.btnMesasReservadas.UseVisualStyleBackColor = true;
+            this.btnMesasReservadas.Click += new System.EventHandler(this.btnMesasReservadas_Click);
+            // 
+            // btnMesasOcupadas
+            // 
+            this.btnMesasOcupadas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMesasOcupadas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnMesasOcupadas.IconColor = System.Drawing.Color.Black;
+            this.btnMesasOcupadas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMesasOcupadas.Location = new System.Drawing.Point(321, 0);
+            this.btnMesasOcupadas.Name = "btnMesasOcupadas";
+            this.btnMesasOcupadas.Size = new System.Drawing.Size(321, 60);
+            this.btnMesasOcupadas.TabIndex = 1;
+            this.btnMesasOcupadas.Text = "Mesas Ocupadas";
+            this.btnMesasOcupadas.UseVisualStyleBackColor = true;
+            this.btnMesasOcupadas.Click += new System.EventHandler(this.btnMesasOcupadas_Click);
+            // 
+            // btnMesasLibres
+            // 
+            this.btnMesasLibres.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMesasLibres.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnMesasLibres.IconColor = System.Drawing.Color.Black;
+            this.btnMesasLibres.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMesasLibres.Location = new System.Drawing.Point(0, 0);
+            this.btnMesasLibres.Name = "btnMesasLibres";
+            this.btnMesasLibres.Size = new System.Drawing.Size(321, 60);
+            this.btnMesasLibres.TabIndex = 0;
+            this.btnMesasLibres.Text = "Mesas Libres";
+            this.btnMesasLibres.UseVisualStyleBackColor = true;
+            this.btnMesasLibres.Click += new System.EventHandler(this.btnMesasLibres_Click);
             // 
             // tabPage3
             // 
@@ -692,15 +749,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.pnPrincipalMesas.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.flpMesasLibres.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
             this.pnTitulo.ResumeLayout(false);
@@ -736,7 +792,6 @@
         private FontAwesome.Sharp.IconButton btnAlmuerzos;
         private FontAwesome.Sharp.IconButton btnDesayunos;
         private FontAwesome.Sharp.IconButton btnSalir;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
@@ -753,7 +808,7 @@
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnMenos;
         private FontAwesome.Sharp.IconButton btnMas;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flpMesasLibres;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -767,5 +822,10 @@
         private System.Windows.Forms.Panel pnBotones;
         private System.Windows.Forms.Panel pnTitulo;
         private System.Windows.Forms.Label lbMesa;
+        private FontAwesome.Sharp.IconButton btnMesasReservadas;
+        private FontAwesome.Sharp.IconButton btnMesasOcupadas;
+        private FontAwesome.Sharp.IconButton btnMesasLibres;
+        private System.Windows.Forms.FlowLayoutPanel flpMesasReservadas;
+        private System.Windows.Forms.FlowLayoutPanel flpMesasOcupadas;
     }
 }
