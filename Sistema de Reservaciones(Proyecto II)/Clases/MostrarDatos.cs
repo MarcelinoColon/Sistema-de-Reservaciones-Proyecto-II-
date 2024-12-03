@@ -55,12 +55,17 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
             conexion.CerrarConexion();
             return Tabla;
         }
-        public DataTable MostrarOrdenes()
+        public DataTable MostrarOrdenes(int idMesa, string sillasString)
         {
             DataTable Tabla = new DataTable();
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "sp_ObtenerOrdenes";
             comando.CommandType = CommandType.StoredProcedure;
+
+            // Parámetros del procedimiento almacenado
+            comando.Parameters.AddWithValue("@sillas", sillasString);  // Parámetro con las sillas seleccionadas
+            comando.Parameters.AddWithValue("@mesa", idMesa);  // El parámetro de la mesa, por ejemplo
+
             LeerComando = comando.ExecuteReader();
             Tabla.Load(LeerComando);
             LeerComando.Close();
@@ -149,6 +154,25 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
 
             return idOrden;
         }
+        public bool ExisteOrdenPendiente(int idMesa, int silla)
+        {
+            bool existePendiente = false;
+
+            // Usamos la conexión obtenida del método DBGeneral.ObtenerConexion()
+            using (SqlConnection conexion = DBGeneral.ObtenerConexion())
+            {
+                string query = "SELECT COUNT(*) FROM Orden WHERE id_mesa = @idMesa AND silla = @silla AND estado = 'Pendiente'";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@idMesa", idMesa);
+                cmd.Parameters.AddWithValue("@silla", silla);
+
+                // Ejecutamos la consulta
+                int count = (int)cmd.ExecuteScalar();
+                existePendiente = count > 0;
+            }
+
+            return existePendiente;
+        }
         public int CrearNuevaOrden(int idMesa, int silla)
         {
             int idOrden = 0;
@@ -213,6 +237,65 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
             {
                 SqlCommand cmd = new SqlCommand("UPDATE Orden Set estado = 'Pendiente' WHERE id_orden = @id_orden", con);
                 cmd.Parameters.AddWithValue("@id_orden", idOrden);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al agregar detalle a la orden: {ex.Message}");
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
+        //-----------------------MESAS----------------------
+        public void OcuparMesa(int idMesa)
+        {
+            SqlConnection con = conexion.AbrirConexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Mesa Set estado = 'Ocupada' WHERE id_mesa = @id_mesa", con);
+                cmd.Parameters.AddWithValue("@id_mesa", idMesa);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al agregar detalle a la orden: {ex.Message}");
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+        public void ReservarMesa(int idMesa)
+        {
+            SqlConnection con = conexion.AbrirConexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Mesa Set estado = 'Reservada' WHERE id_mesa = @id_mesa", con);
+                cmd.Parameters.AddWithValue("@id_mesa", idMesa);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al agregar detalle a la orden: {ex.Message}");
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+        public void LiberarMesa(int idMesa)
+        {
+            SqlConnection con = conexion.AbrirConexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Mesa Set estado = 'Libre' WHERE id_mesa = @id_mesa", con);
+                cmd.Parameters.AddWithValue("@id_mesa", idMesa);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
