@@ -55,6 +55,19 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
             conexion.CerrarConexion();
             return Tabla;
         }
+        public DataTable MostrarMesasDisponibles(string fecha)
+        {
+            DataTable Tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "sp_ObtenerMesasDisponibles";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@fecha_reserva", fecha);
+            LeerComando = comando.ExecuteReader();
+            Tabla.Load(LeerComando);
+            LeerComando.Close();
+            conexion.CerrarConexion();
+            return Tabla;
+        }
         public DataTable MostrarOrdenes(int idMesa, string sillasString)
         {
             DataTable Tabla = new DataTable();

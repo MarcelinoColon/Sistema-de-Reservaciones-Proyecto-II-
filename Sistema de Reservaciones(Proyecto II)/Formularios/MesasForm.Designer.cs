@@ -79,6 +79,10 @@
             this.flpPostres = new System.Windows.Forms.FlowLayoutPanel();
             this.flpAlmuerzo = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDesayuno = new System.Windows.Forms.FlowLayoutPanel();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnPrincipalMesas.SuspendLayout();
@@ -388,6 +392,11 @@
             this.dgvOrdenes.AllowUserToAddRows = false;
             this.dgvOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Producto,
+            this.Cantidad,
+            this.Precio,
+            this.Total});
             this.dgvOrdenes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrdenes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvOrdenes.Location = new System.Drawing.Point(0, 0);
@@ -736,6 +745,34 @@
             this.flpDesayuno.Size = new System.Drawing.Size(444, 455);
             this.flpDesayuno.TabIndex = 6;
             // 
+            // Producto
+            // 
+            this.Producto.FillWeight = 172.6187F;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 8;
+            this.Producto.Name = "Producto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 91.70822F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Precio
+            // 
+            this.Precio.FillWeight = 67.49127F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 8;
+            this.Precio.Name = "Precio";
+            // 
+            // Total
+            // 
+            this.Total.FillWeight = 68.18183F;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 8;
+            this.Total.Name = "Total";
+            // 
             // MesasForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -827,5 +864,9 @@
         private FontAwesome.Sharp.IconButton btnMesasLibres;
         private System.Windows.Forms.FlowLayoutPanel flpMesasReservadas;
         private System.Windows.Forms.FlowLayoutPanel flpMesasOcupadas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

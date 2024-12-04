@@ -60,10 +60,12 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 // Si no se ha seleccionado ninguna silla, vaciar las órdenes
                 dgvOrdenes.DataSource = null;
             }
+            CalcularTotalConImpuesto();
         }
         private void MostrarOrdenes(int mesa, string silla)
         {
             MostrarDatos objOrdenes = new MostrarDatos();
+            ColumnaData();
             dgvOrdenes.DataSource = objOrdenes.MostrarOrdenes(mesa, silla);
         }
         private void MostrarMesas()
@@ -173,7 +175,50 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             if (cbMesa.SelectedValue != null && int.TryParse(cbMesa.SelectedValue.ToString(), out int idMesa))
             {
                 Mesa = idMesa;
+                checkSilla1.Checked = false;
+                checkSilla2.Checked = false;
+                checkSilla3.Checked = false;
+                checkSilla4.Checked = false;
+                dgvOrdenes.DataSource = null;
             }
         }
+        private void ColumnaData()
+        {
+            // Desactiva la generación automática de columnas
+            dgvOrdenes.AutoGenerateColumns = false;
+
+            // Limpia cualquier columna previa
+            dgvOrdenes.Columns.Clear();
+
+            // Configura columnas manualmente
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Orden", DataPropertyName = "Orden", Width = 82 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Silla", DataPropertyName = "Silla", Width = 82 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Mesa", DataPropertyName = "Mesa", Width = 82 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Fecha", DataPropertyName = "Fecha", Width = 82 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Hora", DataPropertyName = "Hora", Width = 82 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Producto", DataPropertyName = "Producto", Width = 250 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Cantidad", DataPropertyName = "Cantidad", Width = 100 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Precio", DataPropertyName = "Precio", Width = 100 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Total", DataPropertyName = "Total", Width = 100 });
+
+        }
+        private void CalcularTotalConImpuesto()
+        {
+            decimal sumaTotal = 0;
+
+            // Itera sobre las filas del DataGridView
+            foreach (DataGridViewRow fila in dgvOrdenes.Rows)
+            {
+                // Verifica que la fila no sea nueva y que la columna no esté vacía
+                if (fila.Cells["Total"].Value != null && decimal.TryParse(fila.Cells["Total"].Value.ToString(), out decimal valor))
+                {
+                    sumaTotal += valor;
+                }
+            }
+
+            // Aplica el impuesto del 18% y muestra el resultado en el TextBox
+            tbTotal.Text = (sumaTotal * 1.18m).ToString("0.00");
+        }
+
     }
 }

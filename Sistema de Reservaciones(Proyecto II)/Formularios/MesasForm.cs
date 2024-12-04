@@ -59,6 +59,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
 
         private void Orden()
         {
+            ConfigurarColumnas();
             bool existePendiente = datos.ExisteOrdenPendiente(PMesa.Id, silla);
             if (existePendiente)
             {
@@ -86,6 +87,22 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 }
             }
         }
+        private void ConfigurarColumnas()
+        {
+            // Desactiva la generación automática de columnas
+            dgvOrdenes.AutoGenerateColumns = false;
+
+            // Limpia cualquier columna previa
+            dgvOrdenes.Columns.Clear();
+
+            // Configura columnas manualmente
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Orden", DataPropertyName = "Orden", Width = 50, Visible = false }); // Oculta esta columna
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Producto", DataPropertyName = "Producto", Width = 76 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Cantidad", DataPropertyName = "Cantidad", Width = 40 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Precio", DataPropertyName = "Precio", Width = 30 });
+            dgvOrdenes.Columns.Add(new DataGridViewTextBoxColumn { Name = "Total", DataPropertyName = "Total", Width = 30 });
+        }
+
 
         private void ActualizarPrecio()
         {
