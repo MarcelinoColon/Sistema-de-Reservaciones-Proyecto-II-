@@ -108,17 +108,11 @@
     <Compile Include="Formularios\CajaForm.Designer.cs">
       <DependentUpon>CajaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ClientesForm.cs">
+    <Compile Include="Formularios\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ClientesForm.Designer.cs">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\EmpleadosForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\EmpleadosForm.Designer.cs">
-      <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    <Compile Include="Formularios\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\LoginForm.cs">
       <SubType>Form</SubType>
@@ -126,11 +120,11 @@
     <Compile Include="Formularios\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\MenuForm.cs">
+    <Compile Include="Formularios\ConfiguracionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\MenuForm.Designer.cs">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <Compile Include="Formularios\ConfiguracionForm.Designer.cs">
+      <DependentUpon>ConfiguracionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -162,17 +156,14 @@
     <EmbeddedResource Include="Formularios\CajaForm.resx">
       <DependentUpon>CajaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ClientesForm.resx">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\EmpleadosForm.resx">
-      <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MenuForm.resx">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\ConfiguracionForm.resx">
+      <DependentUpon>ConfiguracionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

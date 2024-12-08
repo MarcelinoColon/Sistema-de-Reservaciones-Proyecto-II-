@@ -54,6 +54,10 @@
             this.btnFacturar = new FontAwesome.Sharp.IconButton();
             this.pnOrdenes = new System.Windows.Forms.Panel();
             this.dgvOrdenes = new System.Windows.Forms.DataGridView();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnOperaciones = new System.Windows.Forms.Panel();
             this.pnBotones = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
@@ -79,6 +83,7 @@
             this.flpPostres = new System.Windows.Forms.FlowLayoutPanel();
             this.flpAlmuerzo = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDesayuno = new System.Windows.Forms.FlowLayoutPanel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnPrincipalMesas.SuspendLayout();
@@ -371,7 +376,7 @@
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(325, 58);
             this.btnFacturar.TabIndex = 2;
-            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.Text = "Cerrar Orden";
             this.btnFacturar.UseVisualStyleBackColor = true;
             this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
@@ -388,6 +393,11 @@
             this.dgvOrdenes.AllowUserToAddRows = false;
             this.dgvOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Producto,
+            this.Cantidad,
+            this.Precio,
+            this.Total});
             this.dgvOrdenes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrdenes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvOrdenes.Location = new System.Drawing.Point(0, 0);
@@ -398,6 +408,34 @@
             this.dgvOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrdenes.Size = new System.Drawing.Size(325, 525);
             this.dgvOrdenes.TabIndex = 0;
+            // 
+            // Producto
+            // 
+            this.Producto.FillWeight = 172.6187F;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 8;
+            this.Producto.Name = "Producto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 91.70822F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Precio
+            // 
+            this.Precio.FillWeight = 67.49127F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 8;
+            this.Precio.Name = "Precio";
+            // 
+            // Total
+            // 
+            this.Total.FillWeight = 68.18183F;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 8;
+            this.Total.Name = "Total";
             // 
             // pnOperaciones
             // 
@@ -500,10 +538,11 @@
             // 
             // pnSillas
             // 
-            this.pnSillas.Controls.Add(this.btnSilla1);
-            this.pnSillas.Controls.Add(this.btnSilla2);
-            this.pnSillas.Controls.Add(this.btnSilla3);
+            this.pnSillas.Controls.Add(this.iconButton1);
             this.pnSillas.Controls.Add(this.btnSilla4);
+            this.pnSillas.Controls.Add(this.btnSilla3);
+            this.pnSillas.Controls.Add(this.btnSilla2);
+            this.pnSillas.Controls.Add(this.btnSilla1);
             this.pnSillas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSillas.Location = new System.Drawing.Point(0, 0);
             this.pnSillas.Name = "pnSillas";
@@ -513,7 +552,7 @@
             // btnSilla1
             // 
             this.btnSilla1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSilla1.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSilla1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSilla1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSilla1.IconChar = FontAwesome.Sharp.IconChar.Chair;
@@ -522,7 +561,7 @@
             this.btnSilla1.IconSize = 35;
             this.btnSilla1.Location = new System.Drawing.Point(0, 0);
             this.btnSilla1.Name = "btnSilla1";
-            this.btnSilla1.Size = new System.Drawing.Size(156, 50);
+            this.btnSilla1.Size = new System.Drawing.Size(126, 50);
             this.btnSilla1.TabIndex = 9;
             this.btnSilla1.Text = "Silla 1";
             this.btnSilla1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -532,16 +571,16 @@
             // btnSilla2
             // 
             this.btnSilla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSilla2.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSilla2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSilla2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSilla2.IconChar = FontAwesome.Sharp.IconChar.Chair;
             this.btnSilla2.IconColor = System.Drawing.Color.Black;
             this.btnSilla2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSilla2.IconSize = 35;
-            this.btnSilla2.Location = new System.Drawing.Point(156, 0);
+            this.btnSilla2.Location = new System.Drawing.Point(126, 0);
             this.btnSilla2.Name = "btnSilla2";
-            this.btnSilla2.Size = new System.Drawing.Size(156, 50);
+            this.btnSilla2.Size = new System.Drawing.Size(126, 50);
             this.btnSilla2.TabIndex = 7;
             this.btnSilla2.Text = "Silla 2";
             this.btnSilla2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -551,16 +590,16 @@
             // btnSilla3
             // 
             this.btnSilla3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSilla3.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSilla3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSilla3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSilla3.IconChar = FontAwesome.Sharp.IconChar.Chair;
             this.btnSilla3.IconColor = System.Drawing.Color.Black;
             this.btnSilla3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSilla3.IconSize = 35;
-            this.btnSilla3.Location = new System.Drawing.Point(312, 0);
+            this.btnSilla3.Location = new System.Drawing.Point(252, 0);
             this.btnSilla3.Name = "btnSilla3";
-            this.btnSilla3.Size = new System.Drawing.Size(156, 50);
+            this.btnSilla3.Size = new System.Drawing.Size(126, 50);
             this.btnSilla3.TabIndex = 8;
             this.btnSilla3.Text = "Silla3";
             this.btnSilla3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -570,7 +609,7 @@
             // btnSilla4
             // 
             this.btnSilla4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSilla4.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSilla4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSilla4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSilla4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -579,9 +618,9 @@
             this.btnSilla4.IconColor = System.Drawing.Color.Black;
             this.btnSilla4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSilla4.IconSize = 35;
-            this.btnSilla4.Location = new System.Drawing.Point(468, 0);
+            this.btnSilla4.Location = new System.Drawing.Point(378, 0);
             this.btnSilla4.Name = "btnSilla4";
-            this.btnSilla4.Size = new System.Drawing.Size(156, 50);
+            this.btnSilla4.Size = new System.Drawing.Size(126, 50);
             this.btnSilla4.TabIndex = 8;
             this.btnSilla4.Text = "Silla 4";
             this.btnSilla4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -736,6 +775,22 @@
             this.flpDesayuno.Size = new System.Drawing.Size(444, 455);
             this.flpDesayuno.TabIndex = 6;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(504, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(120, 50);
+            this.iconButton1.TabIndex = 10;
+            this.iconButton1.Text = "Cerrar Todas";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
             // MesasForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -827,5 +882,10 @@
         private FontAwesome.Sharp.IconButton btnMesasLibres;
         private System.Windows.Forms.FlowLayoutPanel flpMesasReservadas;
         private System.Windows.Forms.FlowLayoutPanel flpMesasOcupadas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

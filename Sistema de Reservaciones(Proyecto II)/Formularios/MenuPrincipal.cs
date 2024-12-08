@@ -142,10 +142,10 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             OpenChildForm(new ReservacionesForm());
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void btnConfiguracion_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new MenuForm());
+            OpenChildForm(new ConfiguracionForm());
         }
 
         private void btnMesas_Click(object sender, EventArgs e)
@@ -166,16 +166,10 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             OpenChildForm(new ReportesForm());
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new ClientesForm());
-        }
-
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new EmpleadosForm());
+            OpenChildForm(new MenuForm());
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
