@@ -66,10 +66,11 @@
             this.btnAlmuerzos = new FontAwesome.Sharp.IconButton();
             this.btnDesayunos = new FontAwesome.Sharp.IconButton();
             this.pnSillas = new System.Windows.Forms.Panel();
-            this.btnSilla1 = new FontAwesome.Sharp.IconButton();
-            this.btnSilla2 = new FontAwesome.Sharp.IconButton();
-            this.btnSilla3 = new FontAwesome.Sharp.IconButton();
+            this.btnCerrarTodas = new FontAwesome.Sharp.IconButton();
             this.btnSilla4 = new FontAwesome.Sharp.IconButton();
+            this.btnSilla3 = new FontAwesome.Sharp.IconButton();
+            this.btnSilla2 = new FontAwesome.Sharp.IconButton();
+            this.btnSilla1 = new FontAwesome.Sharp.IconButton();
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.pnPaneles = new System.Windows.Forms.Panel();
             this.pnDescripcion = new System.Windows.Forms.Panel();
@@ -83,7 +84,6 @@
             this.flpPostres = new System.Windows.Forms.FlowLayoutPanel();
             this.flpAlmuerzo = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDesayuno = new System.Windows.Forms.FlowLayoutPanel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnPrincipalMesas.SuspendLayout();
@@ -143,6 +143,8 @@
             // 
             // flpMesasReservadas
             // 
+            this.flpMesasReservadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.flpMesasReservadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpMesasReservadas.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpMesasReservadas.Location = new System.Drawing.Point(0, 1252);
             this.flpMesasReservadas.Name = "flpMesasReservadas";
@@ -151,6 +153,8 @@
             // 
             // flpMesasOcupadas
             // 
+            this.flpMesasOcupadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.flpMesasOcupadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpMesasOcupadas.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpMesasOcupadas.Location = new System.Drawing.Point(0, 656);
             this.flpMesasOcupadas.Name = "flpMesasOcupadas";
@@ -160,6 +164,8 @@
             // flpMesasLibres
             // 
             this.flpMesasLibres.AutoScroll = true;
+            this.flpMesasLibres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.flpMesasLibres.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpMesasLibres.Controls.Add(this.panel1);
             this.flpMesasLibres.Controls.Add(this.panel10);
             this.flpMesasLibres.Dock = System.Windows.Forms.DockStyle.Top;
@@ -538,7 +544,7 @@
             // 
             // pnSillas
             // 
-            this.pnSillas.Controls.Add(this.iconButton1);
+            this.pnSillas.Controls.Add(this.btnCerrarTodas);
             this.pnSillas.Controls.Add(this.btnSilla4);
             this.pnSillas.Controls.Add(this.btnSilla3);
             this.pnSillas.Controls.Add(this.btnSilla2);
@@ -549,62 +555,22 @@
             this.pnSillas.Size = new System.Drawing.Size(624, 50);
             this.pnSillas.TabIndex = 7;
             // 
-            // btnSilla1
+            // btnCerrarTodas
             // 
-            this.btnSilla1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSilla1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSilla1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSilla1.IconChar = FontAwesome.Sharp.IconChar.Chair;
-            this.btnSilla1.IconColor = System.Drawing.Color.Black;
-            this.btnSilla1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSilla1.IconSize = 35;
-            this.btnSilla1.Location = new System.Drawing.Point(0, 0);
-            this.btnSilla1.Name = "btnSilla1";
-            this.btnSilla1.Size = new System.Drawing.Size(126, 50);
-            this.btnSilla1.TabIndex = 9;
-            this.btnSilla1.Text = "Silla 1";
-            this.btnSilla1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSilla1.UseVisualStyleBackColor = false;
-            this.btnSilla1.Click += new System.EventHandler(this.btnSilla1_Click);
-            // 
-            // btnSilla2
-            // 
-            this.btnSilla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSilla2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSilla2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSilla2.IconChar = FontAwesome.Sharp.IconChar.Chair;
-            this.btnSilla2.IconColor = System.Drawing.Color.Black;
-            this.btnSilla2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSilla2.IconSize = 35;
-            this.btnSilla2.Location = new System.Drawing.Point(126, 0);
-            this.btnSilla2.Name = "btnSilla2";
-            this.btnSilla2.Size = new System.Drawing.Size(126, 50);
-            this.btnSilla2.TabIndex = 7;
-            this.btnSilla2.Text = "Silla 2";
-            this.btnSilla2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSilla2.UseVisualStyleBackColor = false;
-            this.btnSilla2.Click += new System.EventHandler(this.btnSilla2_Click);
-            // 
-            // btnSilla3
-            // 
-            this.btnSilla3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSilla3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSilla3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSilla3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSilla3.IconChar = FontAwesome.Sharp.IconChar.Chair;
-            this.btnSilla3.IconColor = System.Drawing.Color.Black;
-            this.btnSilla3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSilla3.IconSize = 35;
-            this.btnSilla3.Location = new System.Drawing.Point(252, 0);
-            this.btnSilla3.Name = "btnSilla3";
-            this.btnSilla3.Size = new System.Drawing.Size(126, 50);
-            this.btnSilla3.TabIndex = 8;
-            this.btnSilla3.Text = "Silla3";
-            this.btnSilla3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSilla3.UseVisualStyleBackColor = false;
-            this.btnSilla3.Click += new System.EventHandler(this.btnSilla3_Click_1);
+            this.btnCerrarTodas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCerrarTodas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCerrarTodas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarTodas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarTodas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCerrarTodas.IconColor = System.Drawing.Color.Black;
+            this.btnCerrarTodas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarTodas.Location = new System.Drawing.Point(504, 0);
+            this.btnCerrarTodas.Name = "btnCerrarTodas";
+            this.btnCerrarTodas.Size = new System.Drawing.Size(120, 50);
+            this.btnCerrarTodas.TabIndex = 10;
+            this.btnCerrarTodas.Text = "Cerrar Todas";
+            this.btnCerrarTodas.UseVisualStyleBackColor = false;
+            this.btnCerrarTodas.Click += new System.EventHandler(this.btnCerrarTodas_Click);
             // 
             // btnSilla4
             // 
@@ -626,6 +592,63 @@
             this.btnSilla4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSilla4.UseVisualStyleBackColor = false;
             this.btnSilla4.Click += new System.EventHandler(this.btnSilla4_Click_1);
+            // 
+            // btnSilla3
+            // 
+            this.btnSilla3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSilla3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSilla3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSilla3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSilla3.IconChar = FontAwesome.Sharp.IconChar.Chair;
+            this.btnSilla3.IconColor = System.Drawing.Color.Black;
+            this.btnSilla3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSilla3.IconSize = 35;
+            this.btnSilla3.Location = new System.Drawing.Point(252, 0);
+            this.btnSilla3.Name = "btnSilla3";
+            this.btnSilla3.Size = new System.Drawing.Size(126, 50);
+            this.btnSilla3.TabIndex = 8;
+            this.btnSilla3.Text = "Silla3";
+            this.btnSilla3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSilla3.UseVisualStyleBackColor = false;
+            this.btnSilla3.Click += new System.EventHandler(this.btnSilla3_Click_1);
+            // 
+            // btnSilla2
+            // 
+            this.btnSilla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSilla2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSilla2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSilla2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSilla2.IconChar = FontAwesome.Sharp.IconChar.Chair;
+            this.btnSilla2.IconColor = System.Drawing.Color.Black;
+            this.btnSilla2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSilla2.IconSize = 35;
+            this.btnSilla2.Location = new System.Drawing.Point(126, 0);
+            this.btnSilla2.Name = "btnSilla2";
+            this.btnSilla2.Size = new System.Drawing.Size(126, 50);
+            this.btnSilla2.TabIndex = 7;
+            this.btnSilla2.Text = "Silla 2";
+            this.btnSilla2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSilla2.UseVisualStyleBackColor = false;
+            this.btnSilla2.Click += new System.EventHandler(this.btnSilla2_Click);
+            // 
+            // btnSilla1
+            // 
+            this.btnSilla1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSilla1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSilla1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSilla1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSilla1.IconChar = FontAwesome.Sharp.IconChar.Chair;
+            this.btnSilla1.IconColor = System.Drawing.Color.Black;
+            this.btnSilla1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSilla1.IconSize = 35;
+            this.btnSilla1.Location = new System.Drawing.Point(0, 0);
+            this.btnSilla1.Name = "btnSilla1";
+            this.btnSilla1.Size = new System.Drawing.Size(126, 50);
+            this.btnSilla1.TabIndex = 9;
+            this.btnSilla1.Text = "Silla 1";
+            this.btnSilla1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSilla1.UseVisualStyleBackColor = false;
+            this.btnSilla1.Click += new System.EventHandler(this.btnSilla1_Click);
             // 
             // tbFiltro
             // 
@@ -775,22 +798,6 @@
             this.flpDesayuno.Size = new System.Drawing.Size(444, 455);
             this.flpDesayuno.TabIndex = 6;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(504, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(120, 50);
-            this.iconButton1.TabIndex = 10;
-            this.iconButton1.Text = "Cerrar Todas";
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
             // MesasForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -886,6 +893,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnCerrarTodas;
     }
 }
