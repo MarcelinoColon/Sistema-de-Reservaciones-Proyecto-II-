@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
     {
         int Mesa;
         MostrarDatos objOrdenes = new MostrarDatos();
+        List<CheckBox> checkBoxes = new List<CheckBox> { };
+
         public CajaForm()
         {
             InitializeComponent();
@@ -25,6 +28,14 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             checkSilla2.CheckedChanged += checkSilla_CheckedChanged;
             checkSilla3.CheckedChanged += checkSilla_CheckedChanged;
             checkSilla4.CheckedChanged += checkSilla_CheckedChanged;
+            checkBoxes.Add(checkSilla1);
+            checkBoxes.Add(checkSilla2);
+            checkBoxes.Add(checkSilla3);
+            checkBoxes.Add(checkSilla4);
+            checkSilla1.Visible=false;
+            checkSilla2.Visible = false;
+            checkSilla3.Visible = false;
+            checkSilla4.Visible = false;
         }
 
 
@@ -179,6 +190,8 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                 checkSilla2.Checked = false;
                 checkSilla3.Checked = false;
                 checkSilla4.Checked = false;
+                MostrarDatos objDetallesOrdenes = new MostrarDatos();
+                objDetallesOrdenes.VerificarSillasPendientes(idMesa, checkBoxes);
                 dgvOrdenes.DataSource = null;
             }
         }
@@ -217,7 +230,9 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             }
 
             // Aplica el impuesto del 18% y muestra el resultado en el TextBox
-            tbTotal.Text = (sumaTotal * 1.18m).ToString("0.00");
+            tbImpuestos.Text = (sumaTotal * 0.28m).ToString("0.00");
+            tbSubTotal.Text = sumaTotal.ToString("0.00");
+            tbTotal.Text = (sumaTotal * 1.28m).ToString("0.00");
         }
 
     }

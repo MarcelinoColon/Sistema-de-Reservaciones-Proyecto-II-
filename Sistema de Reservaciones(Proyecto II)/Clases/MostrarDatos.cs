@@ -321,5 +321,90 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
                 conexion.CerrarConexion();
             }
         }
+        public void VerificarYActualizarOrden(int idMesa)
+        {
+            using (SqlConnection conexion = DBGeneral.ObtenerConexion())
+            {
+                try
+                {
+                    // Consulta para buscar órdenes abiertas en la mesa
+                    string querySelect = "SELECT * FROM Orden WHERE estado = 'Abierta' AND id_mesa = @mesa";
+
+                    using (SqlCommand comandoSelect = new SqlCommand(querySelect, conexion))
+                    {
+                        comandoSelect.Parameters.AddWithValue("@mesa", idMesa);
+
+                        using (SqlDataReader reader = comandoSelect.ExecuteReader())
+                        {
+                            if (reader.HasRows) // Si hay registros
+                            {
+                                reader.Close(); // Cerramos el lector para ejecutar otro comando
+
+                                // Actualizar el estado a 'Pendiente'
+                                string queryUpdate = "UPDATE Orden SET estado = 'Pendiente' WHERE estado = 'Abierta' AND id_mesa = @mesa";
+
+                                using (SqlCommand comandoUpdate = new SqlCommand(queryUpdate, conexion))
+                                {
+                                    comandoUpdate.Parameters.AddWithValue("@mesa", idMesa);
+                                    int filasAfectadas = comandoUpdate.ExecuteNonQuery();
+
+                                    MessageBox.Show("Ordenes cerradas exitosamente.", "Ordenes cerradas");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No hay órdenes abiertas en esta mesa.", "Sin Órdenes");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error");
+                }
+            }
+        }
+        public void VerificarSillasPendientes(int idMesa, List<CheckBox> checkBoxes)
+        {
+            using (SqlConnection conexion = DBGeneral.ObtenerConexion())
+            {
+                try
+                {
+                    // Consulta para buscar órdenes pendientes en la mesa
+                    string query = "SELECT silla FROM Orden WHERE estado = 'Pendiente' AND id_mesa = @mesa";
+
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@mesa", idMesa);
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            // Reiniciar la visibilidad de los CheckBox
+                            foreach (var checkBox in checkBoxes)
+                            {
+                                checkBox.Visible = false; // Inicialmente, todos no visibles
+                            }
+
+                            while (reader.Read())
+                            {
+                                // Obtener el valor de silla
+                                int silla = reader.GetInt32(0); // Suponiendo que 'silla' es un INT en la base de datos
+
+                                // Asegurarse de que el índice de la silla corresponde a un CheckBox
+                                if (silla >= 1 && silla <= checkBoxes.Count)
+                                {
+                                    checkBoxes[silla - 1].Visible = true; // Poner visible el CheckBox correspondiente
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error");
+                }
+            }
+        }
+
     }
 }

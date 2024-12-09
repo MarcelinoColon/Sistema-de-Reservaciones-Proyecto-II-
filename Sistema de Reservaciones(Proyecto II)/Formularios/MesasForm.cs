@@ -474,5 +474,11 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             flpMesasLibres.Visible = false;
             flpMesasOcupadas.Visible = false;
         }
+
+        private void btnCerrarTodas_Click(object sender, EventArgs e)
+        {
+            MostrarDatos objDetallesOrdenes = new MostrarDatos();
+            objDetallesOrdenes.VerificarYActualizarOrden(PMesa.Id);
+        }
     }
 }
