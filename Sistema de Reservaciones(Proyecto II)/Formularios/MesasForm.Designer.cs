@@ -34,14 +34,6 @@
             this.flpMesasReservadas = new System.Windows.Forms.FlowLayoutPanel();
             this.flpMesasOcupadas = new System.Windows.Forms.FlowLayoutPanel();
             this.flpMesasLibres = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnMesasReservadas = new FontAwesome.Sharp.IconButton();
             this.btnMesasOcupadas = new FontAwesome.Sharp.IconButton();
@@ -87,11 +79,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnPrincipalMesas.SuspendLayout();
-            this.flpMesasLibres.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -166,105 +153,11 @@
             this.flpMesasLibres.AutoScroll = true;
             this.flpMesasLibres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
             this.flpMesasLibres.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flpMesasLibres.Controls.Add(this.panel1);
-            this.flpMesasLibres.Controls.Add(this.panel10);
             this.flpMesasLibres.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpMesasLibres.Location = new System.Drawing.Point(0, 60);
             this.flpMesasLibres.Name = "flpMesasLibres";
             this.flpMesasLibres.Size = new System.Drawing.Size(940, 596);
             this.flpMesasLibres.TabIndex = 7;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.iconPictureBox2);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 183);
-            this.panel1.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Estado y fecha";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(73, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mesa 2";
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Chair;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 118;
-            this.iconPictureBox2.Location = new System.Drawing.Point(30, 28);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(146, 118);
-            this.iconPictureBox2.TabIndex = 5;
-            this.iconPictureBox2.TabStop = false;
-            this.iconPictureBox2.Tag = "1";
-            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Controls.Add(this.iconPictureBox1);
-            this.panel10.Location = new System.Drawing.Point(220, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(211, 183);
-            this.panel10.TabIndex = 6;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Estado y fecha";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(73, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 18);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Mesa 1";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Chair;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 118;
-            this.iconPictureBox1.Location = new System.Drawing.Point(30, 28);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(146, 118);
-            this.iconPictureBox1.TabIndex = 5;
-            this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Tag = "1";
-            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // panel8
             // 
@@ -811,13 +704,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.pnPrincipalMesas.ResumeLayout(false);
-            this.flpMesasLibres.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel8.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
@@ -855,10 +741,6 @@
         private FontAwesome.Sharp.IconButton btnDesayunos;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.FlowLayoutPanel flpDesayuno;
         private System.Windows.Forms.FlowLayoutPanel flpBebidas;
@@ -871,10 +753,6 @@
         private FontAwesome.Sharp.IconButton btnMenos;
         private FontAwesome.Sharp.IconButton btnMas;
         private System.Windows.Forms.FlowLayoutPanel flpMesasLibres;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconButton btnSilla2;
         private FontAwesome.Sharp.IconButton btnTomarOrden;
         private FontAwesome.Sharp.IconButton btnSilla3;
