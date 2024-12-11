@@ -29,6 +29,17 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
             conexion.CerrarConexion();
             return Tabla;
         }
+        public DataTable MostrarSolicitudes()
+        {
+            DataTable Tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select * from Solicitudes";
+            LeerComando = comando.ExecuteReader();
+            Tabla.Load(LeerComando);
+            LeerComando.Close();
+            conexion.CerrarConexion();
+            return Tabla;
+        }
 
         public DataTable MostrarClientes()
         {
@@ -118,6 +129,30 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Clases
             conexion.CerrarConexion();
             return Tabla;
         }
+        public int ContarMesas()
+        {
+            int totalMesas = 0;
+
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SELECT COUNT(*) FROM Mesa";
+                comando.CommandType = CommandType.Text;
+
+                totalMesas = Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al contar las mesas: {ex.Message}");
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return totalMesas;
+        }
+
 
         //Insertar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 

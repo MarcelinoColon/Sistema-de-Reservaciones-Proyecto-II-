@@ -43,29 +43,19 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbFiltrar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSolicitudes = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.tbFiltrar = new System.Windows.Forms.TextBox();
             this.Cliente = new System.Windows.Forms.TabPage();
-            this.Reservacion = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.tbFiltroCliente = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbMesas = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,21 +63,62 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.cbMesas = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tbFiltroCliente = new System.Windows.Forms.TextBox();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.Solicitudes = new System.Windows.Forms.TabPage();
+            this.btnSatras = new FontAwesome.Sharp.IconButton();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Reservaciones.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Cliente.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.Solicitudes.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -149,7 +180,7 @@
             // 
             this.tabControl1.Controls.Add(this.Reservaciones);
             this.tabControl1.Controls.Add(this.Cliente);
-            this.tabControl1.Controls.Add(this.Reservacion);
+            this.tabControl1.Controls.Add(this.Solicitudes);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -264,6 +295,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSolicitudes);
+            this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.iconButton6);
             this.panel1.Controls.Add(this.iconButton3);
             this.panel1.Controls.Add(this.btnReservar);
@@ -272,6 +305,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(142, 563);
             this.panel1.TabIndex = 10;
+            // 
+            // btnSolicitudes
+            // 
+            this.btnSolicitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.btnSolicitudes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSolicitudes.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnSolicitudes.IconColor = System.Drawing.Color.Black;
+            this.btnSolicitudes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSolicitudes.Location = new System.Drawing.Point(0, 224);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Size = new System.Drawing.Size(142, 56);
+            this.btnSolicitudes.TabIndex = 12;
+            this.btnSolicitudes.Text = "Solicitudes";
+            this.btnSolicitudes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSolicitudes.UseVisualStyleBackColor = false;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 168);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(142, 56);
+            this.iconButton1.TabIndex = 11;
+            this.iconButton1.Text = "Mesas libres";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // iconButton6
             // 
@@ -330,193 +396,46 @@
             this.Cliente.Text = "Cliente";
             this.Cliente.UseVisualStyleBackColor = true;
             // 
-            // Reservacion
+            // btnCancelar
             // 
-            this.Reservacion.Location = new System.Drawing.Point(4, 29);
-            this.Reservacion.Name = "Reservacion";
-            this.Reservacion.Padding = new System.Windows.Forms.Padding(3);
-            this.Reservacion.Size = new System.Drawing.Size(972, 647);
-            this.Reservacion.TabIndex = 2;
-            this.Reservacion.Text = "Reservacion";
-            this.Reservacion.UseVisualStyleBackColor = true;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.Location = new System.Drawing.Point(13, 566);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(121, 41);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // panel6
+            // iconButton7
             // 
-            this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel6.Controls.Add(this.txtEmail);
-            this.panel6.Controls.Add(this.txtTelefono);
-            this.panel6.Controls.Add(this.txtApellido);
-            this.panel6.Controls.Add(this.txtNombre);
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.panel10);
-            this.panel6.Location = new System.Drawing.Point(220, 14);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(732, 236);
-            this.panel6.TabIndex = 15;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.Location = new System.Drawing.Point(817, 566);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Size = new System.Drawing.Size(121, 41);
+            this.iconButton7.TabIndex = 20;
+            this.iconButton7.Text = "Guardar";
+            this.iconButton7.UseVisualStyleBackColor = true;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
-            // panel7
+            // label13
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(730, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2, 232);
-            this.panel7.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(2, 234);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(730, 2);
-            this.panel8.TabIndex = 2;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(2, 234);
-            this.panel9.TabIndex = 1;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(732, 2);
-            this.panel10.TabIndex = 0;
-            // 
-            // dgvClientes
-            // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.AllowUserToResizeColumns = false;
-            this.dgvClientes.AllowUserToResizeRows = false;
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
-            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvClientes.Location = new System.Drawing.Point(0, 35);
-            this.dgvClientes.MultiSelect = false;
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.RowHeadersVisible = false;
-            this.dgvClientes.RowHeadersWidth = 62;
-            this.dgvClientes.RowTemplate.Height = 28;
-            this.dgvClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(211, 202);
-            this.dgvClientes.TabIndex = 16;
-            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
-            // 
-            // tbFiltroCliente
-            // 
-            this.tbFiltroCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbFiltroCliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltroCliente.Location = new System.Drawing.Point(0, 2);
-            this.tbFiltroCliente.Name = "tbFiltroCliente";
-            this.tbFiltroCliente.Size = new System.Drawing.Size(211, 33);
-            this.tbFiltroCliente.TabIndex = 17;
-            this.tbFiltroCliente.TextChanged += new System.EventHandler(this.tbFiltroCliente_TextChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tbFiltroCliente);
-            this.panel2.Controls.Add(this.dgvClientes);
-            this.panel2.Location = new System.Drawing.Point(3, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 237);
-            this.panel2.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Nombre";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(390, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 26);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Apellido";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 26);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Telefono";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(298, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(214, 26);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Correo electronico";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(230, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Cliente";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(125, 57);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(154, 33);
-            this.txtNombre.TabIndex = 7;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(519, 57);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(154, 33);
-            this.txtApellido.TabIndex = 8;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(127, 155);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(154, 33);
-            this.txtTelefono.TabIndex = 9;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(517, 155);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(201, 33);
-            this.txtEmail.TabIndex = 10;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(10, 266);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(111, 20);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Reservacion";
             // 
             // panel3
             // 
@@ -535,6 +454,44 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(952, 185);
             this.panel3.TabIndex = 19;
+            // 
+            // cbMesas
+            // 
+            this.cbMesas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMesas.FormattingEnabled = true;
+            this.cbMesas.Location = new System.Drawing.Point(720, 70);
+            this.cbMesas.Name = "cbMesas";
+            this.cbMesas.Size = new System.Drawing.Size(159, 34);
+            this.cbMesas.TabIndex = 12;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00"});
+            this.comboBox2.Location = new System.Drawing.Point(408, 73);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(156, 34);
+            this.comboBox2.TabIndex = 11;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(89, 74);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 33);
+            this.dateTimePicker3.TabIndex = 10;
+            this.dateTimePicker3.Value = new System.DateTime(2024, 12, 4, 0, 0, 0, 0);
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // label10
             // 
@@ -602,84 +559,452 @@
             this.panel12.Size = new System.Drawing.Size(952, 2);
             this.panel12.TabIndex = 0;
             // 
-            // label13
+            // label8
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 266);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 20);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Reservacion";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(230, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Cliente";
             // 
-            // iconButton7
+            // panel2
             // 
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.Location = new System.Drawing.Point(817, 566);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(121, 41);
-            this.iconButton7.TabIndex = 20;
-            this.iconButton7.Text = "Guardar";
-            this.iconButton7.UseVisualStyleBackColor = true;
-            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
+            this.panel2.Controls.Add(this.tbFiltroCliente);
+            this.panel2.Controls.Add(this.dgvClientes);
+            this.panel2.Location = new System.Drawing.Point(3, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(211, 237);
+            this.panel2.TabIndex = 18;
             // 
-            // btnCancelar
+            // tbFiltroCliente
             // 
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.Location = new System.Drawing.Point(13, 566);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 41);
-            this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.tbFiltroCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbFiltroCliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltroCliente.Location = new System.Drawing.Point(0, 2);
+            this.tbFiltroCliente.Name = "tbFiltroCliente";
+            this.tbFiltroCliente.Size = new System.Drawing.Size(211, 33);
+            this.tbFiltroCliente.TabIndex = 17;
+            this.tbFiltroCliente.TextChanged += new System.EventHandler(this.tbFiltroCliente_TextChanged);
             // 
-            // dateTimePicker3
+            // dgvClientes
             // 
-            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(89, 74);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 33);
-            this.dateTimePicker3.TabIndex = 10;
-            this.dateTimePicker3.Value = new System.DateTime(2024, 12, 4, 0, 0, 0, 0);
-            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToResizeColumns = false;
+            this.dgvClientes.AllowUserToResizeRows = false;
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvClientes.Location = new System.Drawing.Point(0, 35);
+            this.dgvClientes.MultiSelect = false;
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.RowHeadersVisible = false;
+            this.dgvClientes.RowHeadersWidth = 62;
+            this.dgvClientes.RowTemplate.Height = 28;
+            this.dgvClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(211, 202);
+            this.dgvClientes.TabIndex = 16;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
-            // comboBox2
+            // panel6
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00"});
-            this.comboBox2.Location = new System.Drawing.Point(408, 73);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 34);
-            this.comboBox2.TabIndex = 11;
+            this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel6.Controls.Add(this.txtEmail);
+            this.panel6.Controls.Add(this.txtTelefono);
+            this.panel6.Controls.Add(this.txtApellido);
+            this.panel6.Controls.Add(this.txtNombre);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Controls.Add(this.panel10);
+            this.panel6.Location = new System.Drawing.Point(220, 14);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(732, 236);
+            this.panel6.TabIndex = 15;
             // 
-            // cbMesas
+            // txtEmail
             // 
-            this.cbMesas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMesas.FormattingEnabled = true;
-            this.cbMesas.Location = new System.Drawing.Point(720, 70);
-            this.cbMesas.Name = "cbMesas";
-            this.cbMesas.Size = new System.Drawing.Size(159, 34);
-            this.cbMesas.TabIndex = 12;
+            this.txtEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(517, 155);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(201, 33);
+            this.txtEmail.TabIndex = 10;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(127, 155);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(154, 33);
+            this.txtTelefono.TabIndex = 9;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(519, 57);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(154, 33);
+            this.txtApellido.TabIndex = 8;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(125, 57);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(154, 33);
+            this.txtNombre.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(298, 158);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(214, 26);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Correo electronico";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 26);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Telefono";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(390, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 26);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Apellido";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 23);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Nombre";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(730, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(2, 232);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(2, 234);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(730, 2);
+            this.panel8.TabIndex = 2;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(2, 234);
+            this.panel9.TabIndex = 1;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(732, 2);
+            this.panel10.TabIndex = 0;
+            // 
+            // Solicitudes
+            // 
+            this.Solicitudes.Controls.Add(this.btnSatras);
+            this.Solicitudes.Controls.Add(this.textBox7);
+            this.Solicitudes.Controls.Add(this.label14);
+            this.Solicitudes.Controls.Add(this.label9);
+            this.Solicitudes.Controls.Add(this.panel13);
+            this.Solicitudes.Controls.Add(this.dgvSolicitudes);
+            this.Solicitudes.Location = new System.Drawing.Point(4, 29);
+            this.Solicitudes.Name = "Solicitudes";
+            this.Solicitudes.Padding = new System.Windows.Forms.Padding(3);
+            this.Solicitudes.Size = new System.Drawing.Size(972, 647);
+            this.Solicitudes.TabIndex = 2;
+            this.Solicitudes.Text = "Solicitudes";
+            this.Solicitudes.UseVisualStyleBackColor = true;
+            // 
+            // btnSatras
+            // 
+            this.btnSatras.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSatras.IconColor = System.Drawing.Color.Black;
+            this.btnSatras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSatras.Location = new System.Drawing.Point(862, 17);
+            this.btnSatras.Name = "btnSatras";
+            this.btnSatras.Size = new System.Drawing.Size(91, 32);
+            this.btnSatras.TabIndex = 20;
+            this.btnSatras.Text = "Atras";
+            this.btnSatras.UseVisualStyleBackColor = true;
+            this.btnSatras.Click += new System.EventHandler(this.btnSatras_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(8, 30);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(213, 27);
+            this.textBox7.TabIndex = 19;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(603, 362);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 20);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Asignar Mesa";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(20, 363);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(159, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Datos de Solicitud";
+            // 
+            // panel13
+            // 
+            this.panel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel13.Controls.Add(this.comboBox3);
+            this.panel13.Controls.Add(this.label21);
+            this.panel13.Controls.Add(this.panel18);
+            this.panel13.Controls.Add(this.textBox6);
+            this.panel13.Controls.Add(this.textBox5);
+            this.panel13.Controls.Add(this.textBox4);
+            this.panel13.Controls.Add(this.textBox3);
+            this.panel13.Controls.Add(this.textBox2);
+            this.panel13.Controls.Add(this.textBox1);
+            this.panel13.Controls.Add(this.label20);
+            this.panel13.Controls.Add(this.label19);
+            this.panel13.Controls.Add(this.label18);
+            this.panel13.Controls.Add(this.label17);
+            this.panel13.Controls.Add(this.label16);
+            this.panel13.Controls.Add(this.label15);
+            this.panel13.Controls.Add(this.iconButton8);
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.panel15);
+            this.panel13.Controls.Add(this.panel16);
+            this.panel13.Controls.Add(this.panel17);
+            this.panel13.Location = new System.Drawing.Point(8, 371);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(956, 240);
+            this.panel13.TabIndex = 16;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(637, 105);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 28);
+            this.comboBox3.TabIndex = 18;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(638, 63);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(117, 20);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "Mesas Libres";
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel18.Location = new System.Drawing.Point(582, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(2, 240);
+            this.panel18.TabIndex = 16;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(371, 156);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(173, 27);
+            this.textBox6.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(371, 99);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(173, 27);
+            this.textBox5.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(371, 42);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(173, 27);
+            this.textBox4.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(93, 160);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(173, 27);
+            this.textBox3.TabIndex = 12;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(96, 93);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(173, 27);
+            this.textBox2.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(93, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 27);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(302, 163);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 20);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Hora";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(300, 42);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 20);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "E-mail";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(302, 99);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 20);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Fecha";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 160);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 20);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Telefono";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 96);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 20);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Apellido";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 42);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 20);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Nombre";
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.Location = new System.Drawing.Point(786, 2);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Size = new System.Drawing.Size(168, 236);
+            this.iconButton8.TabIndex = 3;
+            this.iconButton8.Text = "Confirmar";
+            this.iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel14.Location = new System.Drawing.Point(954, 2);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(2, 236);
+            this.panel14.TabIndex = 1;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel15.Location = new System.Drawing.Point(2, 238);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(954, 2);
+            this.panel15.TabIndex = 2;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.Location = new System.Drawing.Point(0, 2);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(2, 238);
+            this.panel16.TabIndex = 1;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(956, 2);
+            this.panel17.TabIndex = 0;
+            // 
+            // dgvSolicitudes
+            // 
+            this.dgvSolicitudes.AllowUserToAddRows = false;
+            this.dgvSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvSolicitudes.Location = new System.Drawing.Point(8, 77);
+            this.dgvSolicitudes.MultiSelect = false;
+            this.dgvSolicitudes.Name = "dgvSolicitudes";
+            this.dgvSolicitudes.ReadOnly = true;
+            this.dgvSolicitudes.RowHeadersVisible = false;
+            this.dgvSolicitudes.RowHeadersWidth = 62;
+            this.dgvSolicitudes.RowTemplate.Height = 28;
+            this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSolicitudes.Size = new System.Drawing.Size(956, 274);
+            this.dgvSolicitudes.TabIndex = 0;
             // 
             // ReservacionesForm
             // 
@@ -699,13 +1024,18 @@
             this.panel1.ResumeLayout(false);
             this.Cliente.ResumeLayout(false);
             this.Cliente.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.Solicitudes.ResumeLayout(false);
+            this.Solicitudes.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,7 +1054,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private System.Windows.Forms.TabPage Reservacion;
+        private System.Windows.Forms.TabPage Solicitudes;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private FontAwesome.Sharp.IconButton iconButton5;
@@ -764,5 +1094,33 @@
         private System.Windows.Forms.ComboBox cbMesas;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DataGridView dgvSolicitudes;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel13;
+        private FontAwesome.Sharp.IconButton iconButton8;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel18;
+        private FontAwesome.Sharp.IconButton btnSolicitudes;
+        private FontAwesome.Sharp.IconButton btnSatras;
     }
 }

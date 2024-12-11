@@ -87,7 +87,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             cbMesa.ValueMember = "id_mesa";
         }
 
-    
+
         private void GuardarFacturaComoTxt()
         {
             // Asegúrate de que hay filas seleccionadas
@@ -98,44 +98,85 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             }
 
             // Obtener número de orden y fecha para el nombre del archivo
-            string numeroOrden = dgvOrdenes.SelectedRows[0].Cells["NumeroOrden"].Value.ToString();
-            string fecha = DateTime.Now.ToString("yyyyMMdd_HHmm"); // Formato único basado en la fecha y hora
+            string numeroOrden = dgvOrdenes.SelectedRows[0].Cells["Orden"].Value.ToString();
+            string fecha = DateTime.Now.ToString("yyyyMMdd_HHmm");
 
-            string nombreArchivo = $"Factura_{numeroOrden}_{fecha}.txt";
-            string directorio = Path.Combine("C:\\Facturas", nombreArchivo); // Especifica la ruta donde deseas guardar las facturas
+            string directorio = @"C:\Facturas";
             if (!Directory.Exists(directorio))
             {
-                Directory.CreateDirectory(directorio);  // Crea la carpeta si no existe
+                Directory.CreateDirectory(directorio);
             }
 
-            // Combina el directorio con el nombre del archivo para obtener la ruta completa
+            string nombreArchivo = $"Factura_{numeroOrden}_{fecha}.txt";
             string rutaArchivo = Path.Combine(directorio, nombreArchivo);
 
-            // Crear el archivo de texto
             using (StreamWriter sw = new StreamWriter(rutaArchivo))
             {
-                sw.WriteLine($"Factura para la Orden #{numeroOrden}");
-                sw.WriteLine($"Fecha: {fecha}");
-                sw.WriteLine("----------------------------");
+                // Encabezado
+                sw.WriteLine("********************************");
+                sw.WriteLine("  Sistema de Reservaciones ");
+                sw.WriteLine(" Calle Falsa 123, Ciudad Fict. ");
+                sw.WriteLine("  Tel: (809) 555-1234          ");
+                sw.WriteLine("********************************");
+                sw.WriteLine($"Factura N.º: {numeroOrden}");
+                sw.WriteLine($"Fecha: {DateTime.Now.ToShortDateString()}");
+                sw.WriteLine($"Hora: {DateTime.Now.ToShortTimeString()}");
+                sw.WriteLine("--------------------------------");
 
-                // Recorrer solo las filas seleccionadas en el DataGridView
+                // Encabezados de columnas
+                sw.WriteLine("Producto          Qty   Precio   Total");
+                sw.WriteLine("--------------------------------");
+
+                // Variables para totales
+                decimal subtotal = 0;
+
+                // Detalles de productos
                 foreach (DataGridViewRow row in dgvOrdenes.SelectedRows)
                 {
-                    sw.WriteLine($"Cliente: {row.Cells["cliente"].Value}");
-                    sw.WriteLine($"Mesa: {row.Cells["mesa"].Value}");
-                    sw.WriteLine($"Fecha: {row.Cells["fecha"].Value}");
-                    sw.WriteLine($"Hora: {row.Cells["hora"].Value}");
-                    sw.WriteLine($"Producto: {row.Cells["producto"].Value}");
-                    sw.WriteLine($"Cantidad: {row.Cells["cantidad"].Value}");
-                    sw.WriteLine($"Precio Unitario: {row.Cells["preciounitario"].Value}");
-                    sw.WriteLine($"Precio Total: {row.Cells["preciototal"].Value}");
-                    sw.WriteLine("----------------------------");
+                    string producto = row.Cells["producto"].Value.ToString();
+                    int cantidad = Convert.ToInt32(row.Cells["cantidad"].Value);
+                    decimal precioUnitario = Convert.ToDecimal(row.Cells["Precio"].Value);
+                    decimal precioTotal = Convert.ToDecimal(row.Cells["Total"].Value);
+
+                    // Dividir el nombre del producto si es muy largo
+                    int maxLength = 16;  // Longitud máxima por línea
+                    while (producto.Length > maxLength)
+                    {
+                        // Imprimir la primera parte del nombre
+                        sw.WriteLine($"{producto.Substring(0, maxLength),-16} {cantidad,3}  {precioUnitario,7:C}  {precioTotal,7:C}");
+
+                        // Eliminar la parte ya impresa y continuar con la siguiente
+                        producto = producto.Substring(maxLength);
+                    }
+                    if (producto.Length > 0)
+                    {
+                        // Imprimir el resto del nombre
+                        sw.WriteLine($"{producto,-16} {cantidad,3}  {precioUnitario,7:C}  {precioTotal,7:C}");
+                    }
+
+                    subtotal += precioTotal;
                 }
+
+                // Calcular impuestos y totales
+                decimal impuesto = subtotal * 0.18m; // 18% ITBIS
+                decimal propina = subtotal * 0.10m; // 10% Propina
+                decimal total = subtotal + impuesto + propina;
+
+                sw.WriteLine("--------------------------------");
+                sw.WriteLine($"Subtotal:                  {subtotal,7:C}");
+                sw.WriteLine($"ITBIS (18%):               {impuesto,7:C}");
+                sw.WriteLine($"Propina (10%):             {propina,7:C}");
+                sw.WriteLine($"Total:                     {total,7:C}");
+                sw.WriteLine("********************************");
+                sw.WriteLine("Gracias por su visita. ¡Vuelva pronto!");
             }
 
-            MessageBox.Show("Factura guardada exitosamente.");
+            MessageBox.Show($"Factura guardada exitosamente en: {rutaArchivo}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             ImprimirFactura(rutaArchivo);
         }
+
+
         private void ImprimirFactura(string rutaArchivo)
         {
             PrintDocument printDocument = new PrintDocument();

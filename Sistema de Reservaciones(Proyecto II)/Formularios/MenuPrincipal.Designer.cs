@@ -32,21 +32,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnConfiguracion = new FontAwesome.Sharp.IconButton();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnCaja = new FontAwesome.Sharp.IconButton();
             this.btnMesas = new FontAwesome.Sharp.IconButton();
-            this.btnConfiguracion = new FontAwesome.Sharp.IconButton();
             this.btnReservaciones = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.lbFecha = new System.Windows.Forms.Label();
             this.Titulo = new System.Windows.Forms.Label();
             this.iconoMenuActual = new FontAwesome.Sharp.IconPictureBox();
             this.panelSombra = new System.Windows.Forms.Panel();
-            this.lbFecha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -98,7 +97,6 @@
             this.panelBotones.Controls.Add(this.btnConfiguracion);
             this.panelBotones.Controls.Add(this.btnCerrarSesion);
             this.panelBotones.Controls.Add(this.btnMenu);
-            this.panelBotones.Controls.Add(this.btnReportes);
             this.panelBotones.Controls.Add(this.btnCaja);
             this.panelBotones.Controls.Add(this.btnMesas);
             this.panelBotones.Controls.Add(this.btnReservaciones);
@@ -108,6 +106,26 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(220, 765);
             this.panelBotones.TabIndex = 1;
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracion.IconChar = FontAwesome.Sharp.IconChar.Gears;
+            this.btnConfiguracion.IconColor = System.Drawing.Color.Black;
+            this.btnConfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 400);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnConfiguracion.Size = new System.Drawing.Size(220, 65);
+            this.btnConfiguracion.TabIndex = 2;
+            this.btnConfiguracion.Text = "Configuracion";
+            this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnCerrarSesion
             // 
@@ -139,7 +157,7 @@
             this.btnMenu.IconColor = System.Drawing.Color.Black;
             this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(0, 400);
+            this.btnMenu.Location = new System.Drawing.Point(0, 335);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMenu.Size = new System.Drawing.Size(220, 65);
@@ -148,26 +166,6 @@
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
-            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            this.btnReportes.IconColor = System.Drawing.Color.Black;
-            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 335);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnReportes.Size = new System.Drawing.Size(220, 65);
-            this.btnReportes.TabIndex = 5;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnCaja
             // 
@@ -208,26 +206,6 @@
             this.btnMesas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracion.IconChar = FontAwesome.Sharp.IconChar.Gears;
-            this.btnConfiguracion.IconColor = System.Drawing.Color.Black;
-            this.btnConfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 465);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnConfiguracion.Size = new System.Drawing.Size(220, 65);
-            this.btnConfiguracion.TabIndex = 2;
-            this.btnConfiguracion.Text = "Configuracion";
-            this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnReservaciones
             // 
@@ -297,6 +275,16 @@
             this.panelTitulo.Size = new System.Drawing.Size(980, 75);
             this.panelTitulo.TabIndex = 3;
             // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.Location = new System.Drawing.Point(763, 31);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(65, 21);
+            this.lbFecha.TabIndex = 2;
+            this.lbFecha.Text = "Fecha";
+            // 
             // Titulo
             // 
             this.Titulo.AutoSize = true;
@@ -329,16 +317,6 @@
             this.panelSombra.Name = "panelSombra";
             this.panelSombra.Size = new System.Drawing.Size(980, 10);
             this.panelSombra.TabIndex = 4;
-            // 
-            // lbFecha
-            // 
-            this.lbFecha.AutoSize = true;
-            this.lbFecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFecha.Location = new System.Drawing.Point(763, 31);
-            this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(65, 21);
-            this.lbFecha.TabIndex = 2;
-            this.lbFecha.Text = "Fecha";
             // 
             // MenuPrincipal
             // 
@@ -377,7 +355,6 @@
         private FontAwesome.Sharp.IconButton btnReservaciones;
         private FontAwesome.Sharp.IconButton btnCerrarSesion;
         private FontAwesome.Sharp.IconButton btnMenu;
-        private FontAwesome.Sharp.IconButton btnReportes;
         private FontAwesome.Sharp.IconButton btnCaja;
         private FontAwesome.Sharp.IconButton btnMesas;
         private FontAwesome.Sharp.IconButton btnConfiguracion;

@@ -28,6 +28,10 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             buttonManager.CargarBotonesDesdeJson(flowLayoutPanel1, new List<string> { "Desayuno", "Almuerzo", "Postre", "Bebida" });
             mesasManager.CargarMesasDesdeJson(flowLayoutPanel2, new List<string> { "Libre", "Reservada", "Ocupada" });
             AsignarEventoClickAMesas();
+            NumeroMesa();
+            tabControl1.TabPages.Remove(Mesas);
+            tabControl1.TabPages.Remove(Productos);
+            tabControl1.TabPages.Remove(Usuarios);
         }
         private void AsignarEventoClickAMesas()
         {
@@ -38,6 +42,20 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                     // Asignar el evento Click al control CustomMesa
                     mesa.Click += Boton_Click;
                 }
+            }
+        }
+        private void NumeroMesa()
+        {
+            try
+            {
+                MostrarDatos mostrarDatos = new MostrarDatos();
+                int numeroMesas = mostrarDatos.ContarMesas();
+
+                tbNumeroMesa.Text = "Mesa "+ (numeroMesas + 1).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -168,6 +186,7 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             // Guardar el botón en el archivo JSON
             mesasManager.GuardarMesaEnJson(botonmesa);
             MessageBox.Show("Mesa guardada exitosamente");
+            NumeroMesa();
         }
 
         private void btnImagenMesa_Click(object sender, EventArgs e)
@@ -221,6 +240,43 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
                     return;
                 }
             }
+            NumeroMesa();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Productos);
+            tabControl1.TabPages.Remove(Configuraciones);
+        }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Mesas);
+            tabControl1.TabPages.Remove(Configuraciones);
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Usuarios);
+            tabControl1.TabPages.Remove(Configuraciones);
+        }
+
+        private void btnPatras_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Configuraciones);
+            tabControl1.TabPages.Remove(Productos);
+        }
+
+        private void btnMatras_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Configuraciones);
+            tabControl1.TabPages.Remove(Mesas);
+        }
+
+        private void btnUatras_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Configuraciones);
+            tabControl1.TabPages.Remove(Usuarios);
         }
     }
 }

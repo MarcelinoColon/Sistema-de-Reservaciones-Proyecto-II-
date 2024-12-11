@@ -20,12 +20,18 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             InitializeComponent();
             this.Text = "Reservaciones";
             tabControl1.TabPages.Remove(Cliente);
-            tabControl1.TabPages.Remove(Reservacion);
+            tabControl1.TabPages.Remove(Solicitudes);
         }
 
         private void ReservacionesForm_Load(object sender, EventArgs e)
         {
             MostrarClientes();
+            MostrarSolicitudes();
+        }
+        private void MostrarSolicitudes()
+        {
+            MostrarDatos objSolicitudes = new MostrarDatos();
+            dgvSolicitudes.DataSource = objSolicitudes.MostrarSolicitudes();
         }
 
         private void MostrarClientes()
@@ -120,6 +126,18 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         private void iconButton7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Solicitudes);
+            tabControl1.TabPages.Remove(Reservaciones);
+        }
+
+        private void btnSatras_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(Reservaciones);
+            tabControl1.TabPages.Remove(Solicitudes);
         }
     }
 }

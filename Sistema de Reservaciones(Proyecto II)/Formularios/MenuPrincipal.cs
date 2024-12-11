@@ -128,11 +128,32 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
         {
             if (UserCache.Current.TipoUsuario == "4")
             {
-                
+                iconPictureBox1.Enabled = false;
+                btnMesas.Visible = false;
+                btnCaja.Visible = false;
+                btnConfiguracion.Visible = false;
+                btnReservaciones_Click(btnReservaciones, EventArgs.Empty);
+
+            }
+            else if(UserCache.Current.TipoUsuario == "3")
+            {
+                btnReservaciones.Visible = false;
+                btnCaja.Visible = false;
+                btnConfiguracion.Visible = false;
+                iconPictureBox1.Enabled = false;
+                btnMesas_Click(btnMesas, EventArgs.Empty);
+            }
+            else if (UserCache.Current.TipoUsuario == "2")
+            {
+                iconPictureBox1.Enabled = false;
+                btnReservaciones.Visible = false;
+                btnConfiguracion.Visible = false;
+                btnMesas.Visible = false;
+                btnCaja_Click(btnCaja, EventArgs.Empty);
             }
             else
             {
-                
+
             }
         }
 
@@ -160,11 +181,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_.Formularios
             OpenChildForm(new CajaForm());
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new ReportesForm());
-        }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {

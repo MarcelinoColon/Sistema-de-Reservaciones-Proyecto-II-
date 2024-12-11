@@ -23,7 +23,6 @@ namespace Sistema_de_Reservaciones_Proyecto_II_
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PanelLogin.BackColor = Color.FromArgb(100, 0, 0, 0);
             try
             {
                 DBGeneral.ObtenerConexion();
@@ -71,6 +70,49 @@ namespace Sistema_de_Reservaciones_Proyecto_II_
             {
               MessageBox.Show(ex.Message);
             }
+        }
+
+        private void tbUsuario_Enter(object sender, EventArgs e)
+        {
+            if (tbUsuario.Text == "Usuario")
+            {
+                tbUsuario.Text = "";
+                tbUsuario.ForeColor= Color.DarkGray;
+            }
+        }
+
+        private void tbUsuario_Leave(object sender, EventArgs e)
+        {
+            if (tbUsuario.Text == "")
+            {
+                tbUsuario.Text = "Usuario";
+                tbUsuario.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void tbContraseña_Enter(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text == "Contraseña")
+            {
+                tbContraseña.Text = "";
+                tbContraseña.ForeColor = Color.DarkGray;
+                tbContraseña.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void tbContraseña_Leave(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text == "")
+            {
+                tbContraseña.Text = "Contraseña";
+                tbContraseña.ForeColor= Color.LightGray;
+                tbContraseña.UseSystemPasswordChar= false;
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Por favor, comuníquese con el administrador del sistema para recuperar su contraseña.", "Recuperación de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
